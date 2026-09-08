@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dxif5tg63knv8"]
+
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://arena-smith.jpg" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://d22trb7iq2nf7" path="res://f4859daa2f5fbb0169f9b73a41c3f0bf_001.png" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gymab"]
+
+[node name="main" type="Node2D" unique_id=1415599182]
+scale = Vector2(1.5991668, 1.3793104)
+
+[node name="background" type="Sprite2D" parent="." unique_id=205594705]
+position = Vector2(50.000015, 32.624996)
+scale = Vector2(0.083333366, 0.08333333)
+texture = ExtResource("1_0xm2m")
+
+[node name="P1" type="CharacterBody2D" parent="." unique_id=112906977]
+position = Vector2(50.000015, 32.624996)
+scale = Vector2(0.6253256, 0.72499996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P1" unique_id=2012400]
+shape = SubResource("RectangleShape2D_gymab")
+
+[node name="Sprite2D" type="Sprite2D" parent="P1" unique_id=1304541031]
+texture = ExtResource("2_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=13900820]
+position = Vector2(50, 32)

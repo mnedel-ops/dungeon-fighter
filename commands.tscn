@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://brkql3ek373ph"]
+
+[node name="Commands" type="Control" unique_id=75087167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=189728766]
+layout_mode = 0
+offset_right = 108.0
+offset_bottom = 26.0
+color = Color(0.5176471, 0.5176471, 0.5176471, 0.42352942)
+
+[node name="Buttons" type="Label" parent="." unique_id=711974318]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 89.0
+offset_bottom = 23.0
+text = "X accecpt"

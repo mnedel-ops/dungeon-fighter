@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmlcuqoji6kfa"]
+
+[ext_resource type="PackedScene" uid="uid://dxif5tg63knv8" path="res://main.tscn" id="1_etvr7"]
+
+[node name="match-scene" type="Node2D" unique_id=2070016054]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1012073333]
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=141353523]
+size = Vector2i(1920, 1080)
+
+[node name="main" parent="CanvasLayer/SubViewport" unique_id=1415599182 instance=ExtResource("1_etvr7")]
+position = Vector2(960.50006, 540)
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/SubViewport" unique_id=226000714]
+offset_right = 449.0
+offset_bottom = 27.0
+value = 100.0
+rounded = true
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewport" unique_id=771206022]
+position = Vector2(960, 540)
