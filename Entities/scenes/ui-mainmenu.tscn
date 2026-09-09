@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cs15yjhgx52p4"]
+
+[ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="1_cmhrf"]
+
+[node name="mainmenu" type="Control" unique_id=1334709554]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="." unique_id=1030598818]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_cmhrf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
+layout_mode = 1
+offset_top = 811.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Dungeon Fighter"
+
+[node name="command" type="Label" parent="VBoxContainer" unique_id=651067916]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press START to play!"
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=755100766]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"

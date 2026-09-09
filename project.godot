@@ -11,14 +11,26 @@ config_version=5
 [application]
 
 config/name="DungeonFighter"
-run/main_scene="uid://dxif5tg63knv8"
+run/main_scene="uid://dmlcuqoji6kfa"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Entities/icon.svg"
 
 [display]
 
-window/size/viewport_width=160
-window/size/viewport_height=90
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Entities/": "orange",
+"res://Entities/Characters/": "teal",
+"res://Entities/scenes/": "green",
+"res://System/": "yellow",
+"res://addons/": "red"
+}
 
 [physics]
 
@@ -26,6 +38,7 @@ window/size/viewport_height=90
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
