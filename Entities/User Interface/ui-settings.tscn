@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bol80yvum040a"]
 
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_i8uaq"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_n3m7b"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_kpk6f"]
 
 [node name="settings" type="Control" unique_id=2030663330]
 layout_mode = 3
@@ -10,49 +12,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=897070354]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_i8uaq")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1809010668]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1681216454]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1015543013]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -347.0
-offset_right = 119.0
-offset_bottom = 99.0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="buttons" type="VBoxContainer" parent="HBoxContainer" unique_id=268248282]
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=336100592]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/buttons" unique_id=1377022528]
+[node name="settings" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=683700014]
 layout_mode = 2
-
-[node name="name" type="Label" parent="HBoxContainer/buttons" unique_id=1538428612]
-layout_mode = 2
+theme = ExtResource("2_n3m7b")
 text = "Settings"
 
-[node name="audio" type="Button" parent="HBoxContainer/buttons" unique_id=1148895638]
+[node name="audio" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1148895638]
 layout_mode = 2
+theme = ExtResource("3_kpk6f")
 text = "Audio"
 
-[node name="video" type="Button" parent="HBoxContainer/buttons" unique_id=1204828278]
+[node name="video" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
+theme = ExtResource("3_kpk6f")
 text = "Versus"
 
-[node name="Controls" type="Button" parent="HBoxContainer/buttons" unique_id=31043756]
+[node name="Controls" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
+theme = ExtResource("3_kpk6f")
 text = "Settings"
 
-[node name="Acessibility" type="Button" parent="HBoxContainer/buttons" unique_id=418482347]
+[node name="Acessibility" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
+theme = ExtResource("3_kpk6f")
 text = "Credits"
 
-[node name="Back" type="Button" parent="HBoxContainer/buttons" unique_id=419377005]
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2
+theme = ExtResource("3_kpk6f")
 text = "Back"

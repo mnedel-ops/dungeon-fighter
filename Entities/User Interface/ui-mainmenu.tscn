@@ -39,13 +39,14 @@ text = "Dungeon Fighter"
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_vygyu")
-text = "Press START to play!"
+text = "Press START to delve into the Dungeon!"
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=755100766]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Start"
+theme = ExtResource("3_vygyu")
+text = "START	"
 
 [node name="Commands" parent="." unique_id=75087167 instance=ExtResource("6_lopdo")]
 layout_mode = 1

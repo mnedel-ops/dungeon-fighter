@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvkfm78t071x7"]
 
 [ext_resource type="Script" uid="uid://dbrfy8x443n6a" path="res://Entities/User Interface/ui_menu.gd" id="1_ydo8c"]
-[ext_resource type="PackedScene" uid="uid://dk0rmgp20o1s3" path="res://Entities/User Interface/ui_versus.tscn" id="2_ld25a"]
+[ext_resource type="PackedScene" uid="uid://dmlcuqoji6kfa" path="res://Entities/User Interface/match_scene.tscn" id="2_ld25a"]
 [ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui-settings.tscn" id="2_mr1if"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
 [ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
@@ -16,13 +16,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ydo8c")
-versus = NodePath("MarginContainer/buttons/versus")
+versus = NodePath("ColorRect/MarginContainer/buttons/versus")
 versus_scene = ExtResource("2_ld25a")
-settings = NodePath("MarginContainer/buttons/settings")
+settings = NodePath("ColorRect/MarginContainer/buttons/settings")
 settings_scene = ExtResource("2_mr1if")
-credits = NodePath("MarginContainer/buttons/credits")
+credits = NodePath("ColorRect/MarginContainer/buttons/credits")
 credits_scene = ExtResource("3_mr1if")
-exit = NodePath("MarginContainer/buttons/exit")
+exit = NodePath("ColorRect/MarginContainer/buttons/exit")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
 layout_mode = 0
@@ -38,40 +38,44 @@ offset_right = 656.0
 offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=371515679]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 40.0
-offset_bottom = 44.0
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=371515679]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -326.0
+offset_right = 326.0
+offset_bottom = 368.0
+grow_horizontal = 2
 theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
 
-[node name="buttons" type="VBoxContainer" parent="MarginContainer" unique_id=268248282]
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=268248282]
 layout_mode = 2
 
-[node name="name" type="Label" parent="MarginContainer/buttons" unique_id=1538428612]
+[node name="name" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1538428612]
 layout_mode = 2
 theme = ExtResource("4_0ekso")
 text = "Dungeon Figter"
 
-[node name="versus" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
+[node name="versus" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Versus"
 
-[node name="settings" type="Button" parent="MarginContainer/buttons" unique_id=31043756]
+[node name="settings" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Settings"
 
-[node name="credits" type="Button" parent="MarginContainer/buttons" unique_id=418482347]
+[node name="credits" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Credits"
 
-[node name="exit" type="Button" parent="MarginContainer/buttons" unique_id=419377005]
+[node name="exit" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Exit"
