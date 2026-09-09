@@ -1,22 +1,34 @@
 [gd_scene format=3 uid="uid://bvkfm78t071x7"]
 
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_lti8b"]
-[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_pd5xy"]
-[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_jnurk"]
+[ext_resource type="Script" uid="uid://dbrfy8x443n6a" path="res://Entities/User Interface/ui_menu.gd" id="1_ydo8c"]
+[ext_resource type="PackedScene" uid="uid://dk0rmgp20o1s3" path="res://Entities/User Interface/ui_versus.tscn" id="2_ld25a"]
+[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui-settings.tscn" id="2_mr1if"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
+[ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
 
-[node name="menu" type="Control" unique_id=2030663330]
+[node name="menu" type="Control" unique_id=2030663330 node_paths=PackedStringArray("versus", "settings", "credits", "exit")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ydo8c")
+versus = NodePath("MarginContainer/buttons/versus")
+versus_scene = ExtResource("2_ld25a")
+settings = NodePath("MarginContainer/buttons/settings")
+settings_scene = ExtResource("2_mr1if")
+credits = NodePath("MarginContainer/buttons/credits")
+credits_scene = ExtResource("3_mr1if")
+exit = NodePath("MarginContainer/buttons/exit")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_lti8b")
+texture = ExtResource("3_ld25a")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1377022528]
@@ -41,30 +53,25 @@ layout_mode = 2
 
 [node name="name" type="Label" parent="MarginContainer/buttons" unique_id=1538428612]
 layout_mode = 2
-theme = ExtResource("2_pd5xy")
+theme = ExtResource("4_0ekso")
 text = "Dungeon Figter"
-
-[node name="arcade" type="Button" parent="MarginContainer/buttons" unique_id=1148895638]
-layout_mode = 2
-theme = ExtResource("3_jnurk")
-text = "Arcade"
 
 [node name="versus" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
-theme = ExtResource("3_jnurk")
+theme = ExtResource("5_dtf8w")
 text = "Versus"
 
 [node name="settings" type="Button" parent="MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
-theme = ExtResource("3_jnurk")
+theme = ExtResource("5_dtf8w")
 text = "Settings"
 
 [node name="credits" type="Button" parent="MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
-theme = ExtResource("3_jnurk")
+theme = ExtResource("5_dtf8w")
 text = "Credits"
 
 [node name="exit" type="Button" parent="MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2
-theme = ExtResource("3_jnurk")
+theme = ExtResource("5_dtf8w")
 text = "Exit"

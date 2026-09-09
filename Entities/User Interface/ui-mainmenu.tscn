@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cs15yjhgx52p4"]
 
 [ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="1_cmhrf"]
-[ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://Entities/scenes/ui_mainmenu.gd" id="1_she5c"]
-[ext_resource type="PackedScene" uid="uid://bvkfm78t071x7" path="res://Entities/scenes/ui-menu.tscn" id="2_uhxte"]
+[ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://Entities/User Interface/ui_mainmenu.gd" id="1_she5c"]
+[ext_resource type="PackedScene" uid="uid://bvkfm78t071x7" path="res://Entities/User Interface/ui-menu.tscn" id="2_uhxte"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
-[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/scenes/commands.tscn" id="6_lopdo"]
+[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="6_lopdo"]
 
 [node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
 layout_mode = 3

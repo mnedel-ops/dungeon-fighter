@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bol80yvum040a"]
 
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_agjmm"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_i8uaq"]
 
 [node name="settings" type="Control" unique_id=2030663330]
 layout_mode = 3
@@ -14,7 +14,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_agjmm")
+texture = ExtResource("1_i8uaq")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1809010668]

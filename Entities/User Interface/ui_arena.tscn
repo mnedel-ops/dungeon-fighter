@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_hqoml"]
 [ext_resource type="Texture2D" uid="uid://dek202kg4wxxm" path="res://Entities/arena-selector.jpg" id="2_hi0p3"]
-[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/scenes/commands.tscn" id="3_hi0p3"]
+[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="3_hi0p3"]
 
 [node name="ui-arena" type="Control" unique_id=482908394]
 layout_mode = 3

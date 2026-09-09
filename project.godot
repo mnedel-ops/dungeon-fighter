@@ -12,7 +12,7 @@ config_version=5
 
 config/name="DungeonFighter"
 run/main_scene="uid://cs15yjhgx52p4"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Entities/icon.svg"
 
 [display]
@@ -22,12 +22,16 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
 "res://Entities/": "orange",
 "res://Entities/Characters/": "teal",
-"res://Entities/scenes/": "green",
+"res://Entities/User Interface/": "green",
 "res://System/": "yellow",
 "res://addons/": "red"
 }
