@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DungeonFighter"
-run/main_scene="uid://dmlcuqoji6kfa"
+run/main_scene="uid://cs15yjhgx52p4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Entities/icon.svg"
 

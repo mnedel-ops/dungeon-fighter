@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://cs15yjhgx52p4"]
 
 [ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="1_cmhrf"]
+[ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://Entities/scenes/ui_mainmenu.gd" id="1_she5c"]
+[ext_resource type="PackedScene" uid="uid://bvkfm78t071x7" path="res://Entities/scenes/ui-menu.tscn" id="2_uhxte"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
+[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/scenes/commands.tscn" id="6_lopdo"]
 
-[node name="mainmenu" type="Control" unique_id=1334709554]
+[node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_she5c")
+botao = NodePath("VBoxContainer/start")
+menu = ExtResource("2_uhxte")
 
 [node name="background" type="TextureRect" parent="." unique_id=1030598818]
 layout_mode = 0
@@ -16,7 +24,7 @@ texture = ExtResource("1_cmhrf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
-offset_top = 811.0
+offset_top = 679.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 alignment = 1
@@ -24,11 +32,13 @@ alignment = 1
 [node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_vygyu")
 text = "Dungeon Fighter"
 
 [node name="command" type="Label" parent="VBoxContainer" unique_id=651067916]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_vygyu")
 text = "Press START to play!"
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=755100766]
@@ -36,3 +46,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Start"
+
+[node name="Commands" parent="." unique_id=75087167 instance=ExtResource("6_lopdo")]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 993.0
+offset_right = 13.0
+offset_bottom = 993.0
