@@ -63,6 +63,7 @@ shape = SubResource("WorldBoundaryShape2D_etvr7")
 position = Vector2(146.38611, 75.57084)
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/SubViewportContainer/SubViewport/P1" unique_id=1905267957]
+texture_filter = 1
 position = Vector2(0.04000244, 0.049999997)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_4wal8")
