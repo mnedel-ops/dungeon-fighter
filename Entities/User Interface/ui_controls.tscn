@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d040hukj4f648"]
+
+[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_1j7ha"]
+[ext_resource type="Script" uid="uid://b74melyw3mv05" path="res://Entities/User Interface/ui_controls.gd" id="1_7jts3"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_7jts3"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_dyrfq"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_5wal0"]
+
+[node name="ui_controls" type="Control" unique_id=2111797591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jts3")
+
+[node name="print" type="Label" parent="." unique_id=959055481]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_1j7ha")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2047250167]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_7jts3")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1222399938]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1075356029]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=559317129]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="control" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1857735576]
+layout_mode = 2
+theme = ExtResource("3_dyrfq")
+text = "Controls"
+
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1736629238]
+layout_mode = 2
+theme = ExtResource("4_5wal0")
+text = "Back"

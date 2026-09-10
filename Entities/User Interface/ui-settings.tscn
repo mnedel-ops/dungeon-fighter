@@ -1,16 +1,40 @@
 [gd_scene format=3 uid="uid://bol80yvum040a"]
 
+[ext_resource type="Script" uid="uid://boyr3cr6xco4p" path="res://Entities/User Interface/ui_settings.gd" id="1_c1vfu"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_i8uaq"]
+[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_kpk6f"]
+[ext_resource type="PackedScene" uid="uid://c50ipmvknsq82" path="res://Entities/User Interface/ui_audio.tscn" id="2_mwdkq"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_n3m7b"]
+[ext_resource type="PackedScene" uid="uid://bvkfm78t071x7" path="res://Entities/User Interface/ui-menu.tscn" id="2_x35sp"]
+[ext_resource type="PackedScene" uid="uid://chpylms322xia" path="res://Entities/User Interface/ui_video.tscn" id="3_hpssv"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_kpk6f"]
+[ext_resource type="PackedScene" uid="uid://d040hukj4f648" path="res://Entities/User Interface/ui_controls.tscn" id="4_6i4lx"]
+[ext_resource type="PackedScene" uid="uid://dac2n6gvf6w6g" path="res://Entities/User Interface/ui_acessibility.tscn" id="5_m4j4y"]
 
-[node name="settings" type="Control" unique_id=2030663330]
+[node name="settings" type="Control" unique_id=2030663330 node_paths=PackedStringArray("audio", "video", "controls", "accessibility", "back")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c1vfu")
+audio = NodePath("ColorRect/MarginContainer/buttons/audio")
+audio_scene = ExtResource("2_mwdkq")
+video = NodePath("ColorRect/MarginContainer/buttons/video")
+video_scene = ExtResource("3_hpssv")
+controls = NodePath("ColorRect/MarginContainer/buttons/Controls")
+controls_scene = ExtResource("4_6i4lx")
+accessibility = NodePath("ColorRect/MarginContainer/buttons/Acessibility")
+accessibility_scene = ExtResource("5_m4j4y")
+back = NodePath("ColorRect/MarginContainer/buttons/Back")
+menu = ExtResource("2_x35sp")
+
+[node name="print" type="Label" parent="." unique_id=1549034253]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_kpk6f")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=897070354]
 layout_mode = 0
@@ -58,17 +82,17 @@ text = "Audio"
 [node name="video" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
-text = "Versus"
+text = "Video"
 
 [node name="Controls" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
-text = "Settings"
+text = "Controls"
 
 [node name="Acessibility" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
-text = "Credits"
+text = "Acessibility"
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c50ipmvknsq82"]
+
+[ext_resource type="Script" uid="uid://x21hp6pv0rr3" path="res://Entities/User Interface/ui_audio.gd" id="1_4wc11"]
+[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_grdx6"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_4wc11"]
+[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui-settings.tscn" id="2_43v2j"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_43v2j"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_tr0ex"]
+
+[node name="ui_audio" type="Control" unique_id=1374872654 node_paths=PackedStringArray("back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4wc11")
+back = NodePath("ColorRect/MarginContainer/buttons/Back")
+settings = ExtResource("2_43v2j")
+
+[node name="print" type="Label" parent="." unique_id=568762409]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_grdx6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=23312142]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_4wc11")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1828087148]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=962213297]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1489445623]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="video" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1176538225]
+layout_mode = 2
+theme = ExtResource("3_43v2j")
+text = "Audio Settings"
+
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=2014585316]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "Back"

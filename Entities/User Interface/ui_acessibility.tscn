@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dac2n6gvf6w6g"]
+
+[ext_resource type="Script" uid="uid://c3g7wi8ddlq3a" path="res://Entities/User Interface/ui_acessibility.gd" id="1_5a64y"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_ufcie"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_hytwb"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_ndh2e"]
+
+[node name="ui_acessibility" type="Control" unique_id=1072012046 node_paths=PackedStringArray("back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5a64y")
+back = NodePath("ColorRect/MarginContainer/buttons/Back")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1604135289]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ufcie")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=132842499]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=201631948]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1355405387]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="settings" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1702849572]
+layout_mode = 2
+theme = ExtResource("3_hytwb")
+text = "Acessibility"
+
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=777186817]
+layout_mode = 2
+theme = ExtResource("4_ndh2e")
+text = "Back"

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
 [ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
+[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="5_0ekso"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
 
 [node name="menu" type="Control" unique_id=2030663330 node_paths=PackedStringArray("versus", "settings", "credits", "exit")]
@@ -23,6 +24,12 @@ settings_scene = ExtResource("2_mr1if")
 credits = NodePath("ColorRect/MarginContainer/buttons/credits")
 credits_scene = ExtResource("3_mr1if")
 exit = NodePath("ColorRect/MarginContainer/buttons/exit")
+
+[node name="print" type="Label" parent="." unique_id=1852157016]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_0ekso")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
 layout_mode = 0

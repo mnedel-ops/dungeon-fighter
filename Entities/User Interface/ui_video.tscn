@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://chpylms322xia"]
+
+[ext_resource type="Script" uid="uid://chs0flnmhls2x" path="res://Entities/User Interface/ui_video.gd" id="1_w6s0i"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_tg252"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
+
+[node name="ui_video" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w6s0i")
+back = NodePath("ColorRect/MarginContainer/buttons/Back")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=495926177]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_tg252")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=403116933]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=937160390]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1251185546]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="video" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=326980611]
+layout_mode = 2
+theme = ExtResource("3_es31i")
+text = "Video Settings"
+
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1215883831]
+layout_mode = 2
+theme = ExtResource("4_fdton")
+text = "Back"
