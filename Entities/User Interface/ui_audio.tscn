@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://x21hp6pv0rr3" path="res://Entities/User Interface/ui_audio.gd" id="1_4wc11"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_grdx6"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_4wc11"]
-[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui-settings.tscn" id="2_43v2j"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_43v2j"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_tr0ex"]
 
@@ -16,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4wc11")
 back = NodePath("ColorRect/MarginContainer/buttons/Back")
-settings = ExtResource("2_43v2j")
 
 [node name="print" type="Label" parent="." unique_id=568762409]
 layout_mode = 0
@@ -57,10 +55,38 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="video" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1176538225]
+[node name="Audio" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1176538225]
 layout_mode = 2
 theme = ExtResource("3_43v2j")
 text = "Audio Settings"
+
+[node name="MasterVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=200013480]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1702858655]
+layout_mode = 2
+
+[node name="MusicVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=784482828]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1444905824]
+layout_mode = 2
+
+[node name="VoiceVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1689634271]
+layout_mode = 2
+text = "Voice Volume"
+
+[node name="VoiceSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=233157671]
+layout_mode = 2
+
+[node name="UIVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1687689636]
+layout_mode = 2
+text = "UI Volume"
+
+[node name="UISlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1661295333]
+layout_mode = 2
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=2014585316]
 layout_mode = 2
