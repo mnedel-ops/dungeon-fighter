@@ -1,5 +1,5 @@
 extends Control
-
+#salvar usando resources. https://www.youtube.com/watch?v=wSq1QJ-g91M
 @export var audio : Button
 @export var audio_scene: PackedScene
 
