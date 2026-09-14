@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
 
-[node name="ui_video" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
+[node name="ui_graphics" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,10 +54,10 @@ theme = ExtResource("3_es31i")
 text = "Graphics 
       Settings"
 
-[node name="window-mode2" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=285980015]
+[node name="screen-mode" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=285980015]
 layout_mode = 2
 theme = ExtResource("4_fdton")
-text = "Window mode"
+text = "Screen mode"
 horizontal_alignment = 2
 
 [node name="window-mode" type="OptionButton" parent="ColorRect/MarginContainer/buttons" unique_id=1794322002]
