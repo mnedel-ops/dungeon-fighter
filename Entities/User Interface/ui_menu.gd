@@ -4,7 +4,7 @@ extends Control
 @export var versus_scene : PackedScene
 
 @export var settings : Button
-@export var settings_scene : PackedScene 
+var settings_scene : PackedScene = load("res://Entities/User Interface/ui_settings.tscn")
 
 @export var credits : Button
 @export var credits_scene : PackedScene

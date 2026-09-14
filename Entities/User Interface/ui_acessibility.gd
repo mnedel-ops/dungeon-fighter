@@ -1,7 +1,7 @@
 extends Control
 
 @export var back : Button
-@onready var settings: PackedScene = preload("res://Entities/User Interface/ui-settings.tscn")
+var settings: PackedScene = load("res://Entities/User Interface/ui_settings.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

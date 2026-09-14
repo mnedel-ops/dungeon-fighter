@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbrfy8x443n6a" path="res://Entities/User Interface/ui_menu.gd" id="1_ydo8c"]
 [ext_resource type="PackedScene" uid="uid://dmlcuqoji6kfa" path="res://Entities/User Interface/match_scene.tscn" id="2_ld25a"]
-[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui-settings.tscn" id="2_mr1if"]
+[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui_settings.tscn" id="2_mr1if"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
 [ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
@@ -20,7 +20,6 @@ script = ExtResource("1_ydo8c")
 versus = NodePath("ColorRect/MarginContainer/buttons/versus")
 versus_scene = ExtResource("2_ld25a")
 settings = NodePath("ColorRect/MarginContainer/buttons/settings")
-settings_scene = ExtResource("2_mr1if")
 credits = NodePath("ColorRect/MarginContainer/buttons/credits")
 credits_scene = ExtResource("3_mr1if")
 exit = NodePath("ColorRect/MarginContainer/buttons/exit")

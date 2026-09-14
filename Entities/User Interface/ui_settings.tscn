@@ -28,7 +28,6 @@ controls_scene = ExtResource("4_6i4lx")
 accessibility = NodePath("ColorRect/MarginContainer/buttons/Acessibility")
 accessibility_scene = ExtResource("5_m4j4y")
 back = NodePath("ColorRect/MarginContainer/buttons/Back")
-menu = ExtResource("2_x35sp")
 
 [node name="print" type="Label" parent="." unique_id=1549034253]
 layout_mode = 0

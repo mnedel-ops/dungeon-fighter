@@ -15,7 +15,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_she5c")
 botao = NodePath("VBoxContainer/start")
-menu = ExtResource("2_uhxte")
 
 [node name="background" type="TextureRect" parent="." unique_id=1030598818]
 layout_mode = 0

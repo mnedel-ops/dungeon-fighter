@@ -1,7 +1,7 @@
 extends Control
 
 @export var botao : Button
-@export var menu : PackedScene
+var menu : PackedScene = load("res://Entities/User Interface/ui_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
