@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://rgcxnyhxwesj"
-path="res://.godot/imported/LadyRadical2Regular-0yAz.ttf-201cabd22243b1b2bda710b89a0e9906.fontdata"
+uid="uid://cbqiq4danlokp"
+path="res://.godot/imported/CsLamiaStippledRegularDemo-V4r2w.otf-fae5ca5ba0ec05e712b4a418679d3694.fontdata"
 
 [deps]
 
-source_file="res://lady-radical-2-font/LadyRadical2Regular-0yAz.ttf"
-dest_files=["res://.godot/imported/LadyRadical2Regular-0yAz.ttf-201cabd22243b1b2bda710b89a0e9906.fontdata"]
+source_file="res://Font/cs-lamia-stippled-font/CsLamiaStippledRegularDemo-V4r2w.otf"
+dest_files=["res://.godot/imported/CsLamiaStippledRegularDemo-V4r2w.otf-fae5ca5ba0ec05e712b4a418679d3694.fontdata"]
 
 [params]
 

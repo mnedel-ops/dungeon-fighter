@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dn3bvdp76c4nh"
-path="res://.godot/imported/Ancient Modern Tales-0df8.woff-577885e0e7275de57fb910b8a194c05e.fontdata"
+uid="uid://bfffea8of6gg2"
+path="res://.godot/imported/GotikaOrnamentPersonalUseRegular-ZV6gZ.otf-f909d62d4895babbf74c9d7be9959134.fontdata"
 
 [deps]
 
-source_file="res://ancient-modern-tales-font/misc/Ancient Modern Tales-0df8.woff"
-dest_files=["res://.godot/imported/Ancient Modern Tales-0df8.woff-577885e0e7275de57fb910b8a194c05e.fontdata"]
+source_file="res://Font/gotika-ornament-font/GotikaOrnamentPersonalUseRegular-ZV6gZ.otf"
+dest_files=["res://.godot/imported/GotikaOrnamentPersonalUseRegular-ZV6gZ.otf-f909d62d4895babbf74c9d7be9959134.fontdata"]
 
 [params]
 

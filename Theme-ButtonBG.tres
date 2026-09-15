@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://msj6jfnbwa5g"]
+
+[ext_resource type="Texture2D" uid="uid://cb2lvytssjy26" path="res://Sprite sheet for Basic Pack.png" id="1_6td12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgiao"]
+atlas = ExtResource("1_6td12")
+region = Rect2(11, 107, 26, 28)
+
+[resource]
+texture = SubResource("AtlasTexture_tgiao")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
