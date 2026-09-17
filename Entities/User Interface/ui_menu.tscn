@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dbrfy8x443n6a" path="res://Entities/User Interface/ui_menu.gd" id="1_ydo8c"]
 [ext_resource type="PackedScene" uid="uid://dmlcuqoji6kfa" path="res://Entities/User Interface/match_scene.tscn" id="2_ld25a"]
-[ext_resource type="PackedScene" uid="uid://bol80yvum040a" path="res://Entities/User Interface/ui_settings.tscn" id="2_mr1if"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
 [ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="5_0ekso"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
+[ext_resource type="FontVariation" uid="uid://c0f2ypepwn3t2" path="res://new_font_variation.tres" id="8_kspne"]
 
 [node name="menu" type="Control" unique_id=2030663330 node_paths=PackedStringArray("versus", "settings", "credits", "exit")]
 layout_mode = 3
@@ -39,9 +39,9 @@ expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1377022528]
 layout_mode = 0
-offset_top = -19.0
+offset_top = 3.0
 offset_right = 656.0
-offset_bottom = 1096.0
+offset_bottom = 1083.0
 color = Color(1, 1, 1, 0.38039216)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=371515679]
@@ -64,11 +64,12 @@ layout_mode = 2
 [node name="name" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1538428612]
 layout_mode = 2
 theme = ExtResource("4_0ekso")
-text = "Dungeon Figter"
+text = "Dungeon Fighter"
 
 [node name="versus" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
+theme_override_fonts/font = ExtResource("8_kspne")
 text = "Versus"
 
 [node name="settings" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]

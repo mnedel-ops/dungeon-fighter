@@ -1,0 +1,4 @@
+Contar uma historia com as artes Iluminadas, de um grupo de rpg que parte em busca de aventuras. A função de cada menu, condiz com o trecho contado.
+Stefan Poag, A Shipwrigth
+
+Aumentar o espaçamento do texto da fonte de texto normal.

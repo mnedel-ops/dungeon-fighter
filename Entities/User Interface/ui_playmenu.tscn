@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="1_cmhrf"]
 [ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://Entities/User Interface/ui_playmenu.gd" id="1_she5c"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
+[ext_resource type="Texture2D" uid="uid://cqob58wvgm6mv" path="res://inspi/playmenu.png" id="3_ims7d"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
 [ext_resource type="FontFile" uid="uid://cbqiq4danlokp" path="res://Font/cs-lamia-stippled-font/CsLamiaStippledRegularDemo-V4r2w.otf" id="5_ru6y8"]
 [ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="6_lopdo"]
@@ -26,11 +27,23 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_cmhrf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
-layout_mode = 1
-offset_top = 679.0
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=582920579]
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 1077.0
+color = Color(0.6109535, 0.61095357, 0.6109535, 0.28627452)
+
+[node name="background2" type="TextureRect" parent="." unique_id=978381466]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+texture = ExtResource("3_ims7d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
+layout_mode = 1
+offset_top = 567.0
+offset_right = 1920.0
+offset_bottom = 968.0
 alignment = 1
 
 [node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
