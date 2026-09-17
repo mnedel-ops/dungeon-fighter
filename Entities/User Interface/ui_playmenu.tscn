@@ -27,17 +27,11 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_cmhrf")
 
-[node name="ColorRect" type="ColorRect" parent="background" unique_id=582920579]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=582920579]
 layout_mode = 0
 offset_right = 1915.0
 offset_bottom = 1077.0
 color = Color(0.6109535, 0.61095357, 0.6109535, 0.28627452)
-
-[node name="background2" type="TextureRect" parent="." unique_id=978381466]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("3_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
@@ -88,3 +82,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("7_udm7l")
+
+[node name="background2" type="TextureRect" parent="." unique_id=978381466]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ims7d")

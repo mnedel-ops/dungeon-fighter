@@ -49,9 +49,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -326.0
-offset_right = 326.0
-offset_bottom = 368.0
+offset_left = -328.0
+offset_right = 371.0
+offset_bottom = 843.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
@@ -64,7 +64,8 @@ layout_mode = 2
 [node name="name" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1538428612]
 layout_mode = 2
 theme = ExtResource("4_0ekso")
-text = "Dungeon Fighter"
+text = "Dungeon
+ Fighter"
 
 [node name="versus" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
