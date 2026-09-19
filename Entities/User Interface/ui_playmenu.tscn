@@ -5,13 +5,8 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
 [ext_resource type="Texture2D" uid="uid://cqob58wvgm6mv" path="res://inspi/playmenu.png" id="3_ims7d"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
-[ext_resource type="FontFile" uid="uid://cbqiq4danlokp" path="res://Font/cs-lamia-stippled-font/CsLamiaStippledRegularDemo-V4r2w.otf" id="5_ru6y8"]
 [ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="6_lopdo"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="7_udm7l"]
-
-[sub_resource type="Theme" id="Theme_ims7d"]
-default_font = ExtResource("5_ru6y8")
-default_font_size = 31
 
 [node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
 layout_mode = 3
@@ -32,6 +27,12 @@ layout_mode = 0
 offset_right = 1915.0
 offset_bottom = 1077.0
 color = Color(0.6109535, 0.61095357, 0.6109535, 0.28627452)
+
+[node name="background2" type="TextureRect" parent="." unique_id=978381466]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
@@ -56,19 +57,8 @@ text = "Press START to delve into the Dungeon!"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource("Theme_ims7d")
-text = "START"
-
-[node name="start2" type="Button" parent="VBoxContainer/start" unique_id=1941582655]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 10.0
-offset_right = 112.0
-offset_bottom = 46.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme = ExtResource("3_vygyu")
-text = "TART"
+text = "START"
 
 [node name="Commands" parent="." unique_id=75087167 instance=ExtResource("6_lopdo")]
 layout_mode = 1
@@ -82,9 +72,3 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("7_udm7l")
-
-[node name="background2" type="TextureRect" parent="." unique_id=978381466]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("3_ims7d")

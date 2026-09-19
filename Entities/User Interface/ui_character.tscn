@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cxs7iqpl7u83a"]
 
-[ext_resource type="Texture2D" uid="uid://ohvs461mhp0c" path="res://Entities/dwarf-characterselect.jpg" id="1_mxr2n"]
-[ext_resource type="Texture2D" uid="uid://bgkwhc1kmifq5" path="res://Entities/orc-characterselect.jpg" id="2_vh7nf"]
+[ext_resource type="Texture2D" uid="uid://dxsse8ckb03fl" path="res://df93701610f28a49f020af1e03714deb.jpg" id="1_iehbw"]
 
-[node name="ui-character" type="Control" unique_id=366417626]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgla0"]
+atlas = ExtResource("1_iehbw")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7irbl"]
+atlas = ExtResource("1_iehbw")
+region = Rect2(400, 0, 400, 400)
+
+[node name="UI_Character" type="Control" unique_id=183295438]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,68 +18,75 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CharacterSelect" type="HBoxContainer" parent="." unique_id=1806239905]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=247493006]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -499.5
-offset_top = -382.0
-offset_right = 499.5
-offset_bottom = 382.0
+offset_left = -328.0
+offset_right = 328.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect" unique_id=1425636739]
+layout_mode = 0
+offset_left = -268.0
+offset_top = -48.0
+offset_right = 940.0
+offset_bottom = 1160.0
+size_flags_horizontal = 0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1978698153]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+expand_mode = 1
+
+[node name="asdfgh" type="TextureRect" parent="ColorRect/GridContainer" unique_id=646927283]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7irbl")
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1170210436]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect4" type="TextureRect" parent="ColorRect/GridContainer" unique_id=290085158]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect5" type="TextureRect" parent="ColorRect/GridContainer" unique_id=431660468]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect6" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1590453323]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect7" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1735631762]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect8" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1525817179]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="TextureRect9" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1823707955]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgla0")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1211404786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -112.0
+offset_right = 300.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 152
-
-[node name="P1" type="TextureRect" parent="CharacterSelect" unique_id=267883867]
-layout_mode = 2
-texture = ExtResource("1_mxr2n")
-
-[node name="charaterlist" type="VBoxContainer" parent="CharacterSelect" unique_id=1253886398]
-layout_mode = 2
-
-[node name="order" type="Label" parent="CharacterSelect/charaterlist" unique_id=1779878876]
-layout_mode = 2
-text = "Choose you cahracter"
-
-[node name="order2" type="Label" parent="CharacterSelect/charaterlist" unique_id=1333095605]
-layout_mode = 2
-text = "d8 | Monster"
-
-[node name="1 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=1714184094]
-layout_mode = 2
-text = "1 Monster"
-
-[node name="2 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=1111920193]
-layout_mode = 2
-text = "2 Monster"
-
-[node name="3 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=1874394643]
-layout_mode = 2
-text = "3 Monster"
-
-[node name="4 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=887057320]
-layout_mode = 2
-text = "4 Monster"
-
-[node name="5 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=296795891]
-layout_mode = 2
-text = "5 Monster"
-
-[node name="6 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=1971107192]
-layout_mode = 2
-text = "6 Monster"
-
-[node name="7 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=920916406]
-layout_mode = 2
-text = "7 Monster"
-
-[node name="8 Monster" type="Button" parent="CharacterSelect/charaterlist" unique_id=1925674222]
-layout_mode = 2
-text = "8 Monster"
-
-[node name="P2" type="TextureRect" parent="CharacterSelect" unique_id=165913784]
-layout_mode = 2
-texture = ExtResource("2_vh7nf")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32

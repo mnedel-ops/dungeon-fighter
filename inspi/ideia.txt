@@ -1,4 +1,21 @@
 Contar uma historia com as artes Iluminadas, de um grupo de rpg que parte em busca de aventuras. A função de cada menu, condiz com o trecho contado.
 Stefan Poag, A Shipwrigth
 
+
+
 Aumentar o espaçamento do texto da fonte de texto normal.
+
+Menu start:aventureiros chegnado na cidade
+menu principal: na taverna
+settings: comprando itens com o ferreiro
+	audio
+	graphics
+	acessibility
+	controls
+creditos: indo embora
+versus
+	character select: na porta da dungeon
+	scene: olhando mapa
+	loading: encontro
+	vitoria: ganharam
+	derrota: perderam

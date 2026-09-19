@@ -1,15 +1,109 @@
 [gd_scene format=3 uid="uid://60pbhsnxv7kt"]
 
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_cngk4"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_bjd6b"]
+
+[sub_resource type="Animation" id="Animation_dufp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, -4000)]
+}
+
+[sub_resource type="Animation" id="Animation_46sya"]
+resource_name = "ui_creditos_scroll"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-40, 0), Vector2(-40, -4000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ur1nv"]
+_data = {
+&"RESET": SubResource("Animation_dufp6"),
+&"ui_creditos_scroll": SubResource("Animation_46sya")
+}
+
 [node name="UI_Credits" type="Control" unique_id=1461704211]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -4000.0
+offset_right = -40.0
+offset_bottom = -4000.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=1966055788]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=339831539]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Lorem ipsum, bla bla bla..."
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 1915.0
+offset_bottom = 1071.0
+texture = ExtResource("2_cngk4")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1785327588]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 656.0
+offset_bottom = 1083.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="exit" type="Button" parent="ColorRect" unique_id=854548379]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 962.0
+offset_right = 643.0
+offset_bottom = 1033.0
+theme = ExtResource("4_bjd6b")
+text = "Exit"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=142274948]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -368.0
+offset_right = 331.0
+offset_bottom = 3934.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=6611970]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/buttons" unique_id=934002732]
+layout_mode = 2
+theme = ExtResource("4_bjd6b")
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis congue ante. Etiam eget vulputate lectus, eget luctus sem. Vivamus facilisis dolor vel ligula dignissim maximus. Praesent tortor dolor, aliquam nec orci vitae, accumsan viverra ligula. Curabitur quis leo et leo posuere commodo a id tortor. Pellentesque eget diam mauris. Aenean eu diam erat. Vivamus malesuada turpis ac hendrerit blandit. In convallis libero justo, et volutpat nulla lobortis eu.
+
+In hac habitasse platea dictumst. Praesent iaculis massa non metus ornare consequat. Nullam vel dui vel quam gravida lacinia sed a mauris. Quisque malesuada, ex in fermentum consectetur, ligula velit viverra ligula, ac pulvinar tellus dolor placerat sapien. Cras placerat convallis velit, nec efficitur massa rutrum non. Etiam elementum a dui et lobortis. Duis ac aliquam felis, sit amet luctus urna.
+
+Nam nec turpis quis nulla aliquam consectetur et vitae nunc. Duis felis augue, imperdiet sit amet commodo ac, tincidunt sed sapien. Praesent aliquam vehicula purus eget blandit. Sed a mattis libero. Phasellus scelerisque tempus gravida. Suspendisse ultricies ex eu elit eleifend viverra. Ut est turpis, cursus id neque in, consequat viverra ante. Phasellus suscipit elementum nunc eu commodo. Sed at convallis urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=746450022]
+libraries/ = SubResource("AnimationLibrary_ur1nv")
