@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://cxs7iqpl7u83a"]
 
-[ext_resource type="Texture2D" uid="uid://dxsse8ckb03fl" path="res://df93701610f28a49f020af1e03714deb.jpg" id="1_iehbw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgla0"]
-atlas = ExtResource("1_iehbw")
-region = Rect2(0, 0, 400, 400)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7irbl"]
-atlas = ExtResource("1_iehbw")
-region = Rect2(400, 0, 400, 400)
+[ext_resource type="Script" uid="uid://5ibxdjttqp5s" path="res://Entities/User Interface/ui_character.gd" id="1_7irbl"]
+[ext_resource type="PackedScene" uid="uid://cqinkunjg1uw1" path="res://Entities/User Interface/character_select-button.tscn" id="1_iehbw"]
+[ext_resource type="Texture2D" uid="uid://ba7x5jmmb13an" path="res://atlas_selector.tres" id="2_dgla0"]
+[ext_resource type="PackedScene" uid="uid://b50s1nh6631hv" path="res://Entities/User Interface/ui_arena.tscn" id="2_ux44t"]
 
 [node name="UI_Character" type="Control" unique_id=183295438]
 layout_mode = 3
@@ -17,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7irbl")
+arena_select = ExtResource("2_ux44t")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=247493006]
 layout_mode = 1
@@ -38,42 +35,9 @@ offset_bottom = 1160.0
 size_flags_horizontal = 0
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1978698153]
+[node name="Button" parent="ColorRect/GridContainer" unique_id=410350460 instance=ExtResource("1_iehbw")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-expand_mode = 1
-
-[node name="asdfgh" type="TextureRect" parent="ColorRect/GridContainer" unique_id=646927283]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7irbl")
-
-[node name="TextureRect3" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1170210436]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect4" type="TextureRect" parent="ColorRect/GridContainer" unique_id=290085158]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect5" type="TextureRect" parent="ColorRect/GridContainer" unique_id=431660468]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect6" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1590453323]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect7" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1735631762]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect8" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1525817179]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
-
-[node name="TextureRect9" type="TextureRect" parent="ColorRect/GridContainer" unique_id=1823707955]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dgla0")
+Icon = ExtResource("2_dgla0")
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1211404786]
 layout_mode = 1

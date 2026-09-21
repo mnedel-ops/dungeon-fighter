@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cqinkunjg1uw1"]
+
+[ext_resource type="Script" uid="uid://bsyya44n1061h" path="res://Entities/User Interface/character_select_button.gd" id="1_cs1rx"]
+
+[node name="Button" type="Button" unique_id=410350460]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cs1rx")
