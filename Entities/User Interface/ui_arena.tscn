@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b50s1nh6631hv"]
 
 [ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_hqoml"]
+[ext_resource type="Script" uid="uid://qqa2li0e0crt" path="res://Entities/User Interface/ui_arena.gd" id="1_knduk"]
+[ext_resource type="PackedScene" uid="uid://dmlcuqoji6kfa" path="res://match_scene.tscn" id="2_2sp16"]
 [ext_resource type="Texture2D" uid="uid://84fvc4ktbsg5" path="res://map_42x17.png" id="2_07ano"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_ekrpw"]
 [ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="3_hi0p3"]
@@ -13,6 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_knduk")
+match_scene = ExtResource("2_2sp16")
 
 [node name="preview" type="TextureRect" parent="." unique_id=221637146]
 layout_mode = 0
