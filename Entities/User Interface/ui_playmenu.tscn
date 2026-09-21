@@ -14,7 +14,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_she5c")
-botao = NodePath("VBoxContainer/start")
+botao = NodePath("VBoxContainer/VBoxContainer/start")
 
 [node name="background" type="TextureRect" parent="." unique_id=1030598818]
 layout_mode = 0
@@ -36,9 +36,10 @@ texture = ExtResource("3_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
-offset_top = 567.0
+offset_top = 17.0
 offset_right = 1920.0
-offset_bottom = 968.0
+offset_bottom = 963.0
+theme_override_constants/separation = 578
 alignment = 1
 
 [node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
@@ -47,13 +48,16 @@ size_flags_horizontal = 4
 theme = ExtResource("2_vygyu")
 text = "Dungeon Fighter"
 
-[node name="command" type="Label" parent="VBoxContainer" unique_id=651067916]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1560946367]
+layout_mode = 2
+
+[node name="command" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=651067916]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_vygyu")
 text = "Press START to delve into the Dungeon!"
 
-[node name="start" type="Button" parent="VBoxContainer" unique_id=755100766]
+[node name="start" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=755100766]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
