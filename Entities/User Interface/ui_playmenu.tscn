@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
 [ext_resource type="Texture2D" uid="uid://cqob58wvgm6mv" path="res://inspi/playmenu.png" id="3_ims7d"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
+[ext_resource type="Texture2D" uid="uid://bx16yr7uecbcl" path="res://bf7091000d77064e5ee6d9e4809f82f4.png" id="4_ims7d"]
 [ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="6_lopdo"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="7_udm7l"]
 
@@ -36,17 +37,34 @@ texture = ExtResource("3_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
-offset_top = 17.0
-offset_right = 1920.0
-offset_bottom = 963.0
-theme_override_constants/separation = 578
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = -136.0
+offset_right = 1937.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+theme_override_constants/separation = 297
 alignment = 1
 
-[node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1390629926]
+layout_mode = 2
+
+[node name="Bf7091000d77064e5Ee6d9e4809f82f4" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=508186234]
+layout_mode = 2
+texture = ExtResource("4_ims7d")
+flip_h = true
+
+[node name="name" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=160666125]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_vygyu")
 text = "Dungeon Fighter"
+
+[node name="Bf7091000d77064e5Ee6d9e4809f82f5" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=515693945]
+layout_mode = 2
+texture = ExtResource("4_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1560946367]
 layout_mode = 2
