@@ -5,9 +5,19 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
 [ext_resource type="Texture2D" uid="uid://cqob58wvgm6mv" path="res://inspi/playmenu.png" id="3_ims7d"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_xk88t"]
 [ext_resource type="Texture2D" uid="uid://bx16yr7uecbcl" path="res://bf7091000d77064e5ee6d9e4809f82f4.png" id="4_ims7d"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="6_e4pg0"]
 [ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="6_lopdo"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="7_udm7l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xbem0"]
+shader = ExtResource("3_xk88t")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_xk88t"]
+base_font = ExtResource("6_e4pg0")
+spacing_glyph = 58
 
 [node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
 layout_mode = 3
@@ -23,11 +33,16 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_cmhrf")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=582920579]
-layout_mode = 0
-offset_right = 1915.0
-offset_bottom = 1077.0
-color = Color(0.6109535, 0.61095357, 0.6109535, 0.28627452)
+[node name="blur" type="ColorRect" parent="." unique_id=582920579]
+material = SubResource("ShaderMaterial_xbem0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="background2" type="TextureRect" parent="." unique_id=978381466]
 layout_mode = 0
@@ -40,16 +55,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -49.0
-offset_top = -136.0
-offset_right = 1937.0
-offset_bottom = 1088.0
+offset_left = -35.0
+offset_top = -95.0
+offset_right = 1911.0
+offset_bottom = 981.0
 grow_horizontal = 2
 theme_override_constants/separation = 297
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1390629926]
 layout_mode = 2
+theme_override_constants/separation = -234
 
 [node name="Bf7091000d77064e5Ee6d9e4809f82f4" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=508186234]
 layout_mode = 2
@@ -60,6 +76,8 @@ flip_h = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_vygyu")
+theme_override_fonts/font = SubResource("FontVariation_xk88t")
+theme_override_font_sizes/font_size = 90
 text = "Dungeon Fighter"
 
 [node name="Bf7091000d77064e5Ee6d9e4809f82f5" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=515693945]
@@ -85,9 +103,9 @@ text = "START"
 [node name="Commands" parent="." unique_id=75087167 instance=ExtResource("6_lopdo")]
 layout_mode = 1
 offset_left = 13.0
-offset_top = 993.0
+offset_top = 945.0
 offset_right = 13.0
-offset_bottom = 993.0
+offset_bottom = 945.0
 
 [node name="print" type="Label" parent="." unique_id=1687246853]
 layout_mode = 0
