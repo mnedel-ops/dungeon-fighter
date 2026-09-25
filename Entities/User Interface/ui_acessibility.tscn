@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_ufcie"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_hytwb"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_ndh2e"]
+[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_ufcie"]
 
 [node name="ui_acessibility" type="Control" unique_id=1072012046 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -57,3 +58,10 @@ text = "Acessibility"
 layout_mode = 2
 theme = ExtResource("4_ndh2e")
 text = "Back"
+
+[node name="ornamento" type="TextureRect" parent="." unique_id=1058216319]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_ufcie")
+expand_mode = 1

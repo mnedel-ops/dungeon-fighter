@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_tg252"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
+[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_qn5pj"]
 
 [node name="ui_graphics" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -92,3 +93,10 @@ popup/item_4/id = 4
 layout_mode = 2
 theme = ExtResource("4_fdton")
 text = "Back"
+
+[node name="ornamento" type="TextureRect" parent="." unique_id=686771209]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_qn5pj")
+expand_mode = 1

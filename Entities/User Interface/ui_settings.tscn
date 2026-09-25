@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://bol80yvum040a"]
 
 [ext_resource type="Script" uid="uid://boyr3cr6xco4p" path="res://Entities/User Interface/ui_settings.gd" id="1_c1vfu"]
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="1_i8uaq"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_kpk6f"]
 [ext_resource type="PackedScene" uid="uid://c50ipmvknsq82" path="res://Entities/User Interface/ui_audio.tscn" id="2_mwdkq"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_n3m7b"]
-[ext_resource type="PackedScene" uid="uid://bvkfm78t071x7" path="res://Entities/User Interface/ui_menu.tscn" id="2_x35sp"]
 [ext_resource type="PackedScene" uid="uid://chpylms322xia" path="res://Entities/User Interface/ui_graphics.tscn" id="3_hpssv"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_kpk6f"]
 [ext_resource type="PackedScene" uid="uid://d040hukj4f648" path="res://Entities/User Interface/ui_controls.tscn" id="4_6i4lx"]
 [ext_resource type="PackedScene" uid="uid://dac2n6gvf6w6g" path="res://Entities/User Interface/ui_acessibility.tscn" id="5_m4j4y"]
+[ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="7_v1v2o"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="8_d6wpc"]
+[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="9_d6wpc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dswpm"]
+shader = ExtResource("8_d6wpc")
+shader_parameter/blur_amount = 2.0
 
 [node name="settings" type="Control" unique_id=2030663330 node_paths=PackedStringArray("audio", "video", "controls", "accessibility", "back")]
 layout_mode = 3
@@ -19,15 +24,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c1vfu")
-audio = NodePath("ColorRect/MarginContainer/buttons/audio")
+audio = NodePath("MarginContainer/buttons/audio")
 audio_scene = ExtResource("2_mwdkq")
-video = NodePath("ColorRect/MarginContainer/buttons/video")
+video = NodePath("MarginContainer/buttons/video")
 video_scene = ExtResource("3_hpssv")
-controls = NodePath("ColorRect/MarginContainer/buttons/Controls")
+controls = NodePath("MarginContainer/buttons/Controls")
 controls_scene = ExtResource("4_6i4lx")
-accessibility = NodePath("ColorRect/MarginContainer/buttons/Acessibility")
+accessibility = NodePath("MarginContainer/buttons/Acessibility")
 accessibility_scene = ExtResource("5_m4j4y")
-back = NodePath("ColorRect/MarginContainer/buttons/Back")
+back = NodePath("MarginContainer/buttons/Back")
 
 [node name="print" type="Label" parent="." unique_id=1549034253]
 layout_mode = 0
@@ -39,8 +44,19 @@ script = ExtResource("1_kpk6f")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_i8uaq")
+texture = ExtResource("7_v1v2o")
 expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="TextureRect" unique_id=1383713686]
+material = SubResource("ShaderMaterial_dswpm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1681216454]
 layout_mode = 0
@@ -49,51 +65,59 @@ offset_right = 656.0
 offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1015543013]
+[node name="ornamento" type="TextureRect" parent="." unique_id=1843591180]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_d6wpc")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1015543013]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
-offset_bottom = 351.0
+offset_left = -984.0
+offset_top = -19.0
+offset_right = -280.0
+offset_bottom = 674.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=336100592]
+[node name="buttons" type="VBoxContainer" parent="MarginContainer" unique_id=336100592]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="settings" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=683700014]
+[node name="settings" type="Label" parent="MarginContainer/buttons" unique_id=683700014]
 layout_mode = 2
 theme = ExtResource("2_n3m7b")
 text = "Settings"
 
-[node name="audio" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1148895638]
+[node name="audio" type="Button" parent="MarginContainer/buttons" unique_id=1148895638]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Audio"
 
-[node name="video" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
+[node name="video" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Video"
 
-[node name="Controls" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]
+[node name="Controls" type="Button" parent="MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Controls"
 
-[node name="Acessibility" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=418482347]
+[node name="Acessibility" type="Button" parent="MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Acessibility"
 
-[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=419377005]
+[node name="Back" type="Button" parent="MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Back"

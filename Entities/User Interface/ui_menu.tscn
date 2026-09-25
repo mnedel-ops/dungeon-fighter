@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="3_ld25a"]
 [ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://Entities/User Interface/ui_credits.tscn" id="3_mr1if"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
-[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="5_0ekso"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="6_g5kqo"]
 [ext_resource type="FontVariation" uid="uid://c0f2ypepwn3t2" path="res://new_font_variation.tres" id="8_kspne"]
@@ -23,18 +22,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ydo8c")
-versus = NodePath("ColorRect/MarginContainer/buttons/versus")
+versus = NodePath("MarginContainer/buttons/versus")
 versus_scene = ExtResource("2_kspne")
-settings = NodePath("ColorRect/MarginContainer/buttons/settings")
-credits = NodePath("ColorRect/MarginContainer/buttons/credits")
+settings = NodePath("MarginContainer/buttons/settings")
+credits = NodePath("MarginContainer/buttons/credits")
 credits_scene = ExtResource("3_mr1if")
-exit = NodePath("ColorRect/MarginContainer/buttons/exit")
-
-[node name="print" type="Label" parent="." unique_id=1852157016]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("5_0ekso")
+exit = NodePath("MarginContainer/buttons/exit")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
 layout_mode = 0
@@ -61,52 +54,53 @@ offset_right = 656.0
 offset_bottom = 1083.0
 color = Color(1, 1, 1, 0.38039216)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=371515679]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1815835535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_k4k2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=371515679]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -328.0
-offset_right = 371.0
-offset_bottom = 843.0
+offset_left = -960.0
+offset_top = 3.0
+offset_right = -261.0
+offset_bottom = 846.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
 
-[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=268248282]
+[node name="buttons" type="VBoxContainer" parent="MarginContainer" unique_id=268248282]
 layout_mode = 2
 
-[node name="name" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1538428612]
+[node name="name" type="Label" parent="MarginContainer/buttons" unique_id=1538428612]
 layout_mode = 2
 theme = ExtResource("4_0ekso")
 text = "Dungeon
  Fighter"
 
-[node name="versus" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1204828278]
+[node name="versus" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 theme_override_fonts/font = ExtResource("8_kspne")
 text = "Versus"
 
-[node name="settings" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=31043756]
+[node name="settings" type="Button" parent="MarginContainer/buttons" unique_id=31043756]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Settings"
 
-[node name="credits" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=418482347]
+[node name="credits" type="Button" parent="MarginContainer/buttons" unique_id=418482347]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Credits"
 
-[node name="exit" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=419377005]
+[node name="exit" type="Button" parent="MarginContainer/buttons" unique_id=419377005]
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Exit"
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1815835535]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("9_k4k2h")

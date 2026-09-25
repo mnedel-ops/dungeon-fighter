@@ -6,10 +6,12 @@ Aumentar o espaçamento do texto da fonte de texto normal.
 
 Ornamentos laterais eh elementos de mapa de TTRPG. Visao dos hex, grids. Casa vistas de cima.
 
+Remover o ornamento no meio dos menus. 
+
 Menu start:aventureiros chegnado na cidade
 menu principal: na taverna
 
-settings: comprando itens com o ferreiro
+settings: comprando itens com o ferreiro. Todos o mesmo ornamento. Sem tempo, irmao.
 	audio
 	graphics
 	acessibility
