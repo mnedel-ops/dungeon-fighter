@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://x21hp6pv0rr3" path="res://Entities/User Interface/ui_audio.gd" id="1_4wc11"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="1_grdx6"]
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_4wc11"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_43v2j"]
+[ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="3_skhx2"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="4_skhx2"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_tr0ex"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_tr0ex"]
+[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="6_43v2j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdlp8"]
+shader = ExtResource("4_skhx2")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_tr0ex"]
+base_font = ExtResource("5_tr0ex")
+spacing_glyph = 12
 
 [node name="ui_audio" type="Control" unique_id=1374872654 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -26,8 +37,19 @@ script = ExtResource("1_grdx6")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_4wc11")
+texture = ExtResource("3_skhx2")
 expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="." unique_id=1559315490]
+material = SubResource("ShaderMaterial_qdlp8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1828087148]
 layout_mode = 0
@@ -51,39 +73,50 @@ theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
 [node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1489445623]
+custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Audio" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1176538225]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("3_43v2j")
-text = "Audio Settings"
+theme_override_fonts/font = SubResource("FontVariation_tr0ex")
+text = "Audio"
 
 [node name="MasterVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=200013480]
 layout_mode = 2
+theme = ExtResource("4_tr0ex")
 text = "Master Volume"
+horizontal_alignment = 2
 
 [node name="MasterSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1702858655]
 layout_mode = 2
 
 [node name="MusicVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=784482828]
 layout_mode = 2
+theme = ExtResource("4_tr0ex")
 text = "Music Volume"
+horizontal_alignment = 2
 
 [node name="MusicSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1444905824]
 layout_mode = 2
 
 [node name="VoiceVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1689634271]
 layout_mode = 2
+theme = ExtResource("4_tr0ex")
 text = "Voice Volume"
+horizontal_alignment = 2
 
 [node name="VoiceSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=233157671]
 layout_mode = 2
 
 [node name="UIVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1687689636]
 layout_mode = 2
+theme = ExtResource("4_tr0ex")
 text = "UI Volume"
+horizontal_alignment = 2
 
 [node name="UISlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1661295333]
 layout_mode = 2
@@ -92,3 +125,10 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("4_tr0ex")
 text = "Back"
+
+[node name="Ornament" type="TextureRect" parent="." unique_id=1084018722]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_43v2j")
+expand_mode = 1

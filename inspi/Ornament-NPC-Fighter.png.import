@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5g42kch3delh"
-path="res://.godot/imported/bfce41b8c03d35e682a774dcc7098540.jpg-92e1d87a70e7870a11eb84b8a8ae90b2.ctex"
+uid="uid://c00l6ade16nes"
+path="res://.godot/imported/Ornament-NPC-Fighter.png-8dcc05a8652a95f6a0d5a5074b9131de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/bfce41b8c03d35e682a774dcc7098540.jpg"
-dest_files=["res://.godot/imported/bfce41b8c03d35e682a774dcc7098540.jpg-92e1d87a70e7870a11eb84b8a8ae90b2.ctex"]
+source_file="res://inspi/Ornament-NPC-Fighter.png"
+dest_files=["res://.godot/imported/Ornament-NPC-Fighter.png-8dcc05a8652a95f6a0d5a5074b9131de.ctex"]
 
 [params]
 

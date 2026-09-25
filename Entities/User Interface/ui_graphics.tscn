@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://chpylms322xia"]
 
 [ext_resource type="Script" uid="uid://chs0flnmhls2x" path="res://Entities/User Interface/ui_graphics.gd" id="1_w6s0i"]
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_tg252"]
+[ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="2_qn5pj"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_7p2b7"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
 [ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_qn5pj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60we3"]
+shader = ExtResource("3_7p2b7")
+shader_parameter/blur_amount = 2.0
 
 [node name="ui_graphics" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -20,8 +25,19 @@ back = NodePath("ColorRect/MarginContainer/buttons/Back")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_tg252")
+texture = ExtResource("2_qn5pj")
 expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="TextureRect" unique_id=1023724930]
+material = SubResource("ShaderMaterial_60we3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=403116933]
 layout_mode = 0
@@ -31,13 +47,14 @@ offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=937160390]
+propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -334.0
-offset_right = 486.0
-offset_bottom = 838.0
+offset_left = -200.5
+offset_right = 200.5
+offset_bottom = 503.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
@@ -52,8 +69,7 @@ size_flags_vertical = 4
 [node name="graphics" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=326980611]
 layout_mode = 2
 theme = ExtResource("3_es31i")
-text = "Graphics 
-  Settings"
+text = "Graphics"
 
 [node name="screen-mode" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=285980015]
 layout_mode = 2

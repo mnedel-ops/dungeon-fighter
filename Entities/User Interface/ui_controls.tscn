@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://d040hukj4f648"]
 
 [ext_resource type="Script" uid="uid://b74melyw3mv05" path="res://Entities/User Interface/ui_controls.gd" id="1_7jts3"]
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_7jts3"]
+[ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="2_5wal0"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_5wal0"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_dyrfq"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_5wal0"]
 [ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_7jts3"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_dyrfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rexhv"]
+shader = ExtResource("3_5wal0")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_tr0ex"]
+base_font = ExtResource("5_dyrfq")
+spacing_glyph = 16
 
 [node name="ui_controls" type="Control" unique_id=2111797591 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -20,8 +30,19 @@ back = NodePath("ColorRect/MarginContainer/buttons/Back")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_7jts3")
+texture = ExtResource("2_5wal0")
 expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="TextureRect" unique_id=715057223]
+material = SubResource("ShaderMaterial_rexhv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1222399938]
 layout_mode = 0
@@ -35,9 +56,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
-offset_bottom = 351.0
+offset_left = -248.5
+offset_right = 248.5
+offset_bottom = 283.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
@@ -49,10 +70,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="control" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1857735576]
+[node name="Button" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1857735576]
 layout_mode = 2
 theme = ExtResource("3_dyrfq")
-text = "Controls"
+theme_override_fonts/font = SubResource("FontVariation_tr0ex")
+text = "Buttons"
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1736629238]
 layout_mode = 2
@@ -60,8 +82,7 @@ theme = ExtResource("4_5wal0")
 text = "Back"
 
 [node name="ornamento" type="TextureRect" parent="." unique_id=162943940]
-layout_mode = 0
-offset_right = 1920.0
+layout_mode = 1
+offset_right = 1967.0
 offset_bottom = 1080.0
 texture = ExtResource("5_7jts3")
-expand_mode = 1

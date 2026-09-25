@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmlcuqoji6kfa" path="res://match_scene.tscn" id="2_2sp16"]
 [ext_resource type="Texture2D" uid="uid://84fvc4ktbsg5" path="res://map_42x17.png" id="2_07ano"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_ekrpw"]
-[ext_resource type="PackedScene" uid="uid://brkql3ek373ph" path="res://Entities/User Interface/commands.tscn" id="3_hi0p3"]
+[ext_resource type="Material" uid="uid://8248102bcy7j" path="res://arena_blur.tres" id="4_2sp16"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_knduk"]
 
 [node name="ui-arena" type="Control" unique_id=482908394]
@@ -23,6 +23,17 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_hqoml")
+
+[node name="blur" type="ColorRect" parent="preview" unique_id=12375968]
+material = ExtResource("4_2sp16")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=797107212]
 layout_mode = 0
@@ -70,10 +81,3 @@ theme_override_font_sizes/font_size = 32
 text = "Smell of coal and the noise of metal hitting metal. 
 A grunt tells you to not wreck the place. 
 You ignore. Roll Initiative"
-
-[node name="Commands" parent="." unique_id=75087167 instance=ExtResource("3_hi0p3")]
-layout_mode = 1
-offset_left = 2.0
-offset_top = -69.0
-offset_right = 2.0
-offset_bottom = -69.0

@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://b50s1nh6631hv" path="res://Entities/User Interface/ui_arena.tscn" id="2_ux44t"]
 [ext_resource type="Texture2D" uid="uid://cajqpnaw0yckj" path="res://df93701610f28a49f020af1e03714deb_001.jpg" id="3_7irbl"]
 [ext_resource type="Texture2D" uid="uid://cexcaqmckrgwq" path="res://sheet.png" id="3_ux44t"]
-[ext_resource type="Texture2D" uid="uid://g2ovvm62v3t1" path="res://inspi/df9c3772b85a676feafa6b5f2003b7fa.jpg" id="4_2wr4x"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="4_h7qd8"]
-[ext_resource type="Texture2D" uid="uid://bbj3pwj7wmtru" path="res://inspi/a19dab366df8b4a7d9869ef5432f38f2.jpg" id="6_l1vnd"]
+[ext_resource type="Texture2D" uid="uid://2xmwkteu8ved" path="res://inspi/Ornament-NPC-Wizard.png" id="6_jhodq"]
 [ext_resource type="Texture2D" uid="uid://dhpsjmemntj3e" path="res://ornament-menu.png" id="7_jhodq"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="7_udkx2"]
 [ext_resource type="Texture2D" uid="uid://bljebmviuutyc" path="res://inspi/background_characterSelect.jpg" id="7_yvwaf"]
+[ext_resource type="Texture2D" uid="uid://c00l6ade16nes" path="res://inspi/Ornament-NPC-Fighter.png" id="9_jhodq"]
 [ext_resource type="Texture2D" uid="uid://dot4u8wn1qjdn" path="res://inspi/mockup_characterselect.svg" id="9_wa7mq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wa7mq"]
@@ -38,99 +39,128 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1880.0
-offset_bottom = 1037.0
+offset_right = -3.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterSelector" type="MarginContainer" parent="." unique_id=766432986]
 layout_mode = 0
-offset_right = 1872.0
-offset_bottom = 980.0
-theme_override_constants/margin_left = 55
-theme_override_constants/margin_top = 44
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+offset_right = 1962.0901
+offset_bottom = 1144.0
+scale = Vector2(0.976, 0.976)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CharacterSelector" unique_id=1088772324]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 20
 
 [node name="Sheet" type="TextureRect" parent="CharacterSelector/HBoxContainer" unique_id=1807141408]
 layout_mode = 2
 texture = ExtResource("3_ux44t")
 
-[node name="character" type="TextureRect" parent="CharacterSelector/HBoxContainer/Sheet" unique_id=2102436699]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 360.0
-offset_right = 638.0
-offset_bottom = 914.0
-texture = ExtResource("4_2wr4x")
+[node name="portrait" type="TextureRect" parent="CharacterSelector/HBoxContainer/Sheet" unique_id=2102436699]
+custom_maximum_size = Vector2(384, 768)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -554.0
+offset_top = -909.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_jhodq")
 expand_mode = 1
 flip_h = true
 
-[node name="TextureRect" type="TextureRect" parent="CharacterSelector/HBoxContainer" unique_id=154604251]
-layout_mode = 2
-texture = ExtResource("7_jhodq")
-
-[node name="GridContainer" type="GridContainer" parent="CharacterSelector/HBoxContainer/TextureRect" unique_id=1425636739]
+[node name="name" type="Label" parent="CharacterSelector/HBoxContainer/Sheet" unique_id=1523537553]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 168.0
-offset_right = 719.0
-offset_bottom = 815.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 153.0
+offset_bottom = 79.0
+theme = ExtResource("7_udkx2")
+text = "Wizard"
+
+[node name="selector" type="CenterContainer" parent="CharacterSelector/HBoxContainer" unique_id=1843918478]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="GridContainer" type="GridContainer" parent="CharacterSelector/HBoxContainer/selector" unique_id=1425636739]
+layout_mode = 2
 size_flags_horizontal = 0
+offset_transform_enabled = true
 columns = 3
 
-[node name="portrait" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=904086704]
+[node name="portrait" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=904086704]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait2" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=1294103808]
+[node name="portrait2" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1294103808]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait3" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=1645078962]
+[node name="portrait3" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1645078962]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait4" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=992967968]
+[node name="portrait4" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=992967968]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait5" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=1733382919]
+[node name="portrait5" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1733382919]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait6" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=970400412]
+[node name="portrait6" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=970400412]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait7" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=951095203]
+[node name="portrait7" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=951095203]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait8" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=1192471003]
+[node name="portrait8" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1192471003]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait9" type="TextureRect" parent="CharacterSelector/HBoxContainer/TextureRect/GridContainer" unique_id=256596058]
+[node name="portrait9" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=256596058]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
+
+[node name="selector-ornament" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector" unique_id=154604251]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("7_jhodq")
 
 [node name="Sheet2" type="TextureRect" parent="CharacterSelector/HBoxContainer" unique_id=839211176]
 layout_mode = 2
 texture = ExtResource("3_ux44t")
 
 [node name="character2" type="TextureRect" parent="CharacterSelector/HBoxContainer/Sheet2" unique_id=1506836763]
-layout_mode = 0
-offset_left = 166.0
-offset_top = 360.0
-offset_right = 720.0
-offset_bottom = 914.0
-texture = ExtResource("6_l1vnd")
+custom_maximum_size = Vector2(384, 768)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -554.0
+offset_right = 356.0
+grow_vertical = 0
+texture = ExtResource("9_jhodq")
 expand_mode = 1
+
+[node name="name2" type="Label" parent="CharacterSelector/HBoxContainer/Sheet2" unique_id=94387660]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 176.0
+offset_bottom = 81.0
+theme = ExtResource("7_udkx2")
+text = "Fighter"
 
 [node name="BackgroundCharacterSelect2" type="TextureRect" parent="." unique_id=1156014502]
 layout_mode = 0

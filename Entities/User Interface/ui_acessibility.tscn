@@ -3,8 +3,18 @@
 [ext_resource type="Script" uid="uid://c3g7wi8ddlq3a" path="res://Entities/User Interface/ui_acessibility.gd" id="1_5a64y"]
 [ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_ufcie"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_hytwb"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_ndh2e"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_hytwb"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_ndh2e"]
 [ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_ufcie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5hs8"]
+shader = ExtResource("3_ndh2e")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_ufcie"]
+base_font = ExtResource("4_hytwb")
+spacing_glyph = 8
 
 [node name="ui_acessibility" type="Control" unique_id=1072012046 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -23,6 +33,12 @@ offset_bottom = 1080.0
 texture = ExtResource("2_ufcie")
 expand_mode = 1
 
+[node name="blur" type="ColorRect" parent="TextureRect" unique_id=1162749475]
+material = SubResource("ShaderMaterial_a5hs8")
+layout_mode = 0
+offset_right = 1927.0
+offset_bottom = 1117.0
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=132842499]
 layout_mode = 0
 offset_top = -19.0
@@ -35,8 +51,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
+offset_left = -264.5
+offset_right = 264.5
 offset_bottom = 351.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
@@ -52,6 +68,7 @@ size_flags_vertical = 4
 [node name="settings" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1702849572]
 layout_mode = 2
 theme = ExtResource("3_hytwb")
+theme_override_fonts/font = SubResource("FontVariation_ufcie")
 text = "Acessibility"
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=777186817]

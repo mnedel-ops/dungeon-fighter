@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do1p8ot68ixv1"
-path="res://.godot/imported/fe8c605f1ff89eb23b07aab0e5dd00fe.jpg-20ec7864c189c0cfd54602b4c9ee9b00.ctex"
+uid="uid://vsbrpvwkjohi"
+path="res://.godot/imported/Ornament-NPC-Halfling.png-e803d7e6a018daba19e03f2d4082bb61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/fe8c605f1ff89eb23b07aab0e5dd00fe.jpg"
-dest_files=["res://.godot/imported/fe8c605f1ff89eb23b07aab0e5dd00fe.jpg-20ec7864c189c0cfd54602b4c9ee9b00.ctex"]
+source_file="res://inspi/Ornament-NPC-Halfling.png"
+dest_files=["res://.godot/imported/Ornament-NPC-Halfling.png-e803d7e6a018daba19e03f2d4082bb61.ctex"]
 
 [params]
 
