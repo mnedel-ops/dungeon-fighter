@@ -4,17 +4,21 @@ Stefan Poag, A Shipwrigth
 Tamanho maximo dos ornamentos 96 pixeis no menor eixo. Ou seja, se for no rodapé da página, 96 de altura. 
 Aumentar o espaçamento do texto da fonte de texto normal.
 
+Ornamentos laterais eh elementos de mapa de TTRPG. Visao dos hex, grids. Casa vistas de cima.
+
 Menu start:aventureiros chegnado na cidade
 menu principal: na taverna
+
 settings: comprando itens com o ferreiro
 	audio
 	graphics
 	acessibility
 	controls
 creditos: indo embora
+
 versus
-	character select: na porta da dungeon 
-	scene: olhando mapa
+	character select: na porta da dungeon. 
+	scene: olhando mapa. ter elementos de exploracao, parte de mapa, bussola.
 	loading: encontro
 	na briga. 
 		Vai ser a barra de vida. Em vez das bandeirolas

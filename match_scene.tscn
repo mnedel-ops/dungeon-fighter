@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://Entities/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
 [ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="3_s8u6n"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://MathScene_ornament.png" id="4_myr3d"]
+[ext_resource type="Texture2D" uid="uid://dy51ue1gu27jc" path="res://ornamento-match.png" id="4_s6y5e"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
-[ext_resource type="Texture2D" uid="uid://c6ciie3fn4c0f" path="res://bandeira vida.png" id="5_7yec8"]
+[ext_resource type="Texture2D" uid="uid://bygaa1obmf01r" path="res://MatchScene_ornament-damage.png" id="5_6hlag"]
 [ext_resource type="Texture2D" uid="uid://33h7obkpq7wq" path="res://ee68a3eea402db141066e372be5eda40.png" id="6_fs81w"]
-[ext_resource type="Texture2D" uid="uid://di5rgmmmh7d7j" path="res://bandeira vida perdiad.png" id="7_6hlag"]
 [ext_resource type="Texture2D" uid="uid://cajqpnaw0yckj" path="res://df93701610f28a49f020af1e03714deb_001.jpg" id="7_osqcl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etvr7"]
@@ -82,22 +82,28 @@ shape = SubResource("RectangleShape2D_4wal8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1321452896]
 
+[node name="OrnamentosSuperior" type="TextureRect" parent="CanvasLayer" unique_id=158771901]
+offset_right = 714.0
+offset_bottom = 1080.0
+texture = ExtResource("4_s6y5e")
+
 [node name="OrnamentosLaterais" type="TextureRect" parent="CanvasLayer" unique_id=1161251755]
 offset_right = 714.0
 offset_bottom = 1080.0
 texture = ExtResource("4_myr3d")
+
+[node name="OrnamentosLaterais2" type="TextureRect" parent="CanvasLayer" unique_id=1157171964]
+offset_left = 1201.0
+offset_right = 1915.0
+offset_bottom = 1080.0
+texture = ExtResource("5_6hlag")
+flip_h = true
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=69650905]
 offset_right = 153.0
 offset_bottom = 29.0
 theme_override_fonts/font = ExtResource("4_snp58")
 text = "Testando texto"
-
-[node name="VidaP2" type="TextureRect" parent="CanvasLayer" unique_id=2014739385]
-offset_left = 1167.0
-offset_right = 1905.0
-offset_bottom = 239.0
-texture = ExtResource("5_7yec8")
 
 [node name="Tempo" type="TextureRect" parent="CanvasLayer" unique_id=821658897]
 offset_left = 810.0
@@ -106,25 +112,19 @@ offset_right = 1110.0
 offset_bottom = 237.0
 texture = ExtResource("6_fs81w")
 
-[node name="VidaP1" type="TextureRect" parent="CanvasLayer" unique_id=1142161784]
-offset_left = 18.0
-offset_right = 756.0
-offset_bottom = 239.0
-texture = ExtResource("7_6hlag")
-flip_h = true
-
 [node name="RetratoP1" type="TextureRect" parent="CanvasLayer" unique_id=1154103566]
-offset_left = 16.0
+offset_left = 34.0
 offset_top = 28.0
-offset_right = 190.0
+offset_right = 208.0
 offset_bottom = 196.0
 texture = ExtResource("7_osqcl")
 expand_mode = 1
 
-[node name="RetratoP2" type="TextureRect" parent="CanvasLayer" unique_id=1554373451]
-offset_left = 1691.0
-offset_top = 16.0
-offset_right = 1892.0
-offset_bottom = 220.0
+[node name="RetratoP2" type="TextureRect" parent="CanvasLayer" unique_id=326182896]
+offset_left = 1708.0
+offset_top = 28.0
+offset_right = 1882.0
+offset_bottom = 196.0
 texture = ExtResource("7_osqcl")
+expand_mode = 1
 flip_h = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crunisdia0cap"
-path="res://.godot/imported/ee68a3eea402db141066e372be5eda40.jpg-afa54a060beea1db4cde7a7ad122fff2.ctex"
+uid="uid://cl54x4ikf0qrx"
+path="res://.godot/imported/ornamento-mapa-menu.jpg-b7e7471c463ac2d1f1f8ae798a91c847.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ee68a3eea402db141066e372be5eda40.jpg"
-dest_files=["res://.godot/imported/ee68a3eea402db141066e372be5eda40.jpg-afa54a060beea1db4cde7a7ad122fff2.ctex"]
+source_file="res://ornamento-mapa-menu.jpg"
+dest_files=["res://.godot/imported/ornamento-mapa-menu.jpg-b7e7471c463ac2d1f1f8ae798a91c847.ctex"]
 
 [params]
 

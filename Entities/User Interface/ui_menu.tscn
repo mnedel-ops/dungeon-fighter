@@ -7,7 +7,13 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="5_0ekso"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="6_g5kqo"]
 [ext_resource type="FontVariation" uid="uid://c0f2ypepwn3t2" path="res://new_font_variation.tres" id="8_kspne"]
+[ext_resource type="Texture2D" uid="uid://be6px2tm4n7dh" path="res://inspi/ornamento_menuprincipal.png" id="9_k4k2h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n12gw"]
+shader = ExtResource("6_g5kqo")
+shader_parameter/blur_amount = 2.0
 
 [node name="menu" type="Control" unique_id=2030663330 node_paths=PackedStringArray("versus", "settings", "credits", "exit")]
 layout_mode = 3
@@ -36,6 +42,17 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_ld25a")
 expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="." unique_id=142744101]
+material = SubResource("ShaderMaterial_n12gw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1377022528]
 layout_mode = 0
@@ -87,3 +104,9 @@ text = "Credits"
 layout_mode = 2
 theme = ExtResource("5_dtf8w")
 text = "Exit"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1815835535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_k4k2h")
