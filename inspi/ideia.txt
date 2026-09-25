@@ -1,8 +1,7 @@
 Contar uma historia com as artes Iluminadas, de um grupo de rpg que parte em busca de aventuras. A função de cada menu, condiz com o trecho contado.
 Stefan Poag, A Shipwrigth
 
-
-
+Tamanho maximo dos ornamentos 96 pixeis no menor eixo. Ou seja, se for no rodapé da página, 96 de altura. 
 Aumentar o espaçamento do texto da fonte de texto normal.
 
 Menu start:aventureiros chegnado na cidade
@@ -14,8 +13,11 @@ settings: comprando itens com o ferreiro
 	controls
 creditos: indo embora
 versus
-	character select: na porta da dungeon
+	character select: na porta da dungeon 
 	scene: olhando mapa
 	loading: encontro
+	na briga. 
+		Vai ser a barra de vida. Em vez das bandeirolas
+		vai ser uma torre que se quebra conforme vai perdendo vida.
 	vitoria: ganharam
 	derrota: perderam
