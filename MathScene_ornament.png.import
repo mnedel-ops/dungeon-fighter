@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnegqq8dhj7a"
-path="res://.godot/imported/MathScene_ornament.jpg-dd0fef10b12536ebf9b55c4f940a9d83.ctex"
+uid="uid://brh5j26vi7wh4"
+path="res://.godot/imported/MathScene_ornament.png-aa291c499889b59f3157f5bb33c1c10a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MathScene_ornament.jpg"
-dest_files=["res://.godot/imported/MathScene_ornament.jpg-dd0fef10b12536ebf9b55c4f940a9d83.ctex"]
+source_file="res://MathScene_ornament.png"
+dest_files=["res://.godot/imported/MathScene_ornament.png-aa291c499889b59f3157f5bb33c1c10a.ctex"]
 
 [params]
 
