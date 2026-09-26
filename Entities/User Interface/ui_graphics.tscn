@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_7p2b7"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
-[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_qn5pj"]
+[ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="6_7p2b7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60we3"]
 shader = ExtResource("3_7p2b7")
@@ -47,7 +47,6 @@ offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=937160390]
-propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -110,9 +109,14 @@ layout_mode = 2
 theme = ExtResource("4_fdton")
 text = "Back"
 
-[node name="ornamento" type="TextureRect" parent="." unique_id=686771209]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("5_qn5pj")
-expand_mode = 1
+[node name="ornamento" parent="." unique_id=997753739 instance=ExtResource("6_7p2b7")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 960.0
+offset_top = 2.0
+offset_right = 960.0
+offset_bottom = 2.0
+grow_horizontal = 1
+grow_vertical = 1

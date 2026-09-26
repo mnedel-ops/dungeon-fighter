@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="3_skhx2"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="4_skhx2"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_tr0ex"]
+[ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="5_skhx2"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_tr0ex"]
-[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="6_43v2j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdlp8"]
 shader = ExtResource("4_skhx2")
@@ -57,6 +57,13 @@ offset_top = -19.0
 offset_right = 656.0
 offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
+
+[node name="Ornament_Settings" parent="ColorRect" unique_id=1163564750 instance=ExtResource("5_skhx2")]
+layout_mode = 1
+offset_left = 634.0
+offset_top = 19.0
+offset_right = 634.0
+offset_bottom = 19.0
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=962213297]
 layout_mode = 1
@@ -125,10 +132,3 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("4_tr0ex")
 text = "Back"
-
-[node name="Ornament" type="TextureRect" parent="." unique_id=1084018722]
-layout_mode = 1
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("6_43v2j")
-expand_mode = 1

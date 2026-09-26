@@ -3,13 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="1_cmhrf"]
 [ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://Entities/User Interface/ui_playmenu.gd" id="1_she5c"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="2_vygyu"]
-[ext_resource type="Texture2D" uid="uid://cqob58wvgm6mv" path="res://inspi/playmenu.png" id="3_ims7d"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="3_vygyu"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_xk88t"]
-[ext_resource type="Texture2D" uid="uid://bx16yr7uecbcl" path="res://bf7091000d77064e5ee6d9e4809f82f4.png" id="4_ims7d"]
-[ext_resource type="Texture2D" uid="uid://dyhot5nqysxyj" path="res://ornamento-superior.png" id="4_xk88t"]
+[ext_resource type="Texture2D" uid="uid://dmmdt84q08pfh" path="res://playmenu-ornamento.png" id="5_xbem0"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="6_e4pg0"]
 [ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://Entities/User Interface/viewport.gd" id="7_udm7l"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="11_mtow3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbem0"]
 shader = ExtResource("3_xk88t")
@@ -44,17 +43,30 @@ offset_bottom = 1037.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ornamentosSuperior" type="TextureRect" parent="." unique_id=707614518]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("4_xk88t")
-
 [node name="ornamentos" type="TextureRect" parent="." unique_id=978381466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = 106.0
+offset_right = 1898.0
+offset_bottom = 1186.0
+grow_horizontal = 2
+texture = ExtResource("5_xbem0")
+
+[node name="print" type="Label" parent="." unique_id=1687246853]
 layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("7_udm7l")
+
+[node name="ornamento" type="TextureRect" parent="." unique_id=1462084480]
+layout_mode = 0
+offset_top = -1.0
 offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("3_ims7d")
+offset_bottom = 1079.0
+texture = ExtResource("11_mtow3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1081081867]
 layout_mode = 1
@@ -69,26 +81,13 @@ grow_horizontal = 2
 theme_override_constants/separation = 297
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1390629926]
-layout_mode = 2
-theme_override_constants/separation = -234
-
-[node name="Bf7091000d77064e5Ee6d9e4809f82f4" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=508186234]
-layout_mode = 2
-texture = ExtResource("4_ims7d")
-flip_h = true
-
-[node name="name" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=160666125]
+[node name="name" type="Label" parent="VBoxContainer" unique_id=160666125]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_vygyu")
 theme_override_fonts/font = SubResource("FontVariation_xk88t")
 theme_override_font_sizes/font_size = 90
 text = "Dungeon Fighter"
-
-[node name="Bf7091000d77064e5Ee6d9e4809f82f5" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=515693945]
-layout_mode = 2
-texture = ExtResource("4_ims7d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1560946367]
 layout_mode = 2
@@ -105,9 +104,3 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_vygyu")
 text = "START"
-
-[node name="print" type="Label" parent="." unique_id=1687246853]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("7_udm7l")

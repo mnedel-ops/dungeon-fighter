@@ -5,8 +5,8 @@
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="3_5wal0"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_dyrfq"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_5wal0"]
-[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="5_7jts3"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_dyrfq"]
+[ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="7_5wal0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rexhv"]
 shader = ExtResource("3_5wal0")
@@ -81,8 +81,14 @@ layout_mode = 2
 theme = ExtResource("4_5wal0")
 text = "Back"
 
-[node name="ornamento" type="TextureRect" parent="." unique_id=162943940]
-layout_mode = 1
-offset_right = 1967.0
-offset_bottom = 1080.0
-texture = ExtResource("5_7jts3")
+[node name="ornamento" parent="." unique_id=997753739 instance=ExtResource("7_5wal0")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 974.0
+offset_top = 2.0
+offset_right = 974.0
+offset_bottom = 2.0
+grow_horizontal = 1
+grow_vertical = 1

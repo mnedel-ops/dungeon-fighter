@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dac2n6gvf6w6g" path="res://Entities/User Interface/ui_acessibility.tscn" id="5_m4j4y"]
 [ext_resource type="Texture2D" uid="uid://ktkv38rlfjt8" path="res://settings-background.jpg" id="7_v1v2o"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="8_d6wpc"]
-[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="9_d6wpc"]
+[ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="11_d6wpc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dswpm"]
 shader = ExtResource("8_d6wpc")
@@ -65,6 +65,18 @@ offset_right = 656.0
 offset_bottom = 1096.0
 color = Color(1, 1, 1, 0.38039216)
 
+[node name="ornamento" parent="ColorRect" unique_id=997753739 instance=ExtResource("11_d6wpc")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 957.0
+offset_top = 19.0
+offset_right = 957.0
+offset_bottom = 19.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1015543013]
 layout_mode = 1
 anchors_preset = 5
@@ -113,10 +125,3 @@ text = "Acessibility"
 layout_mode = 2
 theme = ExtResource("3_kpk6f")
 text = "Back"
-
-[node name="ornamento" type="TextureRect" parent="." unique_id=1843591180]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("9_d6wpc")
-expand_mode = 1

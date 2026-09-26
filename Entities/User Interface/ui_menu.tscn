@@ -83,6 +83,7 @@ layout_mode = 2
 theme = ExtResource("4_0ekso")
 text = "Dungeon
  Fighter"
+horizontal_alignment = 1
 
 [node name="versus" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
 layout_mode = 2

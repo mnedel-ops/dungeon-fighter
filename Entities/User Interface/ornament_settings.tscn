@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://gftgfsojiret"]
+
+[ext_resource type="Texture2D" uid="uid://bk6rst3aprf2t" path="res://inspi/ornamento_settings.png" id="1_7862k"]
+[ext_resource type="Texture2D" uid="uid://dyhot5nqysxyj" path="res://ornamento-superior.png" id="2_jad7p"]
+[ext_resource type="Texture2D" uid="uid://dvsw0v85nigl4" path="res://settings-ferreiro2.png" id="3_4flmh"]
+[ext_resource type="Texture2D" uid="uid://ba64nvgnahlrc" path="res://settings-forja.png" id="4_kei4b"]
+[ext_resource type="Texture2D" uid="uid://b1lfp7pruv7v6" path="res://settings-ornament-map.png" id="5_kei4b"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="6_wofoh"]
+
+[node name="Ornament_Settings" type="Control" unique_id=1163564750]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ornamento" type="TextureRect" parent="." unique_id=997753739]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_7862k")
+expand_mode = 1
+
+[node name="SettomgsOrnamentMap" type="TextureRect" parent="." unique_id=908832287]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 84.0
+offset_right = 958.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("5_kei4b")
+
+[node name="OrnamentoInferior" type="TextureRect" parent="." unique_id=620920997]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_top = 1051.0
+offset_right = 960.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+texture = ExtResource("2_jad7p")
+flip_v = true
+
+[node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1231258076]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("6_wofoh")
+flip_h = true
+
+[node name="SettingsForja" type="TextureRect" parent="." unique_id=266619915]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1307.0
+offset_top = 28.0
+offset_right = -907.22876
+offset_bottom = 620.17456
+grow_horizontal = 2
+scale = Vector2(1.8074867, 1.8074867)
+texture = ExtResource("4_kei4b")
+
+[node name="SettingsFerreiro2" type="TextureRect" parent="." unique_id=311041289]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -875.0
+offset_top = 732.0
+offset_right = 533.0
+offset_bottom = 1500.0
+grow_horizontal = 2
+scale = Vector2(0.48863637, 0.453125)
+texture = ExtResource("3_4flmh")
+
+[node name="OrnamentoSuperior" type="TextureRect" parent="." unique_id=198217385]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 28.0
+grow_horizontal = 2
+texture = ExtResource("2_jad7p")
