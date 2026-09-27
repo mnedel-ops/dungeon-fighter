@@ -104,10 +104,9 @@ theme = ExtResource("4_tr0ex")
 text = "Master Volume"
 horizontal_alignment = 2
 
-[node name="MasterSlider" type="HScrollBar" parent="ColorRect/MarginContainer/buttons" unique_id=913468464]
+[node name="MasterSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1197374619]
 layout_mode = 2
 theme = ExtResource("9_qdlp8")
-custom_step = 4089.855
 
 [node name="MusicVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=784482828]
 layout_mode = 2
@@ -117,6 +116,7 @@ horizontal_alignment = 2
 
 [node name="MusicSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1444905824]
 layout_mode = 2
+theme = ExtResource("9_qdlp8")
 
 [node name="VoiceVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1689634271]
 layout_mode = 2
@@ -126,6 +126,7 @@ horizontal_alignment = 2
 
 [node name="VoiceSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=233157671]
 layout_mode = 2
+theme = ExtResource("9_qdlp8")
 
 [node name="UIVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1687689636]
 layout_mode = 2
@@ -135,6 +136,7 @@ horizontal_alignment = 2
 
 [node name="UISlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1661295333]
 layout_mode = 2
+theme = ExtResource("9_qdlp8")
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=2014585316]
 layout_mode = 2

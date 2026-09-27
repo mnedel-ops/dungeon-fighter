@@ -53,11 +53,11 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_3owkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=830310694]
-position = Vector2(-18.640001, 3.6499987)
+position = Vector2(-18.64, -3.3500013)
 shape = SubResource("WorldBoundaryShape2D_etvr7")
 
 [node name="P1" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1215156299]
-position = Vector2(146.38611, 75.57084)
+position = Vector2(146.38611, 68.57085)
 
 [node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=1905267957]
 texture_filter = 1
@@ -70,7 +70,7 @@ position = Vector2(0.16400033, 0.034999844)
 shape = SubResource("RectangleShape2D_4wal8")
 
 [node name="P2" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=645757314]
-position = Vector2(18.58611, 75.370834)
+position = Vector2(18.58611, 68.370834)
 
 [node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P2" unique_id=75107493]
 texture_filter = 1
@@ -89,9 +89,10 @@ offset_bottom = 1080.0
 texture = ExtResource("4_myr3d")
 
 [node name="OrnamentosLaterais2" type="TextureRect" parent="CanvasLayer" unique_id=1157171964]
-offset_left = 1201.0
-offset_right = 1915.0
-offset_bottom = 1080.0
+offset_left = 1203.0
+offset_top = 1.0
+offset_right = 1917.0
+offset_bottom = 1081.0
 texture = ExtResource("5_6hlag")
 flip_h = true
 

@@ -1,3 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://dkaiooygqokwu"]
 
+[ext_resource type="Texture2D" uid="uid://bodmg7u0htee8" path="res://theme-icon-bar.png" id="1_3lfr0"]
+[ext_resource type="StyleBox" uid="uid://bxa6tev0p0xth" path="res://theme-bar-slider.tres" id="2_v11sq"]
+
 [resource]
+HSlider/icons/grabber = ExtResource("1_3lfr0")
+HSlider/icons/grabber_highlight = ExtResource("1_3lfr0")
+HSlider/styles/slider = ExtResource("2_v11sq")

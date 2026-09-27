@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="7_udkx2"]
 [ext_resource type="Texture2D" uid="uid://bljebmviuutyc" path="res://inspi/background_characterSelect.jpg" id="7_yvwaf"]
 [ext_resource type="Texture2D" uid="uid://mu5wwfxyk546" path="res://character-ornamento-aventureiros.png" id="10_jhodq"]
+[ext_resource type="Texture2D" uid="uid://c7wtkjnprpqga" path="res://ornament-bar.png" id="10_udkx2"]
 [ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="11_udkx2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wa7mq"]
@@ -162,6 +163,24 @@ offset_right = 153.0
 offset_bottom = 79.0
 theme = ExtResource("7_udkx2")
 text = "Wizard"
+
+[node name="OrnamentBarra" type="TextureRect" parent="." unique_id=1097329647]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 1062.0
+offset_right = 1122.0
+offset_bottom = 1078.0
+texture = ExtResource("10_udkx2")
+expand_mode = 1
+
+[node name="OrnamentBarra2" type="TextureRect" parent="." unique_id=2143956528]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 1062.0
+offset_right = 2144.0
+offset_bottom = 1078.0
+texture = ExtResource("10_udkx2")
+expand_mode = 1
 
 [node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1156014502]
 layout_mode = 0

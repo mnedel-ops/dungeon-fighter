@@ -6,10 +6,15 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_es31i"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_fdton"]
 [ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="6_7p2b7"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="6_60we3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60we3"]
 shader = ExtResource("3_7p2b7")
 shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_l8ce4"]
+base_font = ExtResource("6_60we3")
+spacing_glyph = 11
 
 [node name="ui_graphics" type="Control" unique_id=398395133 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -80,6 +85,7 @@ size_flags_vertical = 4
 [node name="graphics" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=326980611]
 layout_mode = 2
 theme = ExtResource("3_es31i")
+theme_override_fonts/font = SubResource("FontVariation_l8ce4")
 text = "Graphics"
 
 [node name="screen-mode" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=285980015]
