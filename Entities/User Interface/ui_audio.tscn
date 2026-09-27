@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_tr0ex"]
 [ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://Entities/User Interface/ornament_settings.tscn" id="5_skhx2"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_tr0ex"]
+[ext_resource type="Theme" uid="uid://dkaiooygqokwu" path="res://theme-bar.tres" id="9_qdlp8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdlp8"]
 shader = ExtResource("4_skhx2")
@@ -60,10 +61,15 @@ color = Color(1, 1, 1, 0.38039216)
 
 [node name="Ornament_Settings" parent="ColorRect" unique_id=1163564750 instance=ExtResource("5_skhx2")]
 layout_mode = 1
-offset_left = 634.0
-offset_top = 19.0
-offset_right = 634.0
-offset_bottom = 19.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 632.0
+offset_top = 16.0
+offset_right = 632.0
+offset_bottom = 16.0
+grow_vertical = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=962213297]
 layout_mode = 1
@@ -98,8 +104,10 @@ theme = ExtResource("4_tr0ex")
 text = "Master Volume"
 horizontal_alignment = 2
 
-[node name="MasterSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1702858655]
+[node name="MasterSlider" type="HScrollBar" parent="ColorRect/MarginContainer/buttons" unique_id=913468464]
 layout_mode = 2
+theme = ExtResource("9_qdlp8")
+custom_step = 4089.855
 
 [node name="MusicVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=784482828]
 layout_mode = 2

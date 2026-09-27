@@ -6,11 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cexcaqmckrgwq" path="res://sheet.png" id="3_ux44t"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="4_h7qd8"]
 [ext_resource type="Texture2D" uid="uid://2xmwkteu8ved" path="res://inspi/Ornament-NPC-Wizard.png" id="6_jhodq"]
-[ext_resource type="Texture2D" uid="uid://dhpsjmemntj3e" path="res://ornament-menu.png" id="7_jhodq"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="7_udkx2"]
 [ext_resource type="Texture2D" uid="uid://bljebmviuutyc" path="res://inspi/background_characterSelect.jpg" id="7_yvwaf"]
-[ext_resource type="Texture2D" uid="uid://c00l6ade16nes" path="res://inspi/Ornament-NPC-Fighter.png" id="9_jhodq"]
-[ext_resource type="Texture2D" uid="uid://dot4u8wn1qjdn" path="res://inspi/mockup_characterselect.svg" id="9_wa7mq"]
+[ext_resource type="Texture2D" uid="uid://mu5wwfxyk546" path="res://character-ornamento-aventureiros.png" id="10_jhodq"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="11_udkx2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wa7mq"]
 shader = ExtResource("4_h7qd8")
@@ -33,51 +32,45 @@ offset_bottom = 1080.0
 texture = ExtResource("7_yvwaf")
 expand_mode = 1
 
-[node name="blur" type="ColorRect" parent="." unique_id=1548736219]
+[node name="blur" type="ColorRect" parent="BackgroundCharacterSelect" unique_id=1548736219]
 material = SubResource("ShaderMaterial_wa7mq")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -3.0
-offset_bottom = -2.0
+offset_right = 36.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CharacterSelector" type="MarginContainer" parent="." unique_id=766432986]
-layout_mode = 0
-offset_right = 1962.0901
-offset_bottom = 1144.0
-scale = Vector2(0.976, 0.976)
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CharacterSelector" unique_id=1088772324]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Sheet" type="TextureRect" parent="CharacterSelector/HBoxContainer" unique_id=1807141408]
-layout_mode = 2
+[node name="Sheet" type="TextureRect" parent="." unique_id=1807141408]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -868.0
+offset_top = 142.0
+offset_right = -337.0
+offset_bottom = 1062.0
+grow_horizontal = 2
 texture = ExtResource("3_ux44t")
 
-[node name="portrait" type="TextureRect" parent="CharacterSelector/HBoxContainer/Sheet" unique_id=2102436699]
-custom_maximum_size = Vector2(384, 768)
+[node name="portrait" type="TextureRect" parent="Sheet" unique_id=2102436699]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -554.0
-offset_top = -909.0
+offset_left = -397.5
+offset_top = -652.2157
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("6_jhodq")
 expand_mode = 1
 flip_h = true
 
-[node name="name" type="Label" parent="CharacterSelector/HBoxContainer/Sheet" unique_id=1523537553]
+[node name="name" type="Label" parent="Sheet" unique_id=1523537553]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -86,85 +79,101 @@ offset_bottom = 79.0
 theme = ExtResource("7_udkx2")
 text = "Wizard"
 
-[node name="selector" type="CenterContainer" parent="CharacterSelector/HBoxContainer" unique_id=1843918478]
-layout_mode = 2
-offset_transform_enabled = true
+[node name="selector" type="CenterContainer" parent="." unique_id=1843918478]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 223.0
+offset_right = 1262.0
+offset_bottom = 843.0
 
-[node name="GridContainer" type="GridContainer" parent="CharacterSelector/HBoxContainer/selector" unique_id=1425636739]
+[node name="GridContainer" type="GridContainer" parent="selector" unique_id=1425636739]
 layout_mode = 2
 size_flags_horizontal = 0
-offset_transform_enabled = true
 columns = 3
 
-[node name="portrait" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=904086704]
+[node name="portrait" type="TextureRect" parent="selector/GridContainer" unique_id=904086704]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait2" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1294103808]
+[node name="portrait2" type="TextureRect" parent="selector/GridContainer" unique_id=1294103808]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait3" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1645078962]
+[node name="portrait3" type="TextureRect" parent="selector/GridContainer" unique_id=1645078962]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait4" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=992967968]
+[node name="portrait4" type="TextureRect" parent="selector/GridContainer" unique_id=992967968]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait5" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1733382919]
+[node name="portrait5" type="TextureRect" parent="selector/GridContainer" unique_id=1733382919]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait6" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=970400412]
+[node name="portrait6" type="TextureRect" parent="selector/GridContainer" unique_id=970400412]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait7" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=951095203]
+[node name="portrait7" type="TextureRect" parent="selector/GridContainer" unique_id=951095203]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait8" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=1192471003]
+[node name="portrait8" type="TextureRect" parent="selector/GridContainer" unique_id=1192471003]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="portrait9" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector/GridContainer" unique_id=256596058]
+[node name="portrait9" type="TextureRect" parent="selector/GridContainer" unique_id=256596058]
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="selector-ornament" type="TextureRect" parent="CharacterSelector/HBoxContainer/selector" unique_id=154604251]
-layout_mode = 2
-offset_transform_enabled = true
-texture = ExtResource("7_jhodq")
-
-[node name="Sheet2" type="TextureRect" parent="CharacterSelector/HBoxContainer" unique_id=839211176]
-layout_mode = 2
+[node name="Sheet2" type="TextureRect" parent="." unique_id=588204908]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 330.0
+offset_top = 142.0
+offset_right = 861.0
+offset_bottom = 1062.0
+grow_horizontal = 2
 texture = ExtResource("3_ux44t")
 
-[node name="character2" type="TextureRect" parent="CharacterSelector/HBoxContainer/Sheet2" unique_id=1506836763]
-custom_maximum_size = Vector2(384, 768)
+[node name="portrait" type="TextureRect" parent="Sheet2" unique_id=552399795]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -554.0
-offset_right = 356.0
+offset_left = -526.0
+offset_top = -652.2157
+offset_right = -128.5
+grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("9_jhodq")
+texture = ExtResource("6_jhodq")
 expand_mode = 1
 
-[node name="name2" type="Label" parent="CharacterSelector/HBoxContainer/Sheet2" unique_id=94387660]
+[node name="name" type="Label" parent="Sheet2" unique_id=1950568229]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 10.0
-offset_right = 176.0
-offset_bottom = 81.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 153.0
+offset_bottom = 79.0
 theme = ExtResource("7_udkx2")
-text = "Fighter"
+text = "Wizard"
 
-[node name="BackgroundCharacterSelect2" type="TextureRect" parent="." unique_id=1156014502]
+[node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1156014502]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("9_wa7mq")
+texture = ExtResource("11_udkx2")
+expand_mode = 1
+
+[node name="OrnamentBorda2" type="TextureRect" parent="." unique_id=20087344]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1920.0
+offset_bottom = 1120.0
+texture = ExtResource("10_jhodq")
 expand_mode = 1

@@ -7,8 +7,11 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="4_0ekso"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="5_dtf8w"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="6_g5kqo"]
+[ext_resource type="Texture2D" uid="uid://b31hv4iua80hm" path="res://menu-ornament-side.png" id="6_n12gw"]
+[ext_resource type="Texture2D" uid="uid://cwra4wnnj1hvt" path="res://ornamento-mapa-menu.png" id="7_n12gw"]
 [ext_resource type="FontVariation" uid="uid://c0f2ypepwn3t2" path="res://new_font_variation.tres" id="8_kspne"]
-[ext_resource type="Texture2D" uid="uid://be6px2tm4n7dh" path="res://inspi/ornamento_menuprincipal.png" id="9_k4k2h"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="10_g5kqo"]
+[ext_resource type="Texture2D" uid="uid://b4hcchi72ml63" path="res://menu-ornamento-aventureiros.png" id="12_riemq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n12gw"]
 shader = ExtResource("6_g5kqo")
@@ -54,11 +57,54 @@ offset_right = 656.0
 offset_bottom = 1083.0
 color = Color(1, 1, 1, 0.38039216)
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1815835535]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("9_k4k2h")
+[node name="ornament" type="TextureRect" parent="." unique_id=1815835535]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -938.0
+offset_top = 259.3471
+offset_right = -313.0
+offset_bottom = 1077.5669
+grow_horizontal = 2
+texture = ExtResource("6_n12gw")
+expand_mode = 1
+
+[node name="OrnamentoMapaMenu" type="TextureRect" parent="." unique_id=181689934]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 338.0
+offset_top = -15.241577
+offset_right = 1196.0
+offset_bottom = 1123.0
+grow_horizontal = 2
+texture = ExtResource("7_n12gw")
+flip_h = true
+
+[node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1887317115]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("10_g5kqo")
+
+[node name="MenuOrnamentoAventureiros" type="TextureRect" parent="." unique_id=183211902]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1461.0
+offset_top = 93.0
+offset_right = 459.0
+offset_bottom = 1173.0
+grow_horizontal = 2
+texture = ExtResource("12_riemq")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=371515679]
 layout_mode = 1

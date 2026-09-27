@@ -7,6 +7,14 @@
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_ekrpw"]
 [ext_resource type="Material" uid="uid://8248102bcy7j" path="res://arena_blur.tres" id="4_2sp16"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="4_knduk"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="7_jgpv1"]
+[ext_resource type="Texture2D" uid="uid://d1elqo4pv2128" path="res://arena-ornamento.png" id="9_iyhcp"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="9_ka570"]
+
+[sub_resource type="FontVariation" id="FontVariation_ka570"]
+base_font = ExtResource("7_jgpv1")
+spacing_glyph = 5
+spacing_top = 18
 
 [node name="ui-arena" type="Control" unique_id=482908394]
 layout_mode = 3
@@ -15,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(178, 180)
 script = ExtResource("1_knduk")
 match_scene = ExtResource("2_2sp16")
 
@@ -43,41 +52,58 @@ color = Color(0.3254902, 0.3254902, 0.3254902, 0.27450982)
 
 [node name="selector" type="TextureRect" parent="." unique_id=394299371]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 612.0
-offset_right = 1621.0605
-offset_bottom = 1111.0
+offset_left = 587.0
+offset_top = 416.0
+offset_right = 1842.0605
+offset_bottom = 915.0
 texture = ExtResource("2_07ano")
 expand_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=356656466]
 layout_mode = 0
-offset_left = 530.0
-offset_top = 761.0
-offset_right = 685.0
-offset_bottom = 915.0
+offset_left = 751.0
+offset_top = 564.0
+offset_right = 906.0
+offset_bottom = 718.0
 color = Color(0.3515629, 0.3515629, 0.35156286, 0.69411767)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1474046112]
+[node name="description" type="VBoxContainer" parent="." unique_id=1474046112]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 104.0
-offset_right = 1943.0
-offset_bottom = 803.0
+offset_left = 722.0
+offset_top = 40.0
+offset_right = 1440.0
+offset_bottom = 403.0
 theme_override_constants/separation = 33
 
-[node name="arena-name" type="Label" parent="VBoxContainer" unique_id=426125295]
+[node name="arena-name" type="Label" parent="description" unique_id=426125295]
 layout_mode = 2
 theme = ExtResource("3_ekrpw")
 theme_override_constants/line_spacing = -44
+theme_override_fonts/font = SubResource("FontVariation_ka570")
 theme_override_font_sizes/font_size = 64
-text = "Arena 2-12 
+text = "Area 2-12 
          The Smith"
 
-[node name="description" type="Label" parent="VBoxContainer" unique_id=375800411]
+[node name="description" type="Label" parent="description" unique_id=375800411]
 layout_mode = 2
 theme = ExtResource("4_knduk")
 theme_override_font_sizes/font_size = 32
 text = "Smell of coal and the noise of metal hitting metal. 
 A grunt tells you to not wreck the place. 
 You ignore. Roll Initiative"
+
+[node name="Ornament" type="TextureRect" parent="." unique_id=1230082220]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 21.263428
+offset_right = 844.0
+offset_bottom = 1078.0
+texture = ExtResource("9_iyhcp")
+
+[node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1475019049]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(1091, 378)
+texture = ExtResource("9_ka570")
+expand_mode = 1

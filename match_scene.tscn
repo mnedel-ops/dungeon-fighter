@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://Entities/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
 [ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="3_s8u6n"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://MathScene_ornament.png" id="4_myr3d"]
-[ext_resource type="Texture2D" uid="uid://dy51ue1gu27jc" path="res://ornamento-match.png" id="4_s6y5e"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
 [ext_resource type="Texture2D" uid="uid://bygaa1obmf01r" path="res://MatchScene_ornament-damage.png" id="5_6hlag"]
-[ext_resource type="Texture2D" uid="uid://33h7obkpq7wq" path="res://ee68a3eea402db141066e372be5eda40.png" id="6_fs81w"]
+[ext_resource type="Texture2D" uid="uid://cm84bv5xgxlx0" path="res://ornamento-arena-relogio.png" id="7_myr3d"]
 [ext_resource type="Texture2D" uid="uid://cajqpnaw0yckj" path="res://df93701610f28a49f020af1e03714deb_001.jpg" id="7_osqcl"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="8_s6y5e"]
+[ext_resource type="Texture2D" uid="uid://1p7ndti26cms" path="res://match_ornamento-aventureiros.png" id="10_s6y5e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etvr7"]
 
@@ -82,11 +83,6 @@ shape = SubResource("RectangleShape2D_4wal8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1321452896]
 
-[node name="OrnamentosSuperior" type="TextureRect" parent="CanvasLayer" unique_id=158771901]
-offset_right = 714.0
-offset_bottom = 1080.0
-texture = ExtResource("4_s6y5e")
-
 [node name="OrnamentosLaterais" type="TextureRect" parent="CanvasLayer" unique_id=1161251755]
 offset_right = 714.0
 offset_bottom = 1080.0
@@ -106,11 +102,29 @@ theme_override_fonts/font = ExtResource("4_snp58")
 text = "Testando texto"
 
 [node name="Tempo" type="TextureRect" parent="CanvasLayer" unique_id=821658897]
-offset_left = 810.0
-offset_top = -92.0
-offset_right = 1110.0
-offset_bottom = 237.0
-texture = ExtResource("6_fs81w")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.0
+offset_top = -17.0
+offset_right = 170.05908
+offset_bottom = 167.0
+grow_horizontal = 2
+texture = ExtResource("7_myr3d")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Tempo" unique_id=964285466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.529541
+offset_top = 62.0
+offset_right = 22.470459
+offset_bottom = 133.0
+grow_horizontal = 2
+theme = ExtResource("8_s6y5e")
+text = "21"
 
 [node name="RetratoP1" type="TextureRect" parent="CanvasLayer" unique_id=1154103566]
 offset_left = 34.0
@@ -128,3 +142,15 @@ offset_bottom = 196.0
 texture = ExtResource("7_osqcl")
 expand_mode = 1
 flip_h = true
+
+[node name="MatchOrnamentoAventureiros" type="TextureRect" parent="CanvasLayer" unique_id=1506273568]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 886.0
+offset_right = 140.90796
+offset_bottom = 1079.0
+grow_horizontal = 2
+texture = ExtResource("10_s6y5e")
+expand_mode = 1
