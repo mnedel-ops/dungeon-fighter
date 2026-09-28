@@ -5,6 +5,7 @@
 [resource]
 default_font = ExtResource("1_c6bim")
 default_font_size = 128
+Button/colors/font_color = Color(0.096205, 0.096204646, 0.09620472, 1)
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/constants/outline_size = 16

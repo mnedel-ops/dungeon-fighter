@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bs85i5skx8joo"]
+
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="1_3g3jq"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="1_7mxg6"]
+[ext_resource type="Texture2D" uid="uid://bugn2swp6y4i7" path="res://ScreenVictory.png" id="1_habt7"]
+
+[node name="ScreenVictory" type="Control" unique_id=1757651442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1838369224]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 82.0
+offset_right = 1353.0
+offset_bottom = 941.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1554599584]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 81.0
+offset_right = 1355.0
+offset_bottom = 941.0
+texture = ExtResource("1_habt7")
+
+[node name="replay" type="Button" parent="." unique_id=1041645849]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 484.0
+offset_right = 126.0
+offset_bottom = 555.0
+grow_horizontal = 2
+theme = ExtResource("1_7mxg6")
+text = "Fight again!"
+
+[node name="trocar" type="Button" parent="." unique_id=992121937]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.5
+offset_top = 399.0
+offset_right = 205.5
+offset_bottom = 470.0
+grow_horizontal = 2
+theme = ExtResource("1_7mxg6")
+text = "Pick new henchman!"
+
+[node name="victory" type="Label" parent="." unique_id=1920424704]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 180.0
+offset_right = 256.0
+offset_bottom = 402.0
+grow_horizontal = 2
+theme = ExtResource("1_3g3jq")
+theme_override_font_sizes/font_size = 128
+text = "Glory!"

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ck2rb2usochx2"]
+
+[ext_resource type="Texture2D" uid="uid://b03w43jcsxua2" path="res://inspi/ScreenDefeat.png" id="1_2uurn"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="2_tkc2k"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://Theme-Title.tres" id="3_b4y0b"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_tkc2k"]
+
+[sub_resource type="FontVariation" id="FontVariation_b4y0b"]
+base_font = ExtResource("4_tkc2k")
+spacing_glyph = 15
+
+[node name="ScreenDefeat" type="Control" unique_id=1970529978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=853167159]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 82.0
+offset_right = 1353.0
+offset_bottom = 941.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1264838011]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 81.0
+offset_right = 1355.0
+offset_bottom = 1027.2925
+texture = ExtResource("1_2uurn")
+
+[node name="replay" type="Button" parent="." unique_id=601161897]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 464.0
+offset_right = 126.0
+offset_bottom = 535.0
+grow_horizontal = 2
+theme = ExtResource("2_tkc2k")
+text = "Fight again!"
+
+[node name="trocar" type="Button" parent="." unique_id=778477890]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.5
+offset_top = 379.0
+offset_right = 205.5
+offset_bottom = 450.0
+grow_horizontal = 2
+theme = ExtResource("2_tkc2k")
+text = "Pick new henchman!"
+
+[node name="defeat" type="Label" parent="." unique_id=936528972]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.0
+offset_top = 180.0
+offset_right = 303.0
+offset_bottom = 402.0
+grow_horizontal = 2
+theme = ExtResource("3_b4y0b")
+theme_override_fonts/font = SubResource("FontVariation_b4y0b")
+theme_override_font_sizes/font_size = 128
+text = "Shame!"
