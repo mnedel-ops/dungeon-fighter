@@ -27,3 +27,12 @@ versus
 		vai ser uma torre que se quebra conforme vai perdendo vida.
 	vitoria: ganharam
 	derrota: perderam
+
+corrigir:
+	colocar um detalhe pra fechar a caixa de opções;
+	rever o nivel de detalhe da barra de vida;
+	colocar um detalhe para o seletor de personagem;
+	remover a ficha do personagem;
+	
+legal:
+	usar os aventureiros caminhando para a barra de carregamento.

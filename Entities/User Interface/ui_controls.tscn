@@ -25,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7jts3")
 back = NodePath("ColorRect/MarginContainer/buttons/Back")
+metadata/_edit_horizontal_guides_ = [120.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2047250167]
 layout_mode = 0
@@ -68,9 +69,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -248.5
-offset_right = 248.5
-offset_bottom = 283.0
+offset_left = -265.5
+offset_top = 54.0
+offset_right = 265.5
+offset_bottom = 337.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 64
@@ -86,7 +88,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("3_dyrfq")
 theme_override_fonts/font = SubResource("FontVariation_tr0ex")
-text = "Buttons"
+text = "Controls"
 
 [node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=1736629238]
 layout_mode = 2

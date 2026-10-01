@@ -16,7 +16,7 @@ shader_parameter/blur_amount = 2.0
 
 [sub_resource type="FontVariation" id="FontVariation_xk88t"]
 base_font = ExtResource("6_e4pg0")
-spacing_glyph = 58
+spacing_glyph = 56
 
 [node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
 layout_mode = 3
