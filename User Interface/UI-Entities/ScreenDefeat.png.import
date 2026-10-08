@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b03w43jcsxua2"
-path="res://.godot/imported/ScreenDefeat.png-1df5156f5281499bfc3dddd50b4c4b7e.ctex"
+path="res://.godot/imported/ScreenDefeat.png-871b2ab08346422b8af1c26b90d1cd79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/ScreenDefeat.png"
-dest_files=["res://.godot/imported/ScreenDefeat.png-1df5156f5281499bfc3dddd50b4c4b7e.ctex"]
+source_file="res://User Interface/UI-Entities/ScreenDefeat.png"
+dest_files=["res://.godot/imported/ScreenDefeat.png-871b2ab08346422b8af1c26b90d1cd79.ctex"]
 
 [params]
 

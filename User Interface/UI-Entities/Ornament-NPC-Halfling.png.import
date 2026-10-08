@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0h5xb8vb2vbh"
-path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-dcd16ddbd825fdaa93a191e1cf1745bc.ctex"
+uid="uid://vsbrpvwkjohi"
+path="res://.godot/imported/Ornament-NPC-Halfling.png-0ed598e487f04403c88df7741ed1d89a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png"
-dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-dcd16ddbd825fdaa93a191e1cf1745bc.ctex"]
+source_file="res://User Interface/UI-Entities/Ornament-NPC-Halfling.png"
+dest_files=["res://.godot/imported/Ornament-NPC-Halfling.png-0ed598e487f04403c88df7741ed1d89a.ctex"]
 
 [params]
 

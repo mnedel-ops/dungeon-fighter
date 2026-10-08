@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://60pbhsnxv7kt"]
 
-[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="2_cngk4"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://ENTITIES/menu.jpg" id="2_cngk4"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="4_bjd6b"]
 
 [sub_resource type="Animation" id="Animation_dufp6"]

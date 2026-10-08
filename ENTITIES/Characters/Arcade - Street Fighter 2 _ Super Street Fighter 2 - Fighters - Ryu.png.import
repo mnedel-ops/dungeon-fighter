@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2xmwkteu8ved"
-path="res://.godot/imported/Ornament-NPC-Wizard.png-f83c950c99bdadf6d4db6058e7bc077d.ctex"
+uid="uid://d0h5xb8vb2vbh"
+path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-9482bc2d6b3c6d421e92a7690bb946cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/Ornament-NPC-Wizard.png"
-dest_files=["res://.godot/imported/Ornament-NPC-Wizard.png-f83c950c99bdadf6d4db6058e7bc077d.ctex"]
+source_file="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png"
+dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-9482bc2d6b3c6d421e92a7690bb946cd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be6px2tm4n7dh"
-path="res://.godot/imported/ornamento_menuprincipal.png-daf440088b8fa3dc1d66cae977b567d6.ctex"
+uid="uid://c5nale7crd4b2"
+path="res://.godot/imported/Ornament-NPC-Dwarf.png-a82afe949663a8168bb7572c2563aa20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/ornamento_menuprincipal.png"
-dest_files=["res://.godot/imported/ornamento_menuprincipal.png-daf440088b8fa3dc1d66cae977b567d6.ctex"]
+source_file="res://User Interface/UI-Entities/Ornament-NPC-Dwarf.png"
+dest_files=["res://.godot/imported/Ornament-NPC-Dwarf.png-a82afe949663a8168bb7572c2563aa20.ctex"]
 
 [params]
 

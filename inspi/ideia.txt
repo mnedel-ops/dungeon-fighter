@@ -6,33 +6,10 @@ Aumentar o espaçamento do texto da fonte de texto normal.
 
 Ornamentos laterais eh elementos de mapa de TTRPG. Visao dos hex, grids. Casa vistas de cima.
 
-Remover o ornamento no meio dos menus. 
-
-Menu start:aventureiros chegnado na cidade
-menu principal: na taverna
-
-settings: comprando itens com o ferreiro. Todos o mesmo ornamento. Sem tempo, irmao.
-	audio
-	graphics
-	acessibility
-	controls
-creditos: indo embora
-
-versus
-	character select: na porta da dungeon. 
-	scene: olhando mapa. ter elementos de exploracao, parte de mapa, bussola.
-	loading: encontro
-	na briga. 
-		Vai ser a barra de vida. Em vez das bandeirolas
-		vai ser uma torre que se quebra conforme vai perdendo vida.
-	vitoria: ganharam
-	derrota: perderam
-
 corrigir:
 	colocar um detalhe pra fechar a caixa de opções;
 	rever o nivel de detalhe da barra de vida;
 	colocar um detalhe para o seletor de personagem;
-	remover a ficha do personagem;
 	
 legal:
 	usar os aventureiros caminhando para a barra de carregamento.

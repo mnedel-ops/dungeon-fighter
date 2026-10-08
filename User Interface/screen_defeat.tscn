@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck2rb2usochx2"]
 
-[ext_resource type="Texture2D" uid="uid://b03w43jcsxua2" path="res://inspi/ScreenDefeat.png" id="1_qqlht"]
+[ext_resource type="Texture2D" uid="uid://b03w43jcsxua2" path="res://User Interface/UI-Entities/ScreenDefeat.png" id="1_qqlht"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="2_qqlht"]
 [ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://User Interface/UI-Entities/Theme-Title.tres" id="3_yim6x"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_qqlht"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5nale7crd4b2"
-path="res://.godot/imported/Ornament-NPC-Dwarf.png-2fb4b7ed0873ed3859464563d88fb7ba.ctex"
+uid="uid://c00l6ade16nes"
+path="res://.godot/imported/Ornament-NPC-Fighter.png-a1297dfdc6e14d0a9a724da9079aadab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/Ornament-NPC-Dwarf.png"
-dest_files=["res://.godot/imported/Ornament-NPC-Dwarf.png-2fb4b7ed0873ed3859464563d88fb7ba.ctex"]
+source_file="res://User Interface/UI-Entities/Ornament-NPC-Fighter.png"
+dest_files=["res://.godot/imported/Ornament-NPC-Fighter.png-a1297dfdc6e14d0a9a724da9079aadab.ctex"]
 
 [params]
 

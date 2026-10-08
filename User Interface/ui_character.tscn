@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://5ibxdjttqp5s" path="res://User Interface/UI-Scripts/ui_character.gd" id="1_ki8hm"]
 [ext_resource type="PackedScene" uid="uid://b50s1nh6631hv" path="res://User Interface/ui_arena.tscn" id="2_816f6"]
-[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="3_ki8hm"]
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://ENTITIES/arena-smith.jpg" id="3_ki8hm"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://User Interface/UI-Entities/ui_blur.gdshader" id="4_ki8hm"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="5_ki8hm"]
-[ext_resource type="Texture2D" uid="uid://2xmwkteu8ved" path="res://inspi/Ornament-NPC-Wizard.png" id="6_fvti5"]
+[ext_resource type="Texture2D" uid="uid://2xmwkteu8ved" path="res://User Interface/UI-Entities/Ornament-NPC-Wizard.png" id="6_fvti5"]
 [ext_resource type="Texture2D" uid="uid://ct3vsth7bpvof" path="res://User Interface/UI-Entities/PH-characterportrait.jpg" id="7_816f6"]
 [ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://User Interface/UI-Entities/ornament-borda.png" id="8_1nb7i"]
 [ext_resource type="Texture2D" uid="uid://mu5wwfxyk546" path="res://User Interface/UI-Entities/character-ornamento-aventureiros.png" id="9_fdu2s"]

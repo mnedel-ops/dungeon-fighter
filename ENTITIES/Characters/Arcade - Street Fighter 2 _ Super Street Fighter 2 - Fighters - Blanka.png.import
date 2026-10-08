@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqob58wvgm6mv"
-path="res://.godot/imported/playmenu.png-4af2a687bab1f33de7bd7691184a512d.ctex"
+uid="uid://dc28n3fryj10v"
+path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Blanka.png-b352810e84c4f2dc9f059c057148a987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inspi/playmenu.png"
-dest_files=["res://.godot/imported/playmenu.png-4af2a687bab1f33de7bd7691184a512d.ctex"]
+source_file="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Blanka.png"
+dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Blanka.png-b352810e84c4f2dc9f059c057148a987.ctex"]
 
 [params]
 
