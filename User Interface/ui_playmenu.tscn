@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cs15yjhgx52p4"]
+
+[ext_resource type="Script" uid="uid://decjub6xk7lp1" path="res://User Interface/UI-Scripts/ui_playmenu.gd" id="1_c3hiw"]
+[ext_resource type="Texture2D" uid="uid://cllu203gyolhn" path="res://Entities/mainmenu.jpg" id="2_s7l0n"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://User Interface/UI-Entities/ui_blur.gdshader" id="3_r8105"]
+[ext_resource type="Texture2D" uid="uid://dmmdt84q08pfh" path="res://User Interface/UI-Entities/playmenu-ornamento.png" id="4_1wif6"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://User Interface/UI-Entities/ornament-borda.png" id="6_03l2q"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://User Interface/UI-Entities/Theme-Title.tres" id="7_7w5qj"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="8_khwut"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="9_m0uat"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xbem0"]
+shader = ExtResource("3_r8105")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_xk88t"]
+base_font = ExtResource("8_khwut")
+spacing_glyph = 56
+
+[node name="mainmenu" type="Control" unique_id=1334709554 node_paths=PackedStringArray("botao")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c3hiw")
+botao = NodePath("Texto/VBoxContainer/start")
+
+[node name="background" type="TextureRect" parent="." unique_id=1030598818]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_s7l0n")
+
+[node name="blur" type="ColorRect" parent="." unique_id=582920579]
+material = SubResource("ShaderMaterial_xbem0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ornamentos" type="TextureRect" parent="." unique_id=978381466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = 106.0
+offset_right = 1898.0
+offset_bottom = 1186.0
+grow_horizontal = 2
+texture = ExtResource("4_1wif6")
+
+[node name="Borda" type="TextureRect" parent="." unique_id=1462084480]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1920.0
+offset_bottom = 1079.0
+texture = ExtResource("6_03l2q")
+
+[node name="Texto" type="VBoxContainer" parent="." unique_id=1081081867]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = -95.0
+offset_right = 1911.0
+offset_bottom = 981.0
+grow_horizontal = 2
+theme_override_constants/separation = 297
+alignment = 1
+
+[node name="name" type="Label" parent="Texto" unique_id=160666125]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_7w5qj")
+theme_override_fonts/font = SubResource("FontVariation_xk88t")
+theme_override_font_sizes/font_size = 90
+text = "Dungeon Fighter"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Texto" unique_id=1560946367]
+layout_mode = 2
+
+[node name="command" type="Label" parent="Texto/VBoxContainer" unique_id=651067916]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("9_m0uat")
+text = "Press START to delve into the Dungeon!"
+
+[node name="start" type="Button" parent="Texto/VBoxContainer" unique_id=755100766]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("9_m0uat")
+text = "START"

@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bvkfm78t071x7"]
+
+[ext_resource type="Script" uid="uid://dbrfy8x443n6a" path="res://User Interface/UI-Scripts/ui_menu.gd" id="1_b0qhq"]
+[ext_resource type="PackedScene" uid="uid://cxs7iqpl7u83a" path="res://User Interface/ui_character.tscn" id="2_dwkrl"]
+[ext_resource type="PackedScene" uid="uid://60pbhsnxv7kt" path="res://User Interface/ui_credits.tscn" id="3_gd13u"]
+[ext_resource type="Texture2D" uid="uid://bacbd6llg3oii" path="res://Entities/menu.jpg" id="4_y7xuv"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://User Interface/UI-Entities/ui_blur.gdshader" id="5_b0qhq"]
+[ext_resource type="Texture2D" uid="uid://cwra4wnnj1hvt" path="res://User Interface/UI-Entities/ornamento-mapa-menu.png" id="6_b0qhq"]
+[ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://User Interface/UI-Entities/ornament-borda.png" id="7_dwkrl"]
+[ext_resource type="Texture2D" uid="uid://b31hv4iua80hm" path="res://User Interface/UI-Entities/menu-ornament-side.png" id="8_gd13u"]
+[ext_resource type="Texture2D" uid="uid://b4hcchi72ml63" path="res://User Interface/UI-Entities/menu-ornamento-aventureiros.png" id="9_y7xuv"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://User Interface/UI-Entities/Theme-Title.tres" id="10_qgwh3"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="11_pf8ag"]
+[ext_resource type="FontVariation" uid="uid://c0f2ypepwn3t2" path="res://User Interface/UI-Entities/new_font_variation.tres" id="12_dwmwr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n12gw"]
+shader = ExtResource("5_b0qhq")
+shader_parameter/blur_amount = 2.0
+
+[node name="menu" type="Control" unique_id=2030663330 node_paths=PackedStringArray("versus", "settings", "credits", "exit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b0qhq")
+versus = NodePath("MarginContainer/buttons/versus")
+versus_scene = ExtResource("2_dwkrl")
+settings = NodePath("MarginContainer/buttons/settings")
+credits = NodePath("MarginContainer/buttons/credits")
+credits_scene = ExtResource("3_gd13u")
+exit = NodePath("MarginContainer/buttons/exit")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1047854859]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_y7xuv")
+expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="." unique_id=142744101]
+material = SubResource("ShaderMaterial_n12gw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1377022528]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 656.0
+offset_bottom = 1083.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="OrnamentoMapaMenu" type="TextureRect" parent="." unique_id=181689934]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 338.0
+offset_top = -15.241577
+offset_right = 1196.0
+offset_bottom = 1123.0
+grow_horizontal = 2
+texture = ExtResource("6_b0qhq")
+flip_h = true
+
+[node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1887317115]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("7_dwkrl")
+
+[node name="ornament" type="TextureRect" parent="." unique_id=1815835535]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -963.0
+offset_top = 264.3471
+offset_right = -338.0
+offset_bottom = 1082.5669
+grow_horizontal = 2
+texture = ExtResource("8_gd13u")
+expand_mode = 1
+
+[node name="MenuOrnamentoAventureiros" type="TextureRect" parent="." unique_id=183211902]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1461.0
+offset_top = 93.0
+offset_right = 459.0
+offset_bottom = 1173.0
+grow_horizontal = 2
+texture = ExtResource("9_y7xuv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=371515679]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_top = 3.0
+offset_right = -261.0
+offset_bottom = 846.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="MarginContainer" unique_id=268248282]
+layout_mode = 2
+
+[node name="name" type="Label" parent="MarginContainer/buttons" unique_id=1538428612]
+layout_mode = 2
+theme = ExtResource("10_qgwh3")
+text = "Dungeon
+ Fighter"
+horizontal_alignment = 1
+
+[node name="versus" type="Button" parent="MarginContainer/buttons" unique_id=1204828278]
+layout_mode = 2
+theme = ExtResource("11_pf8ag")
+theme_override_fonts/font = ExtResource("12_dwmwr")
+text = "Versus"
+
+[node name="settings" type="Button" parent="MarginContainer/buttons" unique_id=31043756]
+layout_mode = 2
+theme = ExtResource("11_pf8ag")
+text = "Settings"
+
+[node name="credits" type="Button" parent="MarginContainer/buttons" unique_id=418482347]
+layout_mode = 2
+theme = ExtResource("11_pf8ag")
+text = "Credits"
+
+[node name="exit" type="Button" parent="MarginContainer/buttons" unique_id=419377005]
+layout_mode = 2
+theme = ExtResource("11_pf8ag")
+text = "Exit"

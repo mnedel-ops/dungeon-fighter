@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://c50ipmvknsq82"]
+
+[ext_resource type="Script" uid="uid://x21hp6pv0rr3" path="res://User Interface/UI-Scripts/ui_audio.gd" id="1_4wc11"]
+[ext_resource type="Script" uid="uid://b52ocgocp4hlj" path="res://User Interface/UI-Scripts/viewport.gd" id="1_grdx6"]
+[ext_resource type="Theme" uid="uid://bu3hr3wo6f382" path="res://User Interface/UI-Entities/Theme-Title.tres" id="3_43v2j"]
+[ext_resource type="Texture2D" uid="uid://cgtxie0gjk1po" path="res://User Interface/UI-Entities/settings-background.jpg" id="3_skhx2"]
+[ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://User Interface/UI-Entities/ui_blur.gdshader" id="4_skhx2"]
+[ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="4_tr0ex"]
+[ext_resource type="PackedScene" uid="uid://gftgfsojiret" path="res://User Interface/ornament_settings.tscn" id="5_skhx2"]
+[ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="5_tr0ex"]
+[ext_resource type="Theme" uid="uid://dkaiooygqokwu" path="res://User Interface/UI-Entities/theme-bar.tres" id="9_qdlp8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdlp8"]
+shader = ExtResource("4_skhx2")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_tr0ex"]
+base_font = ExtResource("5_tr0ex")
+spacing_glyph = 12
+
+[node name="ui_audio" type="Control" unique_id=1374872654 node_paths=PackedStringArray("back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4wc11")
+back = NodePath("ColorRect/MarginContainer/buttons/Back")
+metadata/_edit_horizontal_guides_ = [120.0]
+
+[node name="print" type="Label" parent="." unique_id=568762409]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_grdx6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=23312142]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_skhx2")
+expand_mode = 1
+
+[node name="blur" type="ColorRect" parent="." unique_id=1559315490]
+material = SubResource("ShaderMaterial_qdlp8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1828087148]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 656.0
+offset_bottom = 1096.0
+color = Color(1, 1, 1, 0.38039216)
+
+[node name="Ornament_Settings" parent="ColorRect" unique_id=1163564750 instance=ExtResource("5_skhx2")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 632.0
+offset_top = 16.0
+offset_right = 632.0
+offset_bottom = 16.0
+grow_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=962213297]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 56.0
+offset_right = 224.0
+offset_bottom = 783.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="buttons" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1489445623]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Audio" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1176538225]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_43v2j")
+theme_override_fonts/font = SubResource("FontVariation_tr0ex")
+text = "Audio"
+
+[node name="MasterVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=200013480]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "Master Volume"
+horizontal_alignment = 2
+
+[node name="MasterSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1197374619]
+layout_mode = 2
+theme = ExtResource("9_qdlp8")
+
+[node name="MusicVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=784482828]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "Music Volume"
+horizontal_alignment = 2
+
+[node name="MusicSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1444905824]
+layout_mode = 2
+theme = ExtResource("9_qdlp8")
+
+[node name="VoiceVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1689634271]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "Voice Volume"
+horizontal_alignment = 2
+
+[node name="VoiceSlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=233157671]
+layout_mode = 2
+theme = ExtResource("9_qdlp8")
+
+[node name="UIVolume" type="Label" parent="ColorRect/MarginContainer/buttons" unique_id=1687689636]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "UI Volume"
+horizontal_alignment = 2
+
+[node name="UISlider" type="HSlider" parent="ColorRect/MarginContainer/buttons" unique_id=1661295333]
+layout_mode = 2
+theme = ExtResource("9_qdlp8")
+
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/buttons" unique_id=2014585316]
+layout_mode = 2
+theme = ExtResource("4_tr0ex")
+text = "Back"

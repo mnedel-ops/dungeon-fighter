@@ -30,8 +30,8 @@ enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 folder_colors={
 "res://Entities/": "orange",
 "res://Entities/Characters/": "teal",
-"res://Entities/User Interface/": "green",
 "res://System/": "yellow",
+"res://User Interface/": "green",
 "res://addons/": "red"
 }
 
