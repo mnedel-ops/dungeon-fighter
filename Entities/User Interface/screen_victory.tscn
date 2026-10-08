@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1838369224]
+[node name="Background" type="ColorRect" parent="." unique_id=1838369224]
 layout_mode = 0
 offset_left = 572.0
 offset_top = 82.0
@@ -20,7 +20,7 @@ offset_right = 1353.0
 offset_bottom = 941.0
 color = Color(0.5132329, 0.5132329, 0.5132329, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1554599584]
+[node name="Ornament" type="TextureRect" parent="." unique_id=1554599584]
 layout_mode = 0
 offset_left = 573.0
 offset_top = 81.0

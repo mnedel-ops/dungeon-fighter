@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgeccqyh7eqpk"
-path="res://.godot/imported/1000_F_488820007_fFkRn4SQK0zldwUEaIh9GvgkqEM2mKV7.jpg-05d5e87c82dfcb67bcfe6c941518ea1e.ctex"
+uid="uid://ct3vsth7bpvof"
+path="res://.godot/imported/PH-characterportrait.jpg-03446821d25444a4ed4033fb619407ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1000_F_488820007_fFkRn4SQK0zldwUEaIh9GvgkqEM2mKV7.jpg"
-dest_files=["res://.godot/imported/1000_F_488820007_fFkRn4SQK0zldwUEaIh9GvgkqEM2mKV7.jpg-05d5e87c82dfcb67bcfe6c941518ea1e.ctex"]
+source_file="res://PH-characterportrait.jpg"
+dest_files=["res://.godot/imported/PH-characterportrait.jpg-03446821d25444a4ed4033fb619407ea.ctex"]
 
 [params]
 

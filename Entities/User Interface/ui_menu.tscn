@@ -32,7 +32,7 @@ credits = NodePath("MarginContainer/buttons/credits")
 credits_scene = ExtResource("3_mr1if")
 exit = NodePath("MarginContainer/buttons/exit")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1047854859]
+[node name="Background" type="TextureRect" parent="." unique_id=1047854859]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0

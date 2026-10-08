@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
 [ext_resource type="Texture2D" uid="uid://bygaa1obmf01r" path="res://MatchScene_ornament-damage.png" id="5_6hlag"]
 [ext_resource type="Texture2D" uid="uid://cm84bv5xgxlx0" path="res://ornamento-arena-relogio.png" id="7_myr3d"]
-[ext_resource type="Texture2D" uid="uid://cajqpnaw0yckj" path="res://df93701610f28a49f020af1e03714deb_001.jpg" id="7_osqcl"]
+[ext_resource type="Texture2D" uid="uid://ct3vsth7bpvof" path="res://PH-characterportrait.jpg" id="7_osqcl"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="8_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://1p7ndti26cms" path="res://match_ornamento-aventureiros.png" id="10_s6y5e"]
 

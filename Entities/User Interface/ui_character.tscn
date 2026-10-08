@@ -2,19 +2,20 @@
 
 [ext_resource type="Script" uid="uid://5ibxdjttqp5s" path="res://Entities/User Interface/ui_character.gd" id="1_7irbl"]
 [ext_resource type="PackedScene" uid="uid://b50s1nh6631hv" path="res://Entities/User Interface/ui_arena.tscn" id="2_ux44t"]
-[ext_resource type="Texture2D" uid="uid://cajqpnaw0yckj" path="res://df93701610f28a49f020af1e03714deb_001.jpg" id="3_7irbl"]
-[ext_resource type="Texture2D" uid="uid://cexcaqmckrgwq" path="res://sheet.png" id="3_ux44t"]
+[ext_resource type="Texture2D" uid="uid://ct3vsth7bpvof" path="res://PH-characterportrait.jpg" id="3_7irbl"]
 [ext_resource type="Shader" uid="uid://4ylplu8m3rad" path="res://Entities/User Interface/ui_blur.gdshader" id="4_h7qd8"]
 [ext_resource type="Texture2D" uid="uid://2xmwkteu8ved" path="res://inspi/Ornament-NPC-Wizard.png" id="6_jhodq"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://Theme-text.tres" id="7_udkx2"]
-[ext_resource type="Texture2D" uid="uid://bljebmviuutyc" path="res://inspi/background_characterSelect.jpg" id="7_yvwaf"]
+[ext_resource type="Texture2D" path="res://inspi/background_characterSelect.jpg" id="7_yvwaf"]
 [ext_resource type="Texture2D" uid="uid://mu5wwfxyk546" path="res://character-ornamento-aventureiros.png" id="10_jhodq"]
-[ext_resource type="Texture2D" uid="uid://c7wtkjnprpqga" path="res://ornament-bar.png" id="10_udkx2"]
 [ext_resource type="Texture2D" uid="uid://qgxsmalaka5l" path="res://ornament-borda.png" id="11_udkx2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wa7mq"]
 shader = ExtResource("4_h7qd8")
 shader_parameter/blur_amount = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jhodq"]
+load_path = "res://.godot/imported/ornament-bar.png-52a92a6f5db50cb85e4e546da0896e06.ctex"
 
 [node name="UI_Character" type="Control" unique_id=183295438]
 layout_mode = 3
@@ -26,14 +27,14 @@ grow_vertical = 2
 script = ExtResource("1_7irbl")
 arena_select = ExtResource("2_ux44t")
 
-[node name="BackgroundCharacterSelect" type="TextureRect" parent="." unique_id=1511116588]
+[node name="Background" type="TextureRect" parent="." unique_id=1511116588]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("7_yvwaf")
 expand_mode = 1
 
-[node name="blur" type="ColorRect" parent="BackgroundCharacterSelect" unique_id=1548736219]
+[node name="blur" type="ColorRect" parent="Background" unique_id=1548736219]
 material = SubResource("ShaderMaterial_wa7mq")
 layout_mode = 1
 anchors_preset = 15
@@ -44,7 +45,7 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sheet" type="TextureRect" parent="." unique_id=1807141408]
+[node name="SheetA" type="VBoxContainer" parent="." unique_id=1654102906]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -52,33 +53,18 @@ anchor_right = 0.5
 offset_left = -868.0
 offset_top = 142.0
 offset_right = -337.0
-offset_bottom = 1062.0
+offset_bottom = 1319.0
 grow_horizontal = 2
-texture = ExtResource("3_ux44t")
 
-[node name="portrait" type="TextureRect" parent="Sheet" unique_id=2102436699]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -397.5
-offset_top = -652.2157
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("6_jhodq")
-expand_mode = 1
-flip_h = true
-
-[node name="name" type="Label" parent="Sheet" unique_id=1523537553]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 153.0
-offset_bottom = 79.0
+[node name="name" type="Label" parent="SheetA" unique_id=1523537553]
+layout_mode = 2
 theme = ExtResource("7_udkx2")
 text = "Wizard"
+
+[node name="portrait" type="TextureRect" parent="SheetA" unique_id=2102436699]
+layout_mode = 2
+texture = ExtResource("6_jhodq")
+flip_h = true
 
 [node name="selector" type="CenterContainer" parent="." unique_id=1843918478]
 layout_mode = 0
@@ -128,7 +114,7 @@ texture = ExtResource("3_7irbl")
 layout_mode = 2
 texture = ExtResource("3_7irbl")
 
-[node name="Sheet2" type="TextureRect" parent="." unique_id=588204908]
+[node name="SheetB" type="VBoxContainer" parent="." unique_id=1877572153]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -138,31 +124,15 @@ offset_top = 142.0
 offset_right = 861.0
 offset_bottom = 1062.0
 grow_horizontal = 2
-texture = ExtResource("3_ux44t")
 
-[node name="portrait" type="TextureRect" parent="Sheet2" unique_id=552399795]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -526.0
-offset_top = -652.2157
-offset_right = -128.5
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("6_jhodq")
-expand_mode = 1
-
-[node name="name" type="Label" parent="Sheet2" unique_id=1950568229]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 153.0
-offset_bottom = 79.0
+[node name="name" type="Label" parent="SheetB" unique_id=1950568229]
+layout_mode = 2
 theme = ExtResource("7_udkx2")
 text = "Wizard"
+
+[node name="portrait" type="TextureRect" parent="SheetB" unique_id=552399795]
+layout_mode = 2
+texture = ExtResource("6_jhodq")
 
 [node name="OrnamentBarra" type="TextureRect" parent="." unique_id=1097329647]
 layout_mode = 0
@@ -170,7 +140,7 @@ offset_left = 42.0
 offset_top = 1062.0
 offset_right = 1122.0
 offset_bottom = 1078.0
-texture = ExtResource("10_udkx2")
+texture = SubResource("CompressedTexture2D_jhodq")
 expand_mode = 1
 
 [node name="OrnamentBarra2" type="TextureRect" parent="." unique_id=2143956528]
@@ -179,7 +149,7 @@ offset_left = 1064.0
 offset_top = 1062.0
 offset_right = 2144.0
 offset_bottom = 1078.0
-texture = ExtResource("10_udkx2")
+texture = SubResource("CompressedTexture2D_jhodq")
 expand_mode = 1
 
 [node name="OrnamentBorda" type="TextureRect" parent="." unique_id=1156014502]
