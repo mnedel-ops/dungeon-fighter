@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dmlcuqoji6kfa"]
 
-[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://ENTITIES/arena-smith.jpg" id="1_3owkx"]
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_3owkx"]
 [ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
-[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="3_s8u6n"]
+[ext_resource type="PackedScene" uid="uid://dvlrba2dfr4ls" path="res://player.tscn" id="3_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://User Interface/UI-Entities/MathScene_ornament.png" id="4_myr3d"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
 [ext_resource type="Texture2D" uid="uid://bygaa1obmf01r" path="res://User Interface/UI-Entities/MatchScene_ornament-damage.png" id="5_6hlag"]
@@ -15,10 +15,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
 size = Vector2(11, 14.985001)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8u6n"]
-atlas = ExtResource("3_s8u6n")
-region = Rect2(6, 32, 12, 16)
 
 [node name="match-scene" type="Node2D" unique_id=2070016054]
 
@@ -69,19 +65,11 @@ texture = ExtResource("2_4wal8")
 position = Vector2(0.16400033, 0.034999844)
 shape = SubResource("RectangleShape2D_4wal8")
 
-[node name="P2" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=645757314]
-position = Vector2(18.58611, 68.370834)
-
-[node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P2" unique_id=75107493]
-texture_filter = 1
-position = Vector2(-0.29999873, 0.49999958)
-texture = SubResource("AtlasTexture_s8u6n")
-
-[node name="HitBox" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P2" unique_id=1413146362]
-position = Vector2(0.02800113, 0.030496217)
-shape = SubResource("RectangleShape2D_4wal8")
+[node name="P2" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1329724611 instance=ExtResource("3_s6y5e")]
+position = Vector2(19, 75.666664)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1321452896]
+visible = false
 
 [node name="OrnamentosLaterais" type="TextureRect" parent="CanvasLayer" unique_id=1161251755]
 offset_right = 714.0
