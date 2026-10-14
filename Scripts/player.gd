@@ -1,9 +1,9 @@
 extends CharacterBody2D
-
+class_name Player
+@onready var collider: CollisionShape2D = $Collider
 
 const SPEED = 64.0
 const JUMP_VELOCITY = -256.0
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,7 +20,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	if Input.is_action_just_pressed("move-dash"):
 		velocity.x = direction * SPEED * 16
 
+	if Input.is_action_just_pressed("move-crouch"):
+		collider.transform /= 2
+	if Input.is_action_just_released("move-crouch"):
+		collider.transform *= 2
 	move_and_slide()
