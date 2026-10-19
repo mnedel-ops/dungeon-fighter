@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_3owkx"]
 [ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
+[ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://p_1.gd" id="2_sesgp"]
 [ext_resource type="PackedScene" uid="uid://dvlrba2dfr4ls" path="res://player.tscn" id="3_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://User Interface/UI-Entities/MathScene_ornament.png" id="4_myr3d"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
@@ -15,6 +16,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
 size = Vector2(11, 14.985001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sesgp"]
 
 [node name="match-scene" type="Node2D" unique_id=2070016054]
 
@@ -54,6 +57,7 @@ shape = SubResource("WorldBoundaryShape2D_etvr7")
 
 [node name="P1" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1215156299]
 position = Vector2(146.38611, 68.57085)
+script = ExtResource("2_sesgp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=1905267957]
 texture_filter = 1
@@ -61,9 +65,16 @@ position = Vector2(0.04000244, 0.049999997)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_4wal8")
 
-[node name="HitBox" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=815866829]
-position = Vector2(0.16400033, 0.034999844)
+[node name="Area2D" type="Area2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=590245145]
+collision_layer = 2
+collision_mask = 4
+
+[node name="PainBox" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1/Area2D" unique_id=815866829]
+position = Vector2(0.16400146, 0.034996033)
 shape = SubResource("RectangleShape2D_4wal8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=2131349003]
+shape = SubResource("RectangleShape2D_sesgp")
 
 [node name="P2" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1329724611 instance=ExtResource("3_s6y5e")]
 position = Vector2(19, 75.666664)
@@ -143,3 +154,5 @@ offset_bottom = 1079.0
 grow_horizontal = 2
 texture = ExtResource("10_s6y5e")
 expand_mode = 1
+
+[connection signal="area_entered" from="Jogo/SubViewportContainer/SubViewport/P1/Area2D" to="Jogo/SubViewportContainer/SubViewport/P1" method="_on_area_2d_area_entered"]
