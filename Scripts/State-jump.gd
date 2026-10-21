@@ -13,6 +13,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _process(delta: float) -> void:
-	if p_2.velocity.y > 0:
+	if  Input.is_action_just_pressed("move-jump"):
 		animated_sprite_2d.play("Jump")
 	
