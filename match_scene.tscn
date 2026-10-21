@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmlcuqoji6kfa"]
 
-[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_3owkx"]
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://ENTITIES/arena-smith.jpg" id="1_3owkx"]
 [ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
 [ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://p_1.gd" id="2_sesgp"]
 [ext_resource type="PackedScene" uid="uid://dvlrba2dfr4ls" path="res://player.tscn" id="3_s6y5e"]

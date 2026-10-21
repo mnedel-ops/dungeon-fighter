@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dvlrba2dfr4ls"]
 
 [ext_resource type="Script" uid="uid://78vs36upo8xg" path="res://Scripts/player.gd" id="1_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dbmxd8ycllfyk" path="res://Scripts/statesmanager.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://duygglskd4wwb" path="res://Scripts/state-walk.gd" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://bbbh643533pqw" path="res://State-Idle.gd" id="4_ivps1"]
 [ext_resource type="Script" uid="uid://dfg6tnbgkdmff" path="res://Scripts/State-dash.gd" id="5_2hs0m"]
 [ext_resource type="Script" uid="uid://cuj8u6crg1jsc" path="res://Scripts/State-jump.gd" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://e2d2xjmhipku" path="res://hit_box.gd" id="7_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://Entities/16x16/16x16 Attack-Sheet.png" id="8_n7ghd"]
-[ext_resource type="Texture2D" uid="uid://cpck0rrf4n7f2" path="res://Entities/16x16/16x16 Jump-Sheet.png" id="9_ivps1"]
-[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://Entities/16x16/16x16 Run-Sheet.png" id="9_nvl01"]
-[ext_resource type="Texture2D" uid="uid://cls22r2ahs14h" path="res://Entities/16x16/16x16 Walk-Sheet.png" id="10_ivps1"]
+[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://ENTITIES/16x16/16x16 Attack-Sheet.png" id="8_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://cpck0rrf4n7f2" path="res://ENTITIES/16x16/16x16 Jump-Sheet.png" id="9_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://ENTITIES/16x16/16x16 Run-Sheet.png" id="9_nvl01"]
+[ext_resource type="Texture2D" uid="uid://cls22r2ahs14h" path="res://ENTITIES/16x16/16x16 Walk-Sheet.png" id="10_ivps1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8u6n"]
 atlas = ExtResource("1_4flbx")
@@ -122,7 +123,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_606se")
 }],
-"loop": true,
+"loop": 0,
 "name": &"Attack",
 "speed": 12.0
 }, {
@@ -139,7 +140,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pylmc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 12.0
 }, {
@@ -147,19 +148,19 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_j5n4i")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_634y6")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_efrwb")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_hiqhm")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_tkwlq")
 }],
-"loop": true,
+"loop": 0,
 "name": &"Jump",
 "speed": 12.0
 }, {
@@ -182,7 +183,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_jm5j8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run",
 "speed": 12.0
 }, {
@@ -199,7 +200,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_iruf7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk",
 "speed": 12.0
 }]
@@ -208,6 +209,7 @@ animations = [{
 script = ExtResource("1_2hs0m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=711648707]
+visible = false
 texture_filter = 1
 position = Vector2(2.9802322e-08, -7)
 texture = SubResource("AtlasTexture_s8u6n")
@@ -221,6 +223,7 @@ debug_color = Color(0, 1, 0, 0.41960785)
 script = ExtResource("3_i3pqv")
 
 [node name="Idle" type="Node" parent="States" unique_id=355627405]
+script = ExtResource("4_ivps1")
 
 [node name="Walk" type="Node" parent="States" unique_id=971588474]
 script = ExtResource("4_hqtel")
@@ -244,5 +247,4 @@ script = ExtResource("7_1jxqw")
 texture_filter = 1
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_j5n4i")
-animation = &"Run"
-frame_progress = 0.64664155
+animation = &"Walk"

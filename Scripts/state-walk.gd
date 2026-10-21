@@ -11,10 +11,11 @@ func _physics_process(delta: float) -> void:
 		p_2.velocity.x = move_toward(p_2.velocity.x, 0, SPEED)
 	p_2.move_and_slide()
 
-	if direction != 0:
+func _process(delta: float) -> void:
+	if p_2.velocity.x != 0:
 		if animated_sprite_2d.animation != "Run":
 			animated_sprite_2d.play("Run")
-		animated_sprite_2d.flip_h = direction < 0
+		animated_sprite_2d.flip_h = p_2.velocity.x < 0
 	else:
-		if animated_sprite_2d.animation != "Idle": # Change "Idle" to whatever your idle animation is named
+		if animated_sprite_2d.animation != "Idle":
 			animated_sprite_2d.play("Idle")
