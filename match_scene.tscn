@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://1p7ndti26cms" path="res://User Interface/UI-Entities/match_ornamento-aventureiros.png" id="10_s6y5e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etvr7"]
+distance = 7.4166603
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
 size = Vector2(11, 14.985001)
@@ -52,11 +53,21 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_3owkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=830310694]
-position = Vector2(-18.64, -3.3500013)
+position = Vector2(-18.602783, 11.812495)
+shape = SubResource("WorldBoundaryShape2D_etvr7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=470391487]
+position = Vector2(-100.35278, -29.020836)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_etvr7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=698213628]
+position = Vector2(71.313896, -29.020836)
+rotation = 4.712389
 shape = SubResource("WorldBoundaryShape2D_etvr7")
 
 [node name="P1" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1215156299]
-position = Vector2(146.38611, 68.57085)
+position = Vector2(119.25, 75.583336)
 script = ExtResource("2_sesgp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=1905267957]
@@ -72,6 +83,7 @@ collision_mask = 4
 [node name="PainBox" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1/Area2D" unique_id=815866829]
 position = Vector2(0.16400146, 0.034996033)
 shape = SubResource("RectangleShape2D_4wal8")
+debug_color = Color(1, 0, 0, 0.67058825)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=2131349003]
 shape = SubResource("RectangleShape2D_sesgp")
