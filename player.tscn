@@ -67,3 +67,5 @@ texture_filter = 1
 position = Vector2(0, -11)
 sprite_frames = ExtResource("9_b26j0")
 animation = &"Walk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]

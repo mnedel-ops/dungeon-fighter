@@ -4,7 +4,7 @@ const SPEED = 32.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../../AnimatedSprite2D"
 @onready var states: Node = $".."
 
-func _physics_process(delta: float) -> void:
+func enter() -> void:
 	var direction := Input.get_axis("move-left", "move-right")
 	if direction:
 		p_2.velocity.x = direction * SPEED
