@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dbmxd8ycllfyk" path="res://Scripts/statesmanager.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://duygglskd4wwb" path="res://Scripts/state-walk.gd" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://bbbh643533pqw" path="res://State-Idle.gd" id="4_ivps1"]
+[ext_resource type="Script" uid="uid://bbbh643533pqw" path="res://Scripts/State-Idle.gd" id="4_ivps1"]
 [ext_resource type="Script" uid="uid://dfg6tnbgkdmff" path="res://Scripts/State-dash.gd" id="5_2hs0m"]
 [ext_resource type="Script" uid="uid://cuj8u6crg1jsc" path="res://Scripts/State-jump.gd" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://e2d2xjmhipku" path="res://hit_box.gd" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://c00newgimpjgn" path="res://Scripts/State-attack.gd" id="8_n7ghd"]
 [ext_resource type="SpriteFrames" uid="uid://b8vq6uwt0nstn" path="res://ENTITIES/Characters/SpriteFrames-Player.tres" id="9_b26j0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8u6n"]
@@ -48,6 +49,9 @@ script = ExtResource("5_sweqy")
 
 [node name="Dash" type="Node" parent="States" unique_id=866374422]
 script = ExtResource("5_2hs0m")
+
+[node name="Attack" type="Node" parent="States" unique_id=1394900337]
+script = ExtResource("8_n7ghd")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1510184587]
 collision_layer = 4
