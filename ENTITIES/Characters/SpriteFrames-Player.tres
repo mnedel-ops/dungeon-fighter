@@ -1,10 +1,10 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://b8vq6uwt0nstn"]
 
-[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://ENTITIES/16x16/16x16 Attack-Sheet.png" id="1_nwlu1"]
-[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="2_maw1g"]
-[ext_resource type="Texture2D" uid="uid://cpck0rrf4n7f2" path="res://ENTITIES/16x16/16x16 Jump-Sheet.png" id="3_jotkc"]
-[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://ENTITIES/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
-[ext_resource type="Texture2D" uid="uid://cls22r2ahs14h" path="res://ENTITIES/16x16/16x16 Walk-Sheet.png" id="5_betos"]
+[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://Entities/16x16/16x16 Attack-Sheet.png" id="1_nwlu1"]
+[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="2_maw1g"]
+[ext_resource type="Texture2D" uid="uid://cpck0rrf4n7f2" path="res://Entities/16x16/16x16 Jump-Sheet.png" id="3_jotkc"]
+[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://Entities/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
+[ext_resource type="Texture2D" uid="uid://cls22r2ahs14h" path="res://Entities/16x16/16x16 Walk-Sheet.png" id="5_betos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
 atlas = ExtResource("1_nwlu1")
@@ -106,7 +106,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_606se")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack",
 "speed": 12.0
 }, {
@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pylmc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Idle",
 "speed": 12.0
 }, {
@@ -143,7 +143,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_tkwlq")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Jump",
 "speed": 12.0
 }, {
@@ -166,7 +166,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_jm5j8")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Run",
 "speed": 12.0
 }, {
@@ -183,7 +183,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_iruf7")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Walk",
 "speed": 12.0
 }]

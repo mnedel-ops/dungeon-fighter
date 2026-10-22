@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvlrba2dfr4ls"]
 
 [ext_resource type="Script" uid="uid://78vs36upo8xg" path="res://Scripts/player.gd" id="1_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dbmxd8ycllfyk" path="res://Scripts/statesmanager.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://duygglskd4wwb" path="res://Scripts/state-walk.gd" id="4_hqtel"]
 [ext_resource type="Script" uid="uid://bbbh643533pqw" path="res://Scripts/State-Idle.gd" id="4_ivps1"]
