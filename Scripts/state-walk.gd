@@ -16,6 +16,6 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = p_2.velocity.x < 0
 	else:
 		p_2.velocity.x = move_toward(p_2.velocity.x, 0, SPEED)
-		states._ready()
+		states.change_state(states.get_node("Idle"))
 	p_2.move_and_slide()
 	

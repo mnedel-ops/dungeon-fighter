@@ -7,9 +7,8 @@ func _ready() -> void:
 	for state in get_children():
 		state.set_process(false)
 		state.set_physics_process(false)
+	current_state.change_state($Idle)
 	
-	current_state = $Idle
-	current_state.enter()
 func _input(event: InputEvent) -> void:
 	#ataque
 	if Input.is_action_just_pressed("attack"):
@@ -25,6 +24,6 @@ func _input(event: InputEvent) -> void:
 func change_state(_go_state: Node):
 	if _go_state == current_state:
 		return
-	else: _go_state.set_process(false)
+	else: current_state.set_process(false)
 	current_state = _go_state
 	current_state.enter()
