@@ -11,8 +11,8 @@ func _process(delta: float) -> void:
 	var direction := Input.get_axis("move-left", "move-right")
 	if direction:
 		p_2.velocity.x = direction * SPEED
-		if animated_sprite_2d.animation != "Run":
-			animated_sprite_2d.play("Run")
+		if animated_sprite_2d.animation != "Walk":
+			animated_sprite_2d.play("Walk")
 		animated_sprite_2d.flip_h = p_2.velocity.x < 0
 	else:
 		p_2.velocity.x = move_toward(p_2.velocity.x, 0, SPEED)

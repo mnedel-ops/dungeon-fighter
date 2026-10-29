@@ -3,3 +3,6 @@ extends Node
 
 func enter() -> void:
 	animated_sprite_2d.play("Idle")
+
+func _process(delta: float) -> void:
+	pass
