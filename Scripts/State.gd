@@ -14,7 +14,7 @@ func update_physics(_delta: float) -> void:
 	pass # Replace with function body.
 
 
-func enter(previous_state_path: String, data := {}) -> void:
+func enter() -> void:
 	pass # Replace with function body.
 
 func exit() -> void:

@@ -1,10 +1,10 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://b8vq6uwt0nstn"]
 
-[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://ENTITIES/16x16/16x16 Attack-Sheet.png" id="1_nwlu1"]
+[ext_resource type="Texture2D" uid="uid://cc0dos72rkks4" path="res://Entities/16x16/16x16 Attack-Sheet.png" id="1_nwlu1"]
 [ext_resource type="Texture2D" uid="uid://b1h4dxeq2g0q0" path="res://ENTITIES/Characters/Files/P1-Jump-Fall.png" id="2_maw1g"]
 [ext_resource type="Texture2D" uid="uid://bj1w62qj0yq7b" path="res://ENTITIES/Characters/Files/P1-Idle.png" id="2_nwlu1"]
 [ext_resource type="Texture2D" uid="uid://b1nfc4sqt5my0" path="res://ENTITIES/Characters/Files/P1-Jump-Rise.png" id="3_nwlu1"]
-[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://ENTITIES/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
+[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://Entities/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
 [ext_resource type="Texture2D" uid="uid://cb7glcmxrv5xq" path="res://ENTITIES/Characters/Files/P1-walk.png" id="5_nwlu1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
@@ -111,7 +111,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_606se")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack",
 "speed": 12.0
 }, {
@@ -134,7 +134,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q0l22")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Fall",
 "speed": 5.0
 }, {
@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_nwlu1")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Idle",
 "speed": 12.0
 }, {
@@ -159,7 +159,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ryosm")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Jump",
 "speed": 12.0
 }, {
@@ -182,7 +182,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_jm5j8")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Run",
 "speed": 12.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_betos")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Walk",
 "speed": 12.0
 }]
