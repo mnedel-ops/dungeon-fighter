@@ -2,7 +2,7 @@ extends Node
 # Em estados que precisa de Input, eu nao preciso ativar nada de _process, controlo tudo por 
 #aqui. 
 @export var current_state : Node = null
-@onready var state: Node = current_state if current_state != null else get_child(0)
+@onready var state: Node = current_state
 
 func _ready() -> void:
 	for state in get_children():
@@ -11,12 +11,10 @@ func _ready() -> void:
 			state.set_physics_process(false)
 	change_state($Idle)
 	
-func _input(event: InputEvent) -> void:
+func _process(delta: float) -> void:
 	#ataque
 	if Input.is_action_just_pressed("attack"):
 		change_state($Attack)
-	elif Input.is_action_just_released("attack"):
-		change_state($Idle)
 		
 	if Input.is_action_pressed("move-left") or Input.is_action_pressed("move-right"):
 		change_state($Walk)

@@ -49,6 +49,9 @@ script = ExtResource("5_sweqy")
 [node name="Dash" type="Node" parent="MovementStates" unique_id=866374422]
 script = ExtResource("5_2hs0m")
 
+[node name="Attack" type="Node" parent="MovementStates" unique_id=1394900337]
+script = ExtResource("8_n7ghd")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1510184587]
 collision_layer = 4
 collision_mask = 2
@@ -62,11 +65,10 @@ script = ExtResource("7_1jxqw")
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = ExtResource("9_b26j0")
-animation = &"Idle"
+animation = &"Attack"
+frame = 1
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
 
 [node name="ActionStates" type="Node" parent="." unique_id=1003700614]
-
-[node name="Attack" type="Node" parent="ActionStates" unique_id=1394900337]
-script = ExtResource("8_n7ghd")
