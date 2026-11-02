@@ -22,75 +22,6 @@ size = Vector2(11, 14.985001)
 
 [node name="match-scene" type="Node2D" unique_id=2070016054]
 
-[node name="Jogo" type="CanvasLayer" parent="." unique_id=1356831727]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Jogo" unique_id=208777026]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 12
-
-[node name="SubViewport" type="SubViewport" parent="Jogo/SubViewportContainer" unique_id=285891146]
-handle_input_locally = false
-size = Vector2i(160, 90)
-render_target_update_mode = 4
-
-[node name="Camera2D" type="Camera2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=771206022]
-position = Vector2(80, 45)
-limit_enabled = false
-
-[node name="Stage" type="Node2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1411811862]
-position = Vector2(94.18611, 80.770836)
-
-[node name="Smith" type="StaticBody2D" parent="Jogo/SubViewportContainer/SubViewport/Stage" unique_id=639318664]
-
-[node name="Sprite" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=579175310]
-position = Vector2(-20.800001, -44.2)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_3owkx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=830310694]
-position = Vector2(-18.602783, 11.812495)
-shape = SubResource("WorldBoundaryShape2D_etvr7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=470391487]
-position = Vector2(-100.35278, -29.020836)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_etvr7")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/Stage/Smith" unique_id=698213628]
-position = Vector2(71.313896, -29.020836)
-rotation = 4.712389
-shape = SubResource("WorldBoundaryShape2D_etvr7")
-
-[node name="P1" type="CharacterBody2D" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1215156299]
-position = Vector2(119.25, 75.583336)
-script = ExtResource("2_sesgp")
-
-[node name="Sprite2D" type="Sprite2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=1905267957]
-texture_filter = 1
-position = Vector2(0.04000244, 0.049999997)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4wal8")
-
-[node name="Area2D" type="Area2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=590245145]
-collision_layer = 2
-collision_mask = 4
-
-[node name="PainBox" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1/Area2D" unique_id=815866829]
-position = Vector2(0.16400146, 0.034996033)
-shape = SubResource("RectangleShape2D_4wal8")
-debug_color = Color(1, 0, 0, 0.67058825)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogo/SubViewportContainer/SubViewport/P1" unique_id=2131349003]
-shape = SubResource("RectangleShape2D_sesgp")
-
-[node name="P2" parent="Jogo/SubViewportContainer/SubViewport" unique_id=1329724611 instance=ExtResource("3_s6y5e")]
-position = Vector2(19, 75.666664)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1321452896]
 visible = false
 
@@ -167,4 +98,53 @@ grow_horizontal = 2
 texture = ExtResource("10_s6y5e")
 expand_mode = 1
 
-[connection signal="area_entered" from="Jogo/SubViewportContainer/SubViewport/P1/Area2D" to="Jogo/SubViewportContainer/SubViewport/P1" method="_on_area_2d_area_entered"]
+[node name="Stage" type="Node2D" parent="." unique_id=1411811862]
+position = Vector2(94.18611, 80.770836)
+
+[node name="Smith" type="StaticBody2D" parent="Stage" unique_id=639318664]
+
+[node name="Sprite" type="Sprite2D" parent="Stage/Smith" unique_id=579175310]
+position = Vector2(-20.800001, -44.2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_3owkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Smith" unique_id=830310694]
+position = Vector2(-18.602783, 11.812495)
+shape = SubResource("WorldBoundaryShape2D_etvr7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Stage/Smith" unique_id=470391487]
+position = Vector2(-100.35278, -29.020836)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_etvr7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Stage/Smith" unique_id=698213628]
+position = Vector2(71.313896, -29.020836)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_etvr7")
+
+[node name="P1" type="CharacterBody2D" parent="." unique_id=1215156299]
+position = Vector2(119.25, 75.583336)
+script = ExtResource("2_sesgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="P1" unique_id=1905267957]
+texture_filter = 1
+position = Vector2(0.04000244, 0.049999997)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4wal8")
+
+[node name="Area2D" type="Area2D" parent="P1" unique_id=590245145]
+collision_layer = 2
+collision_mask = 4
+
+[node name="PainBox" type="CollisionShape2D" parent="P1/Area2D" unique_id=815866829]
+position = Vector2(0.16400146, 0.034996033)
+shape = SubResource("RectangleShape2D_4wal8")
+debug_color = Color(1, 0, 0, 0.67058825)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P1" unique_id=2131349003]
+shape = SubResource("RectangleShape2D_sesgp")
+
+[node name="P2" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
+position = Vector2(19, 83.666664)
+
+[connection signal="area_entered" from="P1/Area2D" to="P1" method="_on_area_2d_area_entered"]

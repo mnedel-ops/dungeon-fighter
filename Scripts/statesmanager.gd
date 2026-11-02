@@ -1,10 +1,8 @@
 extends Node
 # Em estados que precisa de Input, eu nao preciso ativar nada de _process, controlo tudo por 
 #aqui. 
-@export var current_state : State = null
-
-@onready var state: Node = (func get_initial_state() -> Node: 
-	return initial_state if initial_state != null else get_child(0).call())
+@export var current_state : Node = null
+@onready var state: Node = current_state if current_state != null else get_child(0)
 
 func _ready() -> void:
 	for state in get_children():
