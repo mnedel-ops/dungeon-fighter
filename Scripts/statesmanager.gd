@@ -3,18 +3,13 @@ extends Node
 #aqui. 
 @export var current_state : Node = null
 @onready var state: Node = current_state
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
-func _ready() -> void:
-	for state in get_children():
-		if state.has_method("process"):
-			state.set_process(false)
-			state.set_physics_process(false)
-	change_state($Idle)
-	
-func _process(delta: float) -> void:
+func _input(event: InputEvent) -> void:
 	#ataque
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_pressed("attack"):
 		change_state($Attack)
+
 		
 	if Input.is_action_pressed("move-left") or Input.is_action_pressed("move-right"):
 		change_state($Walk)
