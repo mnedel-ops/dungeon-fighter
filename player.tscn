@@ -65,9 +65,7 @@ script = ExtResource("7_1jxqw")
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = ExtResource("9_b26j0")
-animation = &"Attack"
-frame = 1
-frame_progress = 1.0
+animation = &"Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
 
