@@ -10,10 +10,8 @@ func _ready() -> void:
 	current_state.enter()
 
 func _input(_event: InputEvent) -> void:
-	#ataque
 	if Input.is_action_just_pressed("attack"):
 		change_state($Attack)
-		return
 
 	if Input.is_action_pressed("move-left") or Input.is_action_pressed("move-right"):
 		change_state($Walk)
@@ -33,3 +31,6 @@ func change_state(_go_state: Node):
 		return
 	current_state = _go_state
 	current_state.enter()
+
+func exit():
+	change_state($Idle)

@@ -5,7 +5,6 @@ const SPEED = 32.0
 @onready var states: Node = $".."
 
 func enter() -> void:
-
 	var direction := Input.get_axis("move-left", "move-right")
 	if direction:
 		p_2.velocity.x = direction * SPEED

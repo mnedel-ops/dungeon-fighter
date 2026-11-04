@@ -13,5 +13,8 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("move-jump") and p_2.is_on_floor():
 		p_2.velocity.y = JUMP_VELOCITY
+	elif p_2.velocity.y > JUMP_VELOCITY and not p_2.is_on_floor():
+		animated_sprite_2d.play("Fall")
+		
 	p_2.move_and_slide()
 	

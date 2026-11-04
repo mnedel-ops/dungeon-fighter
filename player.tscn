@@ -66,8 +66,10 @@ script = ExtResource("7_1jxqw")
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = ExtResource("9_b26j0")
-animation = &"Att"
+animation = &"Jump"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
 
 [node name="ActionStates" type="Node" parent="." unique_id=1003700614]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="MovementStates/Attack" method="_on_animation_player_animation_finished"]
