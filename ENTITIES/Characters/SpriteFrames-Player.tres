@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1h4dxeq2g0q0" path="res://ENTITIES/Characters/Files/P1-Jump-Fall.png" id="2_maw1g"]
 [ext_resource type="Texture2D" uid="uid://bj1w62qj0yq7b" path="res://ENTITIES/Characters/Files/P1-Idle.png" id="2_nwlu1"]
 [ext_resource type="Texture2D" uid="uid://b1nfc4sqt5my0" path="res://ENTITIES/Characters/Files/P1-Jump-Rise.png" id="3_nwlu1"]
-[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://ENTITIES/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
+[ext_resource type="Texture2D" uid="uid://dgf4pojce0ic" path="res://Entities/16x16/16x16 Run-Sheet.png" id="4_cn34s"]
 [ext_resource type="Texture2D" uid="uid://cb7glcmxrv5xq" path="res://ENTITIES/Characters/Files/P1-walk.png" id="5_nwlu1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8m8r"]
@@ -86,14 +86,14 @@ region = Rect2(48, 0, 16, 16)
 [resource]
 animations = [{
 "frames": [{
-"duration": 6.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_q8m8r")
 }, {
-"duration": 6.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5sod4")
 }],
 "loop": false,
-"name": &"Attacks",
+"name": &"Att",
 "speed": 12.0
 }, {
 "frames": [{
@@ -106,9 +106,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q0l22")
 }],
-"loop": true,
+"loop": false,
 "name": &"Fall",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
