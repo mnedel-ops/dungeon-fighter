@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://dvlrba2dfr4ls"]
 
-[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://Entities/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dbmxd8ycllfyk" path="res://Scripts/statesmanager.gd" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://duygglskd4wwb" path="res://Scripts/state-walk.gd" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://bbbh643533pqw" path="res://Scripts/State-Idle.gd" id="4_ivps1"]
-[ext_resource type="Script" uid="uid://dfg6tnbgkdmff" path="res://Scripts/State-dash.gd" id="5_2hs0m"]
-[ext_resource type="Script" uid="uid://cuj8u6crg1jsc" path="res://Scripts/State-jump.gd" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://b74xgwcgmyqno" path="res://ENTITIES/16x16/16x16 Idle-Sheet.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://78vs36upo8xg" path="res://Scripts/player.gd" id="1_n7ghd"]
 [ext_resource type="Script" uid="uid://e2d2xjmhipku" path="res://hit_box.gd" id="7_1jxqw"]
-[ext_resource type="Script" uid="uid://c00newgimpjgn" path="res://Scripts/State-attack.gd" id="8_n7ghd"]
 [ext_resource type="SpriteFrames" uid="uid://b8vq6uwt0nstn" path="res://ENTITIES/Characters/SpriteFrames-Player.tres" id="9_b26j0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8u6n"]
@@ -21,6 +16,7 @@ size = Vector2(12, 15)
 size = Vector2(24, 15)
 
 [node name="P2" type="CharacterBody2D" unique_id=1329724611]
+script = ExtResource("1_n7ghd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=711648707]
 visible = false
@@ -32,26 +28,6 @@ texture = SubResource("AtlasTexture_s8u6n")
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_i3pqv")
 debug_color = Color(0, 1, 0, 0.41960785)
-
-[node name="MovementStates" type="Node" parent="." unique_id=282916106 node_paths=PackedStringArray("current_state")]
-script = ExtResource("3_i3pqv")
-current_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="MovementStates" unique_id=355627405]
-script = ExtResource("4_ivps1")
-
-[node name="Walk" type="Node" parent="MovementStates" unique_id=971588474]
-script = ExtResource("4_hqtel")
-
-[node name="Jump" type="Node" parent="MovementStates" unique_id=572081744]
-script = ExtResource("5_sweqy")
-
-[node name="Dash" type="Node" parent="MovementStates" unique_id=866374422]
-script = ExtResource("5_2hs0m")
-
-[node name="Attack" type="Node" parent="MovementStates" unique_id=1394900337 node_paths=PackedStringArray("anim_play")]
-script = ExtResource("8_n7ghd")
-anim_play = NodePath("../../AnimatedSprite2D")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1510184587]
 collision_layer = 4
@@ -66,10 +42,6 @@ script = ExtResource("7_1jxqw")
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = ExtResource("9_b26j0")
-animation = &"Jump"
+animation = &"Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
-
-[node name="ActionStates" type="Node" parent="." unique_id=1003700614]
-
-[connection signal="animation_finished" from="AnimationPlayer" to="MovementStates/Attack" method="_on_animation_player_animation_finished"]

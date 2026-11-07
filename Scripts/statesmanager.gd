@@ -3,6 +3,7 @@ extends Node
 #aqui. 
 @export var current_state: Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var p_2: Player = $".."
 
 func _ready() -> void:
 	if current_state == null:
@@ -23,6 +24,11 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("move-jump"):
 		change_state($Jump)
 		return
+	if p_2.velocity.y >= 0 and not p_2.is_on_floor():
+		animated_sprite_2d.play("Fall")
+	elif p_2.is_on_floor():
+		print("Cai")
+		exit()
 
 func change_state(_go_state: Node):
 	if _go_state == null:
