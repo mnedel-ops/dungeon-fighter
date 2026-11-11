@@ -59,7 +59,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_5sod4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Att",
 "speed": 12.0
 }, {
@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3n716")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Fall",
 "speed": 12.0
 }, {
@@ -75,7 +75,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_nwlu1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 12.0
 }, {
@@ -92,7 +92,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_ryosm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump",
 "speed": 12.0
 }, {
@@ -109,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_betos")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk",
 "speed": 12.0
 }]

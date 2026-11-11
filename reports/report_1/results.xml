@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites id="2026-11-09" name="report_1" tests="1" failures="0" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="state_machine_test" package="test" timestamp="2026-11-09T18:10:07" hostname="localhost" tests="1" failures="0" errors="1" skipped="0" flaky="0" time="0.029">
-		<testcase name="test_idle" classname="state_machine_test" time="0.021">
-			<error message="ERROR: res://test/state_machine_test.gd:13" type="ABORT">
+<testsuites id="2026-11-11" name="report_1" tests="1" failures="1" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="player_test" package="test/Scripts" timestamp="2026-11-11T23:10:07" hostname="localhost" tests="1" failures="1" errors="0" skipped="0" flaky="0" time="0.009">
+		<testcase name="test_walk" classname="player_test" time="0.002">
+			<failure message="FAILED: res://test/Scripts/player_test.gd:13" type="FAILURE">
 <![CDATA[
-Godot Runtime Error !
-  'Invalid access to property or key 'state' on a base object of type 'Nil'.'
-	at 'test_idle' in res://test/state_machine_test.gd:13
+Test not implemented!
+	at 'test_walk' in res://test/Scripts/player_test.gd:13
 ]]>
-			</error>
+			</failure>
 		</testcase>
 	</testsuite>
 </testsuites>
