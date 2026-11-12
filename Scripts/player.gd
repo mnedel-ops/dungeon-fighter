@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move-jump") and is_on_floor():
 		state = States.JUMP
 	
-	elif Input.is_action_pressed("move-left") or Input.is_action_pressed("move-right"):
+	elif velocity.x:
 		state = States.WALK
 	
 	if velocity.y <= 0:
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		print_debug("receba")
 		state = States.ATTACK
 	
-	if (Input.is_action_just_released("move-left") or Input.is_action_just_released("move-right")) or (state == States.FALL and is_on_floor()):
+	if velocity.x==0 or (state == States.FALL and is_on_floor()):
 		state = States.IDLE
 
 	match state:
@@ -46,7 +46,7 @@ func walk():
 	animated_sprite_2d.flip_h = velocity.x < 0
 
 func idle():
-	velocity = Vector2.ZERO
+	velocity.x = 0
 	animated_sprite_2d.play("Idle")
 
 func jump():

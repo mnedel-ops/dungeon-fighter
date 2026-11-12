@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites id="2026-11-11" name="report_1" tests="7" failures="1" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="player_state_test" package="test/Scripts" timestamp="2026-11-12T00:47:00" hostname="localhost" tests="7" failures="1" errors="0" skipped="0" flaky="0" time="3.009">
-		<testcase name="test_starting_state" classname="player_state_test" time="0.024">
+	<testsuite id="0" name="player_state_test" package="test/Scripts" timestamp="2026-11-12T00:52:17" hostname="localhost" tests="7" failures="1" errors="0" skipped="0" flaky="0" time="3.008">
+		<testcase name="test_starting_state" classname="player_state_test" time="0.027">
 		</testcase>
-		<testcase name="test_walk_state" classname="player_state_test" time="1.499">
+		<testcase name="test_walk_state" classname="player_state_test" time="1.497">
 		</testcase>
 		<testcase name="test_jump_state" classname="player_state_test" time="0.014">
 		</testcase>
-		<testcase name="test_fall_state" classname="player_state_test" time="0.002">
+		<testcase name="test_fall_state" classname="player_state_test" time="0.003">
 			<failure message="FAILED: res://test/Scripts/player_state_test.gd:42" type="FAILURE">
 <![CDATA[
 Expecting:
