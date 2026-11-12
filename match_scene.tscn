@@ -103,7 +103,7 @@ texture = ExtResource("10_s6y5e")
 expand_mode = 1
 
 [node name="Stage" type="Node2D" parent="." unique_id=1411811862]
-position = Vector2(94, 80)
+position = Vector2(94, 80.771)
 
 [node name="Smith" type="StaticBody2D" parent="Stage" unique_id=639318664]
 
@@ -149,6 +149,6 @@ debug_color = Color(1, 0, 0, 0.67058825)
 shape = SubResource("RectangleShape2D_sesgp")
 
 [node name="P2" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
-position = Vector2(18, 88)
+position = Vector2(18, 87)
 
 [connection signal="area_entered" from="P1/Area2D" to="P1" method="_on_area_2d_area_entered"]

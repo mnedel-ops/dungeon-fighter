@@ -33,8 +33,8 @@ func _physics_process(delta: float) -> void:
 
 	match state:
 		States.IDLE: idle()
-		States.JUMP: jump()
 		States.WALK: walk()
+		States.JUMP: jump()
 		States.FALL: fall()
 		States.ATTACK: attack()
 	move_and_slide()
