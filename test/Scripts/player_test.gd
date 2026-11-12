@@ -14,9 +14,13 @@ const __source: String = 'res://Scripts/player.gd'
 
 func test_idle_state() -> void:
 	var state = player.state
-	var idle = player.States.IDLE
-	#runner.simulate_key_pressed(KEY_D)
-		#await runner.await_input_processed()
-		
-	await_millis(3000)
-	assert_that(state).is_equal(idle)
+	
+	assert_that(state).is_equal(player.States.IDLE)
+
+func test_walk_state() -> void:
+	runner.simulate_key_press(KEY_D)
+	await runner.simulate_frames(90)
+	
+	var state = player.state
+	
+	assert_that(state).is_equal(player.States.WALK)
