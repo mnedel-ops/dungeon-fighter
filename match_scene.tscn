@@ -103,7 +103,7 @@ texture = ExtResource("10_s6y5e")
 expand_mode = 1
 
 [node name="Stage" type="Node2D" parent="." unique_id=1411811862]
-position = Vector2(94, 80.771)
+position = Vector2(94.18611, 80.770836)
 
 [node name="Smith" type="StaticBody2D" parent="Stage" unique_id=639318664]
 

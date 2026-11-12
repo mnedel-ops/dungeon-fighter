@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		States.JUMP: jump()
 		States.FALL: fall()
 		States.ATTACK: attack()
+		
 	move_and_slide()
 	
 
@@ -51,8 +52,9 @@ func idle():
 func jump():
 	animated_sprite_2d.play("Jump")
 	velocity.y = JUMP_VELOCITY
+	
 func fall():
-	print(str(velocity))
+	print_debug(str(velocity))
 	animated_sprite_2d.play("Fall")
 func attack():
 	animated_sprite_2d.play("Att")

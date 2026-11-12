@@ -6,7 +6,6 @@ extends GdUnitTestSuite
 
 var runner := scene_runner("res://match_scene.tscn")
 var player :Player= runner.invoke("find_child", "P2")
-
 # TestSuite generated from
 const __source: String = 'res://Scripts/player.gd'
 
@@ -32,6 +31,15 @@ func test_jump_state() -> void:
 	
 	var state = player.state
 	assert_that(state).is_equal(player.States.JUMP)
+	
+func test_fall_state() -> void:
+	runner.simulate_action_pressed("move-jump")
+	var state = player.state
+	
+	
+	if player.velocity.y < 0:
+		state = player.state
+	assert_that(state).is_equal(player.States.FALL)
 	
 func test_attack_state() -> void:
 	runner.simulate_key_pressed(KEY_J)
