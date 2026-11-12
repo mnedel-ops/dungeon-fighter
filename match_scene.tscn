@@ -103,7 +103,7 @@ texture = ExtResource("10_s6y5e")
 expand_mode = 1
 
 [node name="Stage" type="Node2D" parent="." unique_id=1411811862]
-position = Vector2(94.18611, 80.770836)
+position = Vector2(94, 80)
 
 [node name="Smith" type="StaticBody2D" parent="Stage" unique_id=639318664]
 
@@ -113,7 +113,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_3owkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Smith" unique_id=830310694]
-position = Vector2(-18.186111, 8.229167)
+position = Vector2(-19.186108, 8.229164)
 shape = SubResource("SegmentShape2D_uyvmm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Stage/Smith" unique_id=470391487]
@@ -123,7 +123,7 @@ shape = SubResource("WorldBoundaryShape2D_etvr7")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Stage/Smith" unique_id=698213628]
 position = Vector2(71.313896, -29.020836)
-rotation = 4.712389
+rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_etvr7")
 
 [node name="P1" type="CharacterBody2D" parent="." unique_id=1215156299]
@@ -149,6 +149,6 @@ debug_color = Color(1, 0, 0, 0.67058825)
 shape = SubResource("RectangleShape2D_sesgp")
 
 [node name="P2" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
-position = Vector2(19, 83.666664)
+position = Vector2(18, 87)
 
 [connection signal="area_entered" from="P1/Area2D" to="P1" method="_on_area_2d_area_entered"]
