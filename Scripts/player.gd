@@ -5,10 +5,12 @@ class_name Player
 
 const JUMP_VELOCITY = -256
 const SPEED = 32.0
-const DASH = 64
+const DASH = 512.0
 
 enum States {IDLE, WALK, JUMP, FALL, ATTACK, DASH}
 var state :States= States.IDLE
+
+var sentido := 1
 
 func _physics_process(delta: float) -> void:
 	#Gravidade
@@ -45,10 +47,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-var sentido := 1
 func walk():
 	animated_sprite_2d.play("Walk")
 	animated_sprite_2d.flip_h = velocity.x < 0
+	
 	if animated_sprite_2d.flip_h:
 		sentido = -1
 	else: sentido = 1
@@ -67,6 +69,8 @@ func fall():
 	
 func attack():
 	animated_sprite_2d.play("Att")
+	state = States.IDLE
+	
 
 func dash():
 	velocity.x += DASH * sentido
