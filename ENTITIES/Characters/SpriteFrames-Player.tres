@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://b8vq6uwt0nstn"]
 
 [ext_resource type="Texture2D" uid="uid://bqkgtsg7clwfm" path="res://ENTITIES/Characters/Files/P1-attack.png" id="1_maw1g"]
+[ext_resource type="Texture2D" uid="uid://dwxk55jy70eq0" path="res://ENTITIES/Characters/Files/P1-dash.png" id="2_jotkc"]
 [ext_resource type="Texture2D" uid="uid://b1h4dxeq2g0q0" path="res://ENTITIES/Characters/Files/P1-Jump-Fall.png" id="2_maw1g"]
 [ext_resource type="Texture2D" uid="uid://bj1w62qj0yq7b" path="res://ENTITIES/Characters/Files/P1-Idle.png" id="2_nwlu1"]
 [ext_resource type="Texture2D" uid="uid://b1nfc4sqt5my0" path="res://ENTITIES/Characters/Files/P1-Jump-Rise.png" id="3_nwlu1"]
@@ -13,6 +14,22 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5sod4"]
 atlas = ExtResource("1_maw1g")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kchnn"]
+atlas = ExtResource("2_jotkc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aj8h"]
+atlas = ExtResource("2_jotkc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0l22"]
+atlas = ExtResource("2_jotkc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmn7"]
+atlas = ExtResource("2_jotkc")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3n716"]
 atlas = ExtResource("2_maw1g")
@@ -61,6 +78,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"Att",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_kchnn")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4aj8h")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_q0l22")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lfmn7")
+}],
+"loop": false,
+"name": &"Dash",
 "speed": 12.0
 }, {
 "frames": [{

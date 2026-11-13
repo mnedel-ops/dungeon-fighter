@@ -5,6 +5,7 @@ class_name Player
 
 const JUMP_VELOCITY = -256
 const SPEED = 32.0
+const DASH = 64
 
 enum States {IDLE, WALK, JUMP, FALL, ATTACK, DASH}
 var state :States= States.IDLE
@@ -26,13 +27,12 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("attack"):
 		state = States.ATTACK
-	
-	elif velocity.x==0 or (state == States.FALL and is_on_floor()):
-		state = States.IDLE
-		
-	if Input.is_action_just_pressed("move-dash"):
+
+	if Input.is_action_just_pressed("move-dash"): 
 		state = States.DASH
 	
+	elif (state == States.WALK and velocity.x==0) or (state == States.FALL and is_on_floor()): #Se tava andando e para ou caindo e toca no piso
+		state = States.IDLE
 
 	match state:
 		States.IDLE: idle()
@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 		States.JUMP: jump()
 		States.FALL: fall()
 		States.ATTACK: attack()
+		States.DASH: dash()
 		
 	move_and_slide()
 	
@@ -58,5 +59,13 @@ func jump():
 	
 func fall():
 	animated_sprite_2d.play("Fall")
+	
 func attack():
 	animated_sprite_2d.play("Att")
+
+func dash():
+	velocity.x += DASH
+	animated_sprite_2d.play("Dash")
+	print("woosh")
+	state = States.IDLE
+	
