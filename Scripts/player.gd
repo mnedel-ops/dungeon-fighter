@@ -45,9 +45,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
+var sentido := 1
 func walk():
 	animated_sprite_2d.play("Walk")
 	animated_sprite_2d.flip_h = velocity.x < 0
+	if animated_sprite_2d.flip_h:
+		sentido = -1
+	else: sentido = 1
+
 
 func idle():
 	velocity.x = 0
@@ -64,8 +69,7 @@ func attack():
 	animated_sprite_2d.play("Att")
 
 func dash():
-	velocity.x += DASH
+	velocity.x += DASH * sentido
 	animated_sprite_2d.play("Dash")
-	print("woosh")
 	state = States.IDLE
 	
