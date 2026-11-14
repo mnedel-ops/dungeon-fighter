@@ -15,6 +15,8 @@ var sentido := 1
 func _physics_process(delta: float) -> void:
 	#Gravidade
 	var direction := Input.get_axis("move-left", "move-right")
+	if direction:
+		animated_sprite_2d.scale.x = direction
 	velocity.x = direction * SPEED
 	velocity += get_gravity() * delta
 	
@@ -36,6 +38,9 @@ func _physics_process(delta: float) -> void:
 	elif (state == States.WALK and velocity.x==0) or (state == States.FALL and is_on_floor()): #Se tava andando e para ou caindo e toca no piso
 		state = States.IDLE
 
+	if state != States.ATTACK: 
+		$AnimatedSprite2D/Area2D/HitBox.disabled = true
+		
 	match state:
 		States.IDLE: idle()
 		States.WALK: walk()
@@ -49,16 +54,12 @@ func _physics_process(delta: float) -> void:
 
 func walk():
 	animated_sprite_2d.play("Walk")
-	animated_sprite_2d.flip_h = velocity.x < 0
 	
-	if animated_sprite_2d.flip_h:
-		sentido = -1
-	else: sentido = 1
-
-
 func idle():
 	velocity.x = 0
 	animated_sprite_2d.play("Idle")
+	
+	
 
 func jump():
 	animated_sprite_2d.play("Jump")
@@ -70,7 +71,7 @@ func fall():
 func attack():
 	animated_sprite_2d.play("Att")
 	state = States.IDLE
-	
+	$AnimatedSprite2D/Area2D/HitBox.disabled = false
 
 func dash():
 	velocity.x += DASH * sentido
