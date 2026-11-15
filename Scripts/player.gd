@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -256
 const SPEED = 32.0
 const DASH = 512.0
 
-enum States {IDLE, WALK, JUMP, FALL, DASH}
+enum States {IDLE, WALK, JUMP, FALL, DASH, ATTACK}
 var is_attacking : bool= false
 var state :States= States.IDLE
 
@@ -32,7 +32,8 @@ func _physics_process(delta: float) -> void:
 		state = States.FALL
 
 	if Input.is_action_just_pressed("attack"):
-		attack()
+		state = States.ATTACK
+		animation()
 
 	if Input.is_action_just_pressed("move-dash"): 
 		state = States.DASH
@@ -44,36 +45,28 @@ func _physics_process(delta: float) -> void:
 		#$AnimatedSprite2D/Area2D/HitBox.disabled = true
 	if state != States.DASH: 
 		$AnimatedSprite2D/Area2D/PainBox.disabled = false
-		
-	match state:
-		States.IDLE: idle()
-		States.WALK: walk()
-		States.JUMP: jump()
-		States.FALL: fall()
-		States.DASH: dash()
-		
+	animation()
 	move_and_slide()
 
-func walk():
-	animated_sprite_2d.play("Walk")
-	
-func idle():
-	velocity.x = 0
-	animated_sprite_2d.play("Idle")
-		
-func jump():
-	animated_sprite_2d.play("Jump")
-	velocity.y = JUMP_VELOCITY
-	
-func fall():
-	animated_sprite_2d.play("Fall")
+func animation():
+	if state == States.ATTACK:
+		animated_sprite_2d.play("Att")
+		$AnimatedSprite2D/Area2D/HitBox.disabled = false
+	$AnimatedSprite2D/Area2D/HitBox.disabled = true
+	if state == States.WALK:
+		animated_sprite_2d.play("Walk")
+	if state == States.IDLE:
+		animated_sprite_2d.play("Idle")
+	if state == States.JUMP:
+		animated_sprite_2d.play("Jump")
+		velocity.y = JUMP_VELOCITY
+	if state == States.FALL:
+		animated_sprite_2d.play("Fall")
 	
 func attack():
 	if is_attacking:
 		return
 	is_attacking = true
-	animated_sprite_2d.play("Att")
-	$AnimatedSprite2D/Area2D/HitBox.disabled = false
 
 func dash():
 	velocity.x += DASH * sentido
