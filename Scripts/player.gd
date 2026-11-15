@@ -7,7 +7,8 @@ const JUMP_VELOCITY = -256
 const SPEED = 32.0
 const DASH = 512.0
 
-enum States {IDLE, WALK, JUMP, FALL, ATTACK, DASH}
+enum States {IDLE, WALK, JUMP, FALL, DASH}
+var is_attacking : bool= false
 var state :States= States.IDLE
 
 var sentido := 1
@@ -17,8 +18,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move-left", "move-right")
 	if direction:
 		animated_sprite_2d.scale.x = direction
-		if direction != 0:
-			sentido = direction
+		sentido = direction as int
 	velocity.x = direction * SPEED
 	velocity += get_gravity() * delta
 	
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		state = States.FALL
 
 	if Input.is_action_just_pressed("attack"):
-		state = States.ATTACK
+		attack()
 
 	if Input.is_action_just_pressed("move-dash"): 
 		state = States.DASH
@@ -40,8 +40,8 @@ func _physics_process(delta: float) -> void:
 	elif (state == States.WALK and velocity.x==0) or (state == States.FALL and is_on_floor()): #Se tava andando e para ou caindo e toca no piso
 		state = States.IDLE
 
-	if state != States.ATTACK: 
-		$AnimatedSprite2D/Area2D/HitBox.disabled = true
+	#if state != States.ATTACK: 
+		#$AnimatedSprite2D/Area2D/HitBox.disabled = true
 	if state != States.DASH: 
 		$AnimatedSprite2D/Area2D/PainBox.disabled = false
 		
@@ -50,11 +50,9 @@ func _physics_process(delta: float) -> void:
 		States.WALK: walk()
 		States.JUMP: jump()
 		States.FALL: fall()
-		States.ATTACK: attack()
 		States.DASH: dash()
 		
 	move_and_slide()
-	
 
 func walk():
 	animated_sprite_2d.play("Walk")
@@ -71,8 +69,10 @@ func fall():
 	animated_sprite_2d.play("Fall")
 	
 func attack():
+	if is_attacking:
+		return
+	is_attacking = true
 	animated_sprite_2d.play("Att")
-	state = States.IDLE
 	$AnimatedSprite2D/Area2D/HitBox.disabled = false
 
 func dash():
