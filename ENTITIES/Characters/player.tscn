@@ -14,6 +14,9 @@ size = Vector2(12, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(24, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfttq"]
+size = Vector2(7, 12)
+
 [node name="P2" type="CharacterBody2D" unique_id=1329724611]
 script = ExtResource("1_n7ghd")
 
@@ -32,7 +35,7 @@ debug_color = Color(0, 1, 0, 0.41960785)
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = ExtResource("9_b26j0")
-animation = &"Att"
+animation = &"Idle"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1510184587]
 position = Vector2(0, 8)
@@ -42,5 +45,10 @@ collision_mask = 2
 [node name="HitBox" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=1294463076]
 position = Vector2(6, -7.5)
 shape = SubResource("RectangleShape2D_2hs0m")
+
+[node name="PainBox" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=26775645]
+position = Vector2(1.5, -7)
+shape = SubResource("RectangleShape2D_hfttq")
+debug_color = Color(0.9607843, 0, 0, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
