@@ -18,7 +18,6 @@ var sentido := 1
 func _ready() -> void:
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 
-
 func _physics_process(delta: float) -> void:
 	# Física
 	var direction := Input.get_axis("move-left", "move-right")
@@ -89,10 +88,8 @@ func attack() -> void:
 
 func _on_animation_finished() -> void:
 	if animated_sprite_2d.animation == "Att":
-
 		is_attacking = false
 		hit_box.set_deferred("disabled", true)
-
 		# Recupera o estado de movimentação
 		if not is_on_floor():
 			if velocity.y < 0:
