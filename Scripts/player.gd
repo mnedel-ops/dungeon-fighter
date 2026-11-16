@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 class_name Player
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: CollisionShape2D = $AnimatedSprite2D/Area2D/HitBox
 
@@ -86,7 +86,7 @@ func animation() -> void:
 			animated_sprite_2d.play("Idle")
 
 		States.WALK:
-			animated_sprite_2d.play("Walk")
+			animation_player.play("walk")
 
 		States.JUMP:
 			animated_sprite_2d.play("Jump")
@@ -110,8 +110,8 @@ func dash() -> void:
 
 	is_dashing = true
 	state = States.DASH
-	dash_timer = DASH_DURATION
 	animated_sprite_2d.play("Dash")
+	dash_timer = DASH_DURATION
 
 func _on_animation_finished() -> void:
 	if animated_sprite_2d.animation == "Dash":
