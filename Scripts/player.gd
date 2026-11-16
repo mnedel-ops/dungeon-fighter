@@ -13,6 +13,8 @@ enum States {IDLE, WALK, JUMP, FALL, DASH, ATTACK}
 
 var state: States = States.IDLE
 var is_attacking: bool = false
+var is_dashing: bool = false
+
 var sentido := 1
 
 func _ready() -> void:
@@ -35,7 +37,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("move-jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			state = States.JUMP
-
+		
+		if Input.is_action_just_pressed("move-dash"):
+			dash()
+		
 		elif not is_on_floor():
 			if velocity.y < 0:
 				state = States.JUMP
@@ -53,12 +58,11 @@ func _physics_process(delta: float) -> void:
 			attack()
 
 	# Animação
-	if not is_attacking:
+	if not is_attacking or not is_dashing:
 		animation()
 
 	# Movimento
 	move_and_slide()
-
 
 func animation() -> void:
 	match state:
@@ -74,7 +78,6 @@ func animation() -> void:
 		States.FALL:
 			animated_sprite_2d.play("Fall")
 
-
 func attack() -> void:
 	if is_attacking:
 		return
@@ -85,8 +88,20 @@ func attack() -> void:
 	hit_box.set_deferred("disabled", false)
 	animated_sprite_2d.play("Att")
 
+func dash() -> void:
+	if is_dashing:
+		return
+
+	is_dashing = true
+	state = States.DASH
+
+	#hit_box.set_deferred("disabled", false)
+	animated_sprite_2d.play("Dash")
 
 func _on_animation_finished() -> void:
+	if animated_sprite_2d.animation == "Dash":
+		is_dashing = false
+		
 	if animated_sprite_2d.animation == "Att":
 		is_attacking = false
 		hit_box.set_deferred("disabled", true)
