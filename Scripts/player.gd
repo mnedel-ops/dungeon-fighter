@@ -7,7 +7,12 @@ class_name Player
 
 const JUMP_VELOCITY = -256
 const SPEED = 32.0
-const DASH = 512.0
+
+const DASH_DISTANCE := 48.0
+const DASH_DURATION := 0.18
+const DASH_SPEED := DASH_DISTANCE / DASH_DURATION
+
+var dash_timer := 0.0
 
 enum States {IDLE, WALK, JUMP, FALL, DASH, ATTACK}
 
@@ -19,6 +24,8 @@ var sentido := 1
 
 func _ready() -> void:
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
+	hit_box.set_deferred("disabled", true)
+
 
 func _physics_process(delta: float) -> void:
 	# Física
@@ -32,15 +39,12 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 
 	# Atualização dos estados de movimentação
-	if not is_attacking:
+	if not is_attacking and not is_dashing:
 
 		if Input.is_action_just_pressed("move-jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			state = States.JUMP
-		
-		if Input.is_action_just_pressed("move-dash"):
-			dash()
-		
+				
 		elif not is_on_floor():
 			if velocity.y < 0:
 				state = States.JUMP
@@ -56,11 +60,23 @@ func _physics_process(delta: float) -> void:
 		# Ataque
 		if Input.is_action_just_pressed("attack"):
 			attack()
+		if Input.is_action_just_pressed("move-dash"):
+			dash()
 
 	# Animação
-	if not is_attacking or not is_dashing:
+	if not is_attacking and not is_dashing:
 		animation()
+	if is_dashing:
+		velocity.x = DASH_SPEED * sentido
+		velocity.y = 0
 
+		dash_timer -= delta
+
+		if dash_timer <= 0:
+			is_dashing = false
+			velocity.x = 0
+	else:
+			velocity.x = direction * SPEED
 	# Movimento
 	move_and_slide()
 
@@ -94,8 +110,7 @@ func dash() -> void:
 
 	is_dashing = true
 	state = States.DASH
-
-	#hit_box.set_deferred("disabled", false)
+	dash_timer = DASH_DURATION
 	animated_sprite_2d.play("Dash")
 
 func _on_animation_finished() -> void:
