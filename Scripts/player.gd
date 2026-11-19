@@ -2,8 +2,11 @@
 extends CharacterBody2D
 class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hit_box: CollisionShape2D = $AnimatedSprite2D/Area2D/HitBox
+
+@onready var hit_box: CollisionShape2D = $Player/Area2D/HitBox
+
+@onready var sprite_2d: Sprite2D = $Player
+@onready var axe: Sprite2D = $Axe
 
 const JUMP_VELOCITY = -256
 const SPEED = 32.0
@@ -23,7 +26,6 @@ var is_dashing: bool = false
 var sentido := 1
 
 func _ready() -> void:
-	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	hit_box.set_deferred("disabled", true)
 
 
@@ -32,7 +34,8 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move-left", "move-right")
 
 	if direction:
-		animated_sprite_2d.scale.x = direction
+		sprite_2d.scale.x = direction
+		axe.scale.x = direction
 		sentido = int(sign(direction))
 
 	velocity.x = direction * SPEED
@@ -83,16 +86,16 @@ func _physics_process(delta: float) -> void:
 func animation() -> void:
 	match state:
 		States.IDLE:
-			animated_sprite_2d.play("Idle")
+			animation_player.play("Idle")
 
 		States.WALK:
 			animation_player.play("walk")
 
 		States.JUMP:
-			animated_sprite_2d.play("Jump")
+			animation_player.play("Jump")
 
 		States.FALL:
-			animated_sprite_2d.play("Fall")
+			animation_player.play("Fall")
 
 func attack() -> void:
 	if is_attacking:
@@ -102,22 +105,22 @@ func attack() -> void:
 	state = States.ATTACK
 
 	hit_box.set_deferred("disabled", false)
-	animated_sprite_2d.play("Att")
-
+	animation_player.play("Ataque")
+	
 func dash() -> void:
 	if is_dashing:
 		return
 
 	is_dashing = true
 	state = States.DASH
-	animated_sprite_2d.play("Dash")
+	animation_player.play("Dash")
 	dash_timer = DASH_DURATION
 
-func _on_animation_finished() -> void:
-	if animated_sprite_2d.animation == "Dash":
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Dash":
 		is_dashing = false
 		
-	if animated_sprite_2d.animation == "Att":
+	if anim_name == "Ataque":
 		is_attacking = false
 		hit_box.set_deferred("disabled", true)
 		# Recupera o estado de movimentação
@@ -132,3 +135,6 @@ func _on_animation_finished() -> void:
 
 		else:
 			state = States.IDLE
+
+
+	pass # Replace with function body.

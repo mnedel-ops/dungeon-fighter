@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dmlcuqoji6kfa"]
 
-[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_3owkx"]
-[ext_resource type="Texture2D" uid="uid://d0h5xb8vb2vbh" path="res://ENTITIES/Characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="2_4wal8"]
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://ENTITIES/arena-smith.jpg" id="1_3owkx"]
 [ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://p_1.gd" id="2_sesgp"]
 [ext_resource type="PackedScene" uid="uid://dvlrba2dfr4ls" path="res://ENTITIES/Characters/player.tscn" id="3_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://User Interface/UI-Entities/MathScene_ornament.png" id="4_myr3d"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ct3vsth7bpvof" path="res://User Interface/UI-Entities/PH-characterportrait.jpg" id="7_osqcl"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="8_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://1p7ndti26cms" path="res://User Interface/UI-Entities/match_ornamento-aventureiros.png" id="10_s6y5e"]
+[ext_resource type="Texture2D" uid="uid://bthp46tehq606" path="res://ENTITIES/Characters/Files/Boss.png" id="10_sesgp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uyvmm"]
 a = Vector2(100, 0)
@@ -132,9 +132,8 @@ script = ExtResource("2_sesgp")
 
 [node name="Sprite2D" type="Sprite2D" parent="P1" unique_id=1905267957]
 texture_filter = 1
-position = Vector2(0.04000244, 0.049999997)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4wal8")
+position = Vector2(-1.2499985, -4.5833387)
+texture = ExtResource("10_sesgp")
 
 [node name="Area2D" type="Area2D" parent="P1" unique_id=590245145]
 collision_layer = 2
