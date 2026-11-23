@@ -1,0 +1,46 @@
+
+extends CharacterBody2D
+class_name Boss
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var player: Player = get_tree().current_scene.get_node("P2") #pega o node da arvore
+
+const JUMP_VELOCITY = -256
+const SPEED = 16.0
+
+const SAFE_DISTANCE : float = 32.00
+enum States {IDLE, WALK, JUMP, FALL, ATTACK, FLEE}
+
+var state: States = States.IDLE
+var is_attacking: bool = false
+
+var sentido := 1
+
+func _physics_process(delta: float) -> void:
+	# Física
+	if position.distance_to(player.position) > SAFE_DISTANCE:
+		state = States.WALK
+	else: state = States.IDLE
+	
+	if position.distance_to(player.position) < SAFE_DISTANCE:
+		state = States.FLEE
+	velocity.y = 0
+	
+	if position.distance_to(player.position) > 10:
+		move_and_slide()
+	
+	match state:
+		States.IDLE: idle()
+		States.WALK: walk()
+		States.FLEE: flee()
+		
+func idle():
+	velocity = Vector2.ZERO
+	
+func walk():
+	velocity = position.direction_to(player.position) * SPEED
+	
+func flee():
+	pass
+func animation() -> void:
+	pass

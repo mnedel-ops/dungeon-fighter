@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dmlcuqoji6kfa"]
 
-[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://ENTITIES/arena-smith.jpg" id="1_3owkx"]
-[ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://p_1.gd" id="2_sesgp"]
+[ext_resource type="Texture2D" uid="uid://dnwlcexdqbdnq" path="res://Entities/arena-smith.jpg" id="1_3owkx"]
 [ext_resource type="PackedScene" uid="uid://dvlrba2dfr4ls" path="res://ENTITIES/Characters/player.tscn" id="3_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://brh5j26vi7wh4" path="res://User Interface/UI-Entities/MathScene_ornament.png" id="4_myr3d"]
 [ext_resource type="FontFile" uid="uid://rgcxnyhxwesj" path="res://User Interface/UI-Entities/Font/lady-radical-2-font/LadyRadical2Regular-0yAz.ttf" id="4_snp58"]
@@ -9,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cm84bv5xgxlx0" path="res://User Interface/UI-Entities/ornamento-arena-relogio.png" id="7_myr3d"]
 [ext_resource type="Texture2D" uid="uid://ct3vsth7bpvof" path="res://User Interface/UI-Entities/PH-characterportrait.jpg" id="7_osqcl"]
 [ext_resource type="Theme" uid="uid://dh8hh2086wj7d" path="res://User Interface/UI-Entities/Theme-text.tres" id="8_s6y5e"]
+[ext_resource type="PackedScene" uid="uid://c0gvoklnpalnj" path="res://ENTITIES/Characters/Boss.tscn" id="9_s6y5e"]
 [ext_resource type="Texture2D" uid="uid://1p7ndti26cms" path="res://User Interface/UI-Entities/match_ornamento-aventureiros.png" id="10_s6y5e"]
-[ext_resource type="Texture2D" uid="uid://bthp46tehq606" path="res://ENTITIES/Characters/Files/Boss.png" id="10_sesgp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uyvmm"]
 a = Vector2(100, 0)
@@ -18,11 +17,6 @@ b = Vector2(-100, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etvr7"]
 distance = 7.4166603
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
-size = Vector2(11, 14.985001)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sesgp"]
 
 [node name="match-scene" type="Node2D" unique_id=2070016054]
 
@@ -113,7 +107,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_3owkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Smith" unique_id=830310694]
-position = Vector2(-19.186108, 8.229164)
+position = Vector2(-5, 10)
 shape = SubResource("SegmentShape2D_uyvmm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Stage/Smith" unique_id=470391487]
@@ -126,28 +120,8 @@ position = Vector2(71.313896, -29.020836)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_etvr7")
 
-[node name="P1" type="CharacterBody2D" parent="." unique_id=1215156299]
-position = Vector2(119.25, 75.583336)
-script = ExtResource("2_sesgp")
-
-[node name="Sprite2D" type="Sprite2D" parent="P1" unique_id=1905267957]
-texture_filter = 1
-position = Vector2(-1.2499985, -4.5833387)
-texture = ExtResource("10_sesgp")
-
-[node name="Area2D" type="Area2D" parent="P1" unique_id=590245145]
-collision_layer = 2
-collision_mask = 4
-
-[node name="PainBox" type="CollisionShape2D" parent="P1/Area2D" unique_id=815866829]
-position = Vector2(0.16400146, 0.034996033)
-shape = SubResource("RectangleShape2D_4wal8")
-debug_color = Color(1, 0, 0, 0.67058825)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="P1" unique_id=2131349003]
-shape = SubResource("RectangleShape2D_sesgp")
+[node name="P1" parent="." unique_id=1050520266 instance=ExtResource("9_s6y5e")]
+position = Vector2(135, 89)
 
 [node name="P2" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
-position = Vector2(18, 87)
-
-[connection signal="area_entered" from="P1/Area2D" to="P1" method="_on_area_2d_area_entered"]
+position = Vector2(20, 77)

@@ -8,7 +8,7 @@ class_name Player
 @onready var sprite_2d: Sprite2D = $Player
 @onready var axe: Sprite2D = $Axe
 
-const JUMP_VELOCITY = -256
+const JUMP_VELOCITY = -256 - 32
 const SPEED = 32.0
 
 const DASH_DISTANCE := 48.0
