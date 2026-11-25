@@ -7,8 +7,10 @@ class_name Boss
 
 const JUMP_VELOCITY = -256
 const SPEED = 16.0
+const FLEE_SPEED = SPEED*2
 
-const SAFE_DISTANCE : float = 32.00
+const SAFE_DISTANCE : float = 64.00
+const DANGER_DISTANCE : float = SAFE_DISTANCE/2
 enum States {IDLE, WALK, JUMP, FALL, ATTACK, FLEE}
 
 var state: States = States.IDLE
@@ -22,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		state = States.WALK
 	else: state = States.IDLE
 	
-	if position.distance_to(player.position) < SAFE_DISTANCE:
+	if position.distance_to(player.position) < DANGER_DISTANCE:
 		state = States.FLEE
 	velocity.y = 0
 	
@@ -41,6 +43,7 @@ func walk():
 	velocity = position.direction_to(player.position) * SPEED
 	
 func flee():
-	pass
+	velocity = -position.direction_to(player.position) * FLEE_SPEED
+	print("ain que medo")
 func animation() -> void:
 	pass

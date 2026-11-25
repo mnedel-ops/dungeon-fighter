@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1w62qj0yq7b" path="res://ENTITIES/Characters/Files/P1-Idle.png" id="6_cw2lv"]
 [ext_resource type="Texture2D" uid="uid://b1nfc4sqt5my0" path="res://ENTITIES/Characters/Files/P1-Jump-Rise.png" id="7_ftqs4"]
 [ext_resource type="Texture2D" uid="uid://cb7glcmxrv5xq" path="res://ENTITIES/Characters/Files/P1-walk.png" id="8_fyiwr"]
+[ext_resource type="Script" uid="uid://7obkq38o2abv" path="res://Scripts/vida.gd" id="10_2q3dc"]
 [ext_resource type="Texture2D" uid="uid://b85kjbjfxgmyk" path="res://ENTITIES/Characters/Files/P1-MachadoAtaque.png" id="10_fyiwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
@@ -634,5 +635,8 @@ texture = ExtResource("10_fyiwr")
 offset = Vector2(12, -8)
 hframes = 3
 frame = 1
+
+[node name="Vida" type="Node" parent="." unique_id=1893191748]
+script = ExtResource("10_2q3dc")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
