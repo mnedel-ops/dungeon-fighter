@@ -3,10 +3,10 @@ extends CharacterBody2D
 class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var hit_box: CollisionShape2D = $Axe/Hitbox/HitBox
+@onready var hit_box: CollisionShape2D = $Node2D/Axe/Hitbox/HitBox
 
 @onready var sprite_2d: Sprite2D = $Player
-@onready var axe: Sprite2D = $Axe
+@onready var axe: Node2D = $Node2D
 
 const JUMP_VELOCITY = -256 - 32
 const SPEED = 32.0

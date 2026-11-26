@@ -62,7 +62,7 @@ step = 0.041666668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Axe:texture")
+tracks/0/path = NodePath("Node2D/Axe:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,14 +74,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Axe:position")
+tracks/1/path = NodePath("Node2D/Axe:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.083478585),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(14, -17), Vector2(14, -8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -98,7 +98,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Axe:hframes")
+tracks/3/path = NodePath("Node2D/Axe:hframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -110,7 +110,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Axe:frame")
+tracks/4/path = NodePath("Node2D/Axe:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -134,67 +134,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Axe:offset")
+tracks/6/path = NodePath("Node2D/Axe/Hitbox/HitBox:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.08314979),
+"times": PackedFloat32Array(0, 0.12500417),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(12, -16), Vector2(12, -8)]
-}
-
-[sub_resource type="Animation" id="Animation_ftqs4"]
-resource_name = "Atk"
-length = 0.083333336
-step = 0.041666668
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_hfttq")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Player:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, -8)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Player:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.083333336),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
+"values": [Vector2(4, -7), Vector2(4, -16)]
 }
 
 [sub_resource type="Animation" id="Animation_cw2lv"]
@@ -358,7 +305,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Axe:texture")
+tracks/4/path = NodePath("Node2D/Axe:texture")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -466,7 +413,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Axe:frame")
+tracks/4/path = NodePath("Node2D/Axe:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -478,7 +425,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Axe:texture")
+tracks/5/path = NodePath("Node2D/Axe:texture")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -490,7 +437,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Axe:position")
+tracks/6/path = NodePath("Node2D/Axe:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -502,7 +449,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Axe:hframes")
+tracks/7/path = NodePath("Node2D/Axe:hframes")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -514,14 +461,14 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Axe:offset")
+tracks/8/path = NodePath("Node2D/Axe/Hitbox/HitBox:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(12, -8)]
+"values": [Vector2(6, -8)]
 }
 
 [sub_resource type="Animation" id="Animation_hfttq"]
@@ -568,7 +515,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Axe:texture")
+tracks/3/path = NodePath("Node2D/Axe:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -582,7 +529,6 @@ tracks/3/keys = {
 _data = {
 &"Apanhar": SubResource("Animation_2q3dc"),
 &"Ataque": SubResource("Animation_q00w3"),
-&"Atk": SubResource("Animation_ftqs4"),
 &"Dash": SubResource("Animation_cw2lv"),
 &"Fall": SubResource("Animation_1406c"),
 &"Idle": SubResource("Animation_or8dr"),
@@ -627,20 +573,21 @@ position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_hfttq")
 debug_color = Color(0.9607843, 0, 0, 0.41960785)
 
-[node name="Axe" type="Sprite2D" parent="." unique_id=1299996014]
+[node name="Node2D" type="Node2D" parent="." unique_id=110224172]
+
+[node name="Axe" type="Sprite2D" parent="Node2D" unique_id=1299996014]
 position = Vector2(12, -16)
 texture = ExtResource("10_fyiwr")
-offset = Vector2(12, -8)
 hframes = 3
 frame = 1
 
-[node name="Hitbox" type="Area2D" parent="Axe" unique_id=1510184587]
+[node name="Hitbox" type="Area2D" parent="Node2D/Axe" unique_id=1510184587]
 position = Vector2(-4, 16)
 collision_layer = 4
 collision_mask = 2
 
-[node name="HitBox" type="CollisionShape2D" parent="Axe/Hitbox" unique_id=1294463076]
-position = Vector2(12, -7.5)
+[node name="HitBox" type="CollisionShape2D" parent="Node2D/Axe/Hitbox" unique_id=1294463076]
+position = Vector2(6, -8)
 shape = SubResource("RectangleShape2D_2hs0m")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
