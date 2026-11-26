@@ -591,4 +591,5 @@ position = Vector2(6, -8)
 shape = SubResource("RectangleShape2D_2hs0m")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="morri" from="Vida" to="." method="_on_vida_morri"]
 [connection signal="area_entered" from="PainBox" to="Vida" method="_on_pain_box_area_entered"]

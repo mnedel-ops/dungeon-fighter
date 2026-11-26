@@ -137,3 +137,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 	pass # Replace with function body.
+
+
+func _on_vida_morri() -> void:
+	queue_free()

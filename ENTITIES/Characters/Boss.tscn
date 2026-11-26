@@ -10,7 +10,7 @@ size = Vector2(17, 29)
 size = Vector2(10, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2gxc"]
-size = Vector2(16.5, 16)
+size = Vector2(66.5, 16)
 
 [node name="Boss" type="CharacterBody2D" unique_id=1050520266]
 script = ExtResource("1_w2gxc")
@@ -39,8 +39,9 @@ debug_color = Color(1, 0, 0, 0.67058825)
 position = Vector2(0, -10)
 collision_layer = 4
 collision_mask = 2
+monitoring = false
 
 [node name="HitBox" type="CollisionShape2D" parent="Node2D/HitBox" unique_id=688450588]
-position = Vector2(-16.75, 2)
+position = Vector2(-41.75, 2)
 shape = SubResource("RectangleShape2D_w2gxc")
 debug_color = Color(0, 1, 0, 0.41960785)
