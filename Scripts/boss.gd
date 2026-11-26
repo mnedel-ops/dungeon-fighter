@@ -21,18 +21,6 @@ var old_direction :int = direction
 
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
-
-#	Controlar o sentido do Boss
-	if position.x > player.position.x:
-		direction = 1
-	elif position.x < player.position.x:
-		direction = -1
-		
-	if direction != old_direction:
-		print(direction)
-		old_direction = direction
-	scale.x = direction
-		
 	# Estados
 	if position.distance_to(player.position) > SAFE_DISTANCE:
 		state = States.WALK
@@ -48,7 +36,17 @@ func _physics_process(delta: float) -> void:
 			position.x = player.position.x - SAFE_DISTANCE
 		elif direction < 0:
 			position.x = player.position.x + SAFE_DISTANCE
-			
+#	Controlar o sentido do Boss
+	if position.x > player.position.x:
+		direction = 1
+	elif position.x < player.position.x:
+		direction = -1
+		
+	if direction != old_direction:
+		print(direction)
+		old_direction = direction
+		scale.x = direction
+		
 	match state:
 		States.IDLE: idle()
 		States.WALK: walk()
