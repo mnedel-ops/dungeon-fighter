@@ -18,6 +18,7 @@ var state: States = States.IDLE
 
 var direction : int = 1
 var old_direction :int = direction
+
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 
@@ -29,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		
 	if direction != old_direction:
 		print(direction)
-		scale.x = direction
 		old_direction = direction
+	scale.x = direction
 		
 	# Estados
 	if position.distance_to(player.position) > SAFE_DISTANCE:
