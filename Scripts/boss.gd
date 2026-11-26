@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Boss
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var player: Player = get_tree().current_scene.get_node("P2") #pega o node da arvore
+@onready var player: Player = get_tree().current_scene.get_node("Player") #pega o node da arvore
 
 const JUMP_VELOCITY = -256
 const SPEED = 16.0
@@ -14,32 +14,40 @@ const DANGER_DISTANCE : float = SAFE_DISTANCE/2
 enum States {IDLE, WALK, JUMP, FALL, ATTACK, FLEE}
 
 var state: States = States.IDLE
-var is_attacking: bool = false
+@onready var ataque_raiz: Node2D = $Node2D
 
-var sentido := 1
-
-var stare : bool = false
+var direction : int = 1
+var old_direction :int = direction
 func _physics_process(delta: float) -> void:
+	velocity += get_gravity() * delta
+
 #	Controlar o sentido do Boss
-	if velocity.x < 0 and stare == false:
-		sprite_2d.flip_h = false
-		stare = true
-	elif velocity.x > 0 and stare == true:
-		sprite_2d.flip_h = true
-		stare = false
+	if position.x > player.position.x:
+		direction = 1
+	elif position.x < player.position.x:
+		direction = -1
 		
-	# Física
+	if direction != old_direction:
+		print(direction)
+		scale.x = direction
+		old_direction = direction
+		
+	# Estados
 	if position.distance_to(player.position) > SAFE_DISTANCE:
 		state = States.WALK
 	else: state = States.IDLE
 	
 	if position.distance_to(player.position) < DANGER_DISTANCE:
 		state = States.FLEE
-	velocity.y = 0
 	
 	if position.distance_to(player.position) > 10:
 		move_and_slide()
-	
+	if state == States.FLEE and velocity.x == 0:
+		if direction > 0:
+			position.x = player.position.x - SAFE_DISTANCE
+		elif direction < 0:
+			position.x = player.position.x + SAFE_DISTANCE
+			
 	match state:
 		States.IDLE: idle()
 		States.WALK: walk()
@@ -50,6 +58,7 @@ func idle():
 	
 func walk():
 	velocity = position.direction_to(player.position) * SPEED
+	velocity.y = 0
 	
 func flee():
 	velocity = -position.direction_to(player.position) * FLEE_SPEED

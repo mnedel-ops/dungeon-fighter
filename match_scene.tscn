@@ -120,8 +120,8 @@ position = Vector2(71.313896, -29.020836)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_etvr7")
 
-[node name="P1" parent="." unique_id=1050520266 instance=ExtResource("9_s6y5e")]
+[node name="Boss" parent="." unique_id=1050520266 instance=ExtResource("9_s6y5e")]
 position = Vector2(135, 89)
 
-[node name="P2" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
+[node name="Player" parent="." unique_id=1329724611 instance=ExtResource("3_s6y5e")]
 position = Vector2(20, 77)
