@@ -11,12 +11,6 @@
 [ext_resource type="Script" uid="uid://7obkq38o2abv" path="res://Scripts/vida.gd" id="10_2q3dc"]
 [ext_resource type="Texture2D" uid="uid://b85kjbjfxgmyk" path="res://ENTITIES/Characters/Files/P1-MachadoAtaque.png" id="10_fyiwr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
-size = Vector2(16, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfttq"]
-size = Vector2(7, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
 size = Vector2(12, 15)
 
@@ -598,6 +592,12 @@ _data = {
 &"walk": SubResource("Animation_hfttq")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfttq"]
+size = Vector2(7, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
+size = Vector2(16, 15)
+
 [node name="P2" type="CharacterBody2D" unique_id=1329724611]
 script = ExtResource("1_n7ghd")
 
@@ -607,20 +607,6 @@ position = Vector2(8, -8)
 texture = ExtResource("2_hfttq")
 hframes = 3
 
-[node name="Area2D" type="Area2D" parent="Player" unique_id=1510184587]
-position = Vector2(0, 8)
-collision_layer = 4
-collision_mask = 2
-
-[node name="HitBox" type="CollisionShape2D" parent="Player/Area2D" unique_id=1294463076]
-position = Vector2(12, -7.5)
-shape = SubResource("RectangleShape2D_2hs0m")
-
-[node name="PainBox" type="CollisionShape2D" parent="Player/Area2D" unique_id=26775645]
-position = Vector2(1.5, -7)
-shape = SubResource("RectangleShape2D_hfttq")
-debug_color = Color(0.9607843, 0, 0, 0.41960785)
-
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1678794154]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_i3pqv")
@@ -629,6 +615,18 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1622780184]
 libraries/ = SubResource("AnimationLibrary_uyvmm")
 
+[node name="Vida" type="Node" parent="." unique_id=1893191748]
+script = ExtResource("10_2q3dc")
+
+[node name="PainBox" type="Area2D" parent="." unique_id=1201793845]
+collision_layer = 2
+collision_mask = 4
+
+[node name="PainBox" type="CollisionShape2D" parent="PainBox" unique_id=26775645]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_hfttq")
+debug_color = Color(0.9607843, 0, 0, 0.41960785)
+
 [node name="Axe" type="Sprite2D" parent="." unique_id=1299996014]
 position = Vector2(12, -16)
 texture = ExtResource("10_fyiwr")
@@ -636,7 +634,14 @@ offset = Vector2(12, -8)
 hframes = 3
 frame = 1
 
-[node name="Vida" type="Node" parent="." unique_id=1893191748]
-script = ExtResource("10_2q3dc")
+[node name="Hitbox" type="Area2D" parent="Axe" unique_id=1510184587]
+position = Vector2(-4, 16)
+collision_layer = 4
+collision_mask = 2
+
+[node name="HitBox" type="CollisionShape2D" parent="Axe/Hitbox" unique_id=1294463076]
+position = Vector2(12, -7.5)
+shape = SubResource("RectangleShape2D_2hs0m")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="PainBox" to="Vida" method="_on_pain_box_area_entered"]

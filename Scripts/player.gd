@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var hit_box: CollisionShape2D = $Player/Area2D/HitBox
+@onready var hit_box: CollisionShape2D = $Axe/Hitbox/HitBox
 
 @onready var sprite_2d: Sprite2D = $Player
 @onready var axe: Sprite2D = $Axe
@@ -27,7 +27,6 @@ var sentido := 1
 
 func _ready() -> void:
 	hit_box.set_deferred("disabled", true)
-
 
 func _physics_process(delta: float) -> void:
 	# Física

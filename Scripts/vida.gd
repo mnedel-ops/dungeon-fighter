@@ -1,12 +1,7 @@
 extends Node
+const VIDA_Max : int = 9
+var vida_atual : int = VIDA_Max
 
-const VIDA_MAX : int = 9
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_pain_box_area_entered(area: Area2D) -> void:
+	vida_atual -=1
+	print(vida_atual)

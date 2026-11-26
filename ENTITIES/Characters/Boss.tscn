@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://Scripts/boss.gd" id="1_w2gxc"]
 [ext_resource type="Texture2D" uid="uid://bthp46tehq606" path="res://ENTITIES/Characters/Files/Boss.png" id="2_rw1wl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
-size = Vector2(10, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2gxc"]
+size = Vector2(16.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sesgp"]
 size = Vector2(17, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wal8"]
+size = Vector2(10, 29)
 
 [node name="P1" type="CharacterBody2D" unique_id=1050520266]
 script = ExtResource("1_w2gxc")
@@ -16,18 +19,26 @@ script = ExtResource("1_w2gxc")
 texture_filter = 1
 position = Vector2(0, -16)
 texture = ExtResource("2_rw1wl")
-flip_h = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=567566148]
+[node name="HitBox" type="Area2D" parent="." unique_id=567566148 groups=["Boss_HitBox"]]
 position = Vector2(0, -10)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 
-[node name="PainBox" type="CollisionShape2D" parent="Area2D" unique_id=1742030442]
-position = Vector2(1, -4.5)
-shape = SubResource("RectangleShape2D_4wal8")
-debug_color = Color(1, 0, 0, 0.67058825)
+[node name="HitBox" type="CollisionShape2D" parent="HitBox" unique_id=688450588]
+position = Vector2(-16.75, 2)
+shape = SubResource("RectangleShape2D_w2gxc")
+debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806226950]
 position = Vector2(-0.5, -14.5)
 shape = SubResource("RectangleShape2D_sesgp")
+
+[node name="PainBox" type="Area2D" parent="." unique_id=1035754894]
+collision_layer = 2
+collision_mask = 4
+
+[node name="PainBox2" type="CollisionShape2D" parent="PainBox" unique_id=1742030442]
+position = Vector2(1, -14.5)
+shape = SubResource("RectangleShape2D_4wal8")
+debug_color = Color(1, 0, 0, 0.67058825)

@@ -7,7 +7,7 @@ class_name Boss
 
 const JUMP_VELOCITY = -256
 const SPEED = 16.0
-const FLEE_SPEED = SPEED*2
+const FLEE_SPEED = SPEED * 2
 
 const SAFE_DISTANCE : float = 64.00
 const DANGER_DISTANCE : float = SAFE_DISTANCE/2
@@ -18,7 +18,16 @@ var is_attacking: bool = false
 
 var sentido := 1
 
+var stare : bool = false
 func _physics_process(delta: float) -> void:
+#	Controlar o sentido do Boss
+	if velocity.x < 0 and stare == false:
+		sprite_2d.flip_h = false
+		stare = true
+	elif velocity.x > 0 and stare == true:
+		sprite_2d.flip_h = true
+		stare = false
+		
 	# Física
 	if position.distance_to(player.position) > SAFE_DISTANCE:
 		state = States.WALK
@@ -44,6 +53,5 @@ func walk():
 	
 func flee():
 	velocity = -position.direction_to(player.position) * FLEE_SPEED
-	print("ain que medo")
 func animation() -> void:
 	pass
