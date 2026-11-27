@@ -11,14 +11,17 @@ const FLEE_SPEED = SPEED * 2
 const SAFE_DISTANCE : float = 64.00
 const DANGER_DISTANCE : float = SAFE_DISTANCE/2
 
-enum States {IDLE, WALK, JUMP, FALL, FLEE, TELEPORT}
+enum States {IDLE, WALK, JUMP, FALL, FLEE, TELEPORT, MANUP}
 enum Action_States {NONE, ATTACK, INTELLECT_EAT, SMART_BEAN}
 
 var act_state: Action_States = Action_States.NONE
-var state: States = States.IDLE
+var act_state_last: Action_States = act_state
 
+var state: States = States.IDLE
+var state_last :States= state
 @onready var hit_box: CollisionShape2D = $Node2D/HitBox/HitBox
 
+@onready var label: Label = $Label
 
 var direction : int = 1
 var old_direction :int = direction
@@ -31,26 +34,27 @@ func _ready() -> void:
 	hit_box.set_deferred("disabled", true)
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
-	
+	label.text = States.find_key(state_last) # Output: "RUN"
+	#print(States.find_key(state_last))
+
+
 	# Estados
 	if position.distance_to(player.position) > SAFE_DISTANCE:
 		state = States.WALK
-	else: 
-		state = States.IDLE
-	
-	if position.distance_to(player.position) < DANGER_DISTANCE:
+	elif position.distance_to(player.position) < SAFE_DISTANCE and position.distance_to(player.position) > DANGER_DISTANCE:
 		state = States.FLEE
+	elif position.distance_to(player.position) < DANGER_DISTANCE: 
+		state = [States.TELEPORT, States.MANUP].pick_random()
 		
 	#Ataque de laser
 	if (position.distance_to(player.position) > DANGER_DISTANCE and position.distance_to(player.position) < SAFE_DISTANCE) and hit_box.disabled:
 		act_state = Action_States.SMART_BEAN
 	elif !hit_box.disabled:
 		act_state = Action_States.NONE
+
 	if position.distance_to(player.position) > 10:
 		move_and_slide()
 	
-	if state == States.FLEE and velocity.x == 0:
-		state = States.TELEPORT
 
 #	Controlar o sentido do Boss
 	if position.x > player.position.x:
@@ -65,11 +69,13 @@ func _physics_process(delta: float) -> void:
 	match state:
 		States.IDLE: idle()
 		States.WALK: walk()
-		#States.FLEE: flee()
-		#States.TELEPORT: teleport()
+		States.FLEE:  if state_last != States.FLEE:flee()
+		States.TELEPORT: if state_last != States.TELEPORT:teleport()
+		States.MANUP: if state_last != States.MANUP:manup()
+
 	match act_state:
 		Action_States.NONE: none()
-		Action_States.SMART_BEAN: smart_bean()
+		Action_States.SMART_BEAN: if act_state_last != Action_States.SMART_BEAN: smart_bean() # Com esse if, consigo controlar qual estado entra, e não repete ações
 	
 func idle():
 	velocity = Vector2.ZERO
@@ -86,6 +92,12 @@ func teleport() -> void:
 		position.x = player.position.x - SAFE_DISTANCE
 	elif direction < 0:
 		position.x = player.position.x + SAFE_DISTANCE
+	state_last = States.TELEPORT
+
+func manup():
+	velocity = position.direction_to(player.position) * FLEE_SPEED
+	if position.distance_to(player.position) < DANGER_DISTANCE:
+		state_last = States.MANUP
 
 
 func none():
@@ -94,3 +106,4 @@ func none():
 
 func smart_bean():
 	hit_box.set_deferred("disabled", false)
+	act_state_last = Action_States.SMART_BEAN

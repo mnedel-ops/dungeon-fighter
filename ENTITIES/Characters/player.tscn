@@ -581,7 +581,7 @@ texture = ExtResource("10_fyiwr")
 hframes = 3
 frame = 1
 
-[node name="Hitbox" type="Area2D" parent="Node2D/Axe" unique_id=1510184587]
+[node name="Hitbox" type="Area2D" parent="Node2D/Axe" unique_id=1510184587 groups=["Boss_HitBox"]]
 position = Vector2(-4, 16)
 collision_layer = 4
 collision_mask = 2

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pgl7epe8vh38" path="res://Scripts/boss.gd" id="1_w2gxc"]
 [ext_resource type="Texture2D" uid="uid://bthp46tehq606" path="res://ENTITIES/Characters/Files/Boss.png" id="2_rw1wl"]
+[ext_resource type="Script" uid="uid://7obkq38o2abv" path="res://Scripts/vida.gd" id="3_rw1wl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sesgp"]
 size = Vector2(17, 29)
@@ -45,3 +46,13 @@ monitoring = false
 position = Vector2(-41.75, 2)
 shape = SubResource("RectangleShape2D_w2gxc")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1175854603]
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 20.0
+offset_bottom = -25.0
+text = "aaa"
+
+[node name="Node" type="Node" parent="." unique_id=1367407758]
+script = ExtResource("3_rw1wl")
